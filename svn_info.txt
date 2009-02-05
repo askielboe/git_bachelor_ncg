@@ -1,0 +1,10 @@
+Her er lidt info om Subversion (SVN).
+
+Den er guide er en rigtig god og simpel grafisk guide til SVN:
+http://betterexplained.com/articles/a-visual-guide-to-version-control/
+
+En bog om SVN hvis man vil lidt i dybden, eller savner noget bestemt info:
+http://svnbook.red-bean.com/
+
+Ark med SVN kommandoer (kun til Terminal):
+http://ariejan.net/upload/svncheatsheet-1.0.1.pdf
