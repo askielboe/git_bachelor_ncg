@@ -1,32 +1,34 @@
 % % % % % % % % % % % % % % % % % % % TITLE % % % % % % % % % % % % % % % % % % %
-Titlen skal tilf√∏jes!
+Titlen skal tilføjes!
 
 % % % % % % % % % % % % % % % % % % % ABSTRACT % % % % % % % % % % % % % % % % % % %
-Skrives n√•r vi er f√¶rdige med opgaven da denne skal indeholde konklusion.
+Skrives når vi er færdige med opgaven da denne skal indeholde konklusion.
 
 % % % % % % % % % % % % % % % % % % % INTRODUKTION % % % % % % % % % % % % % % % % % % %
-Skriv introduktionen. Kort om hvad h√∏jenergifysik er og hvilke udfordringer vi har.
+Skriv introduktionen. Kort om hvad højenergifysik er og hvilke udfordringer vi har.
 
 Vent evt. med dette afsnit til til sidst.
 
-Skal b√•de v√¶re p√• Dansk + Engelsk!
+Skal både være på Dansk + Engelsk!
+
+Andreas 5/2-09: Har skrevet lidt og flyttet lidt op fra teori-afsnittet. Måske lidt filosofisk, men jeg synes det er en god vinkel at have på og for mig gør det det mere interessant at arbejde med når man er opmærksom på den større sammenhæng.
 
 % % % % % % % % % % % % % % % % % % % TEORI % % % % % % % % % % % % % % % % % % %
 a1) Standardmodel -> Problems with gravity -> NCG
 	Overordnet afsnit med introduktion til SM, GR og NCG.
 	
 a2) Feynman Rules
-	Lagrangefunktion -> Feynmanregler -> Tv√¶rsnit
+	Lagrangefunktion -> Feynmanregler -> Tværsnit
 
 % % % % % % % % % % % % % % % % % % % BEREGNINGER % % % % % % % % % % % % % % % % % % %
 b1) LanHep / CompHep
-	Hvad har vi pr√∏vet? Skriv om hvordan antisymmetrien af theta g√∏r at disse programmer ikke er s√• effektive.
+	Hvad har vi prøvet? Skriv om hvordan antisymmetrien af theta gør at disse programmer ikke er så effektive.
 
-b2) L√∏sning
-	Hvad er vi s√• kommet frem til, beskrivelse af hvordan vi l√∏ser opgaven med en symmetrisk theta?
+b2) Løsning
+	Hvad er vi så kommet frem til, beskrivelse af hvordan vi løser opgaven med en symmetrisk theta?
 	
 % % % % % % % % % % % % % % % % % % % RESULTATER % % % % % % % % % % % % % % % % % % %
 
 % % % % % % % % % % % % % % % % % % % KONKLUSION % % % % % % % % % % % % % % % % % % %
 
-% % % % % % % % % % % % % % % % % % % EFTERM√ÜGLE % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % EFTERMÆGLE % % % % % % % % % % % % % % % % % % %
