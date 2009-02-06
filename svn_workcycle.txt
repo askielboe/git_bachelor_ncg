@@ -1,0 +1,39 @@
+Basic Work Cycle
+
+Subversion has numerous features, options, bells, and whistles, but on a day-to-day basis, odds are that you will use only a few of them. In this section, we'll run through the most common things that you might find yourself doing with Subversion in the course of a day's work.
+
+The typical work cycle looks like this:
+
+Update your working copy.
+
+	svn update
+
+Make changes.
+
+	svn add
+
+	svn delete
+
+	svn copy
+
+	svn move
+
+Examine your changes.
+
+	svn status
+
+	svn diff
+
+Possibly undo some changes.
+
+	svn revert
+
+Resolve conflicts (merge others' changes).
+
+	svn update
+
+	svn resolve
+
+Commit your changes.
+
+	svn commit
