@@ -11,3 +11,11 @@ http://ariejan.net/upload/svncheatsheet-1.0.1.pdf
 
 VIGTIGT INFORMATION OM FLYTNING OG KOPIERING AF FILER I WORKING COPY:
 While your working copy is “just like any other collection of files and directories on your system,” you can edit files at will, but you must tell Subversion about everything else that you do. For example, if you want to copy or move an item in a working copy, you should use svn copy or svn move instead of the copy and move commands provided by your operating system. We'll talk more about them later in this chapter.
+
+<---- INFO OM DVCS ---->
+
+Visual guide til DVCS:
+http://betterexplained.com/articles/intro-to-distributed-version-control-illustrated/
+
+Uddybende artikel:
+http://ianclatworthy.files.wordpress.com/2007/10/dvcs-why-and-how1.pdf

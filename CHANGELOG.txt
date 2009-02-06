@@ -1,0 +1,23 @@
+Her kan vi skrive ændringer når vi laver dem, hvis der er brug for uddybende kommentare.
+
+Nyeste ændringer står øverst, som det også fremgår af datoen..
+
+
+% ------------------------------------ TITLE -----------------------------------------
+
+% ----------------------------------- ABSTRACT ---------------------------------------
+
+% ---------------------------------- INTRODUKTION ------------------------------------
+Andreas 6/2-09: Har skrevet et endeligt udkast til introduktionsafsnittet. Vi må lige diskutere det i næste uge, kan godt være at der skal flyttes noget op fra, eller ned i, teori-afsnittet.
+
+Andreas 5/2-09: Har skrevet lidt og flyttet lidt op fra teori-afsnittet. Måske lidt filosofisk, men jeg synes det er en god vinkel at have på og for mig gør det det mere interessant at arbejde med når man er opmærksom på den større sammenhæng.
+
+% ------------------------------------- TEORI ----------------------------------------
+
+% ----------------------------------- BEREGNINGER ------------------------------------
+	
+% ----------------------------------- RESULTATER -------------------------------------
+
+% ----------------------------------- KONKLUSION -------------------------------------
+
+% ----------------------------------- EFTERMÆGLE -------------------------------------

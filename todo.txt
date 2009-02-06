@@ -11,8 +11,6 @@ Vent evt. med dette afsnit til til sidst.
 
 Skal både være på Dansk + Engelsk!
 
-Andreas 5/2-09: Har skrevet lidt og flyttet lidt op fra teori-afsnittet. Måske lidt filosofisk, men jeg synes det er en god vinkel at have på og for mig gør det det mere interessant at arbejde med når man er opmærksom på den større sammenhæng.
-
 % % % % % % % % % % % % % % % % % % % TEORI % % % % % % % % % % % % % % % % % % %
 a1) Standardmodel -> Problems with gravity -> NCG
 	Overordnet afsnit med introduktion til SM, GR og NCG.
