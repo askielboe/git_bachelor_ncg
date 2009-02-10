@@ -20,7 +20,7 @@ a2) Feynman Rules
 
 % % % % % % % % % % % % % % % % % % % BEREGNINGER % % % % % % % % % % % % % % % % % % %
 b1) LanHep / CompHep
-	Hvad har vi prøvet? Skriv om hvordan antisymmetrien af theta gør at disse programmer ikke er så effektive.
+	Hvad har vi prøvet? Skriv om hvordan anti-symmetrien af theta gør at disse programmer ikke er så effektive.
 
 b2) Løsning
 	Hvad er vi så kommet frem til, beskrivelse af hvordan vi løser opgaven med en symmetrisk theta?
