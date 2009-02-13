@@ -1,0 +1,54 @@
+FRA: http://sis.ku.dk/kurser/viskursus.aspx?knr=106639
+
+Bachelorprojekt i de fysiske fag
+
+Udgave:	Forår 2009 Nat
+Point:	15,0
+Semester:
+
+3. år 3. - 4. blok
+Kontaktpersoner:	Erik Johnson
+Formål:	Bachelorprojektet afslutter bacheloruddannelsen og har til formål at give dig evnen til at arbejde selvstændigt med en større problemstilling inden for et eller flere fagområder i fysik. Det betyder, at du skal formulere en problemstilling, arbejde metodisk, inddrage relevant teori, demonstrere analytiske færdigheder samt diskutere resultatet. Du kan lave bachelorprojektet alene eller arbejde sammen med andre studerende i en gruppe på maksimalt fire personer. Du kan lave bachelorprojektet hos en forskergruppe på Niels Bohr Institutet eller udenfor, men der skal altid være en intern vejleder (det vil sige en person, som er ansat på institutet) tilknyttet bachelorprojektet. Den interne vejleder skal sørge for, at de formelle retningslinier i forbindelse med bachelorprojektet bliver overholdt og fungerer også som eksaminator.
+
+Indhold:	
+Bachelorprojektet er et teoretisk, eksperimentelt, observationelt og/eller numerisk projekt i et af de fysiske fagområder. Til hvert projekt knyttes en intern vejleder, der godkender, at projektet ligger inden for de(t) fagområde(r), i hvilke(t) de(n) studerende ønsker at opnå en bachelorgrad. Projektet kan vedrøre flere fagområder. Projektet kan efter aftale med vejlederen udføres individuelt eller i grupper af op til fire studerende. Projektet udføres i en sammenhængende periode fordelt over to blokke. Projektarbejdet skal have et omfang svarende til 15 ECTS point.
+
+Målbeskrivelse:	
+Karakteren 12 gives for den fremragende præstation (rapport og mundtlig fremlæggelse og diskussion), der i det konkrete tilfælde demonstrerer, at den studerende
+kan formulere og analysere en naturvidenskabelig problemstilling
+kan gennemføre et mindre, gerne forskningspræget, projekt under den givne tidsramme
+kan beskrive og analysere en problemstilling bl.a. med inddragelse af den videnskabelige litteratur
+kan skrive en fyldestgørende rapport
+kan formulere sig klart, skriftligt og mundtligt
+kan vurdere og perspektivere eget arbejde i forhold til eksisterende viden
+præsentere de fremkomne resultater på en overskuelig form 
+I tilfælde af et hovedsageligt eksperimentelt bachelorprojekt kan den studerende desuden:
+selvstændigt udføre eksperimenter
+analysere egne resultater på en videnskabeligt relevant måde, herunder anvende relevante statistiske metoder
+give en tolkning af egne data og relatere dem til data fra et udvalg af arbejder inden for fagområdet 
+I tilfælde af et hovedsageligt teoretisk bachelorprojekt kan den studerende desuden:
+selvstændigt udføre teoretiske beregninger
+fortolke de fremkomme resultater med god fysisk forståelse
+håndtere teoretiske beregninger på overskuelig vis 
+I til fælde af et hovedsageligt numerisk bachelorprojekt kan den studerende desuden
+selvstændigt udføre numeriske beregninger
+analysere de fremkomne resultater ved at holde dem op med kendte løsninger
+give en (evt. kritisk) tolkning af egne data
+beskrive de numeriske metoder og dokumentere det udviklede programmel
+
+Tilmelding:	
+Bachelorprojektet udføres i 2 på hinanden følgende blokke, og i blok 1-2 og blok 3-4 udbyder instituttet et antal projekter, som kan vælges. En liste over fysikprojekter kan findes på http://ntserv.fys.ku.dk/lab/bachelor/Default.asp. Har I vanskeligheder ved at finde på et projekt eller finde en vejleder, kan I kontakte projektkoordinatoren Erik Johnson, D306, HCØ, tlf. 3532 0464 email: johnson@fys.ku.dk.
+
+Tilmelding til bachelorprojekter, der skal udføres i blok 1-2 eller 3-4, skal foretages ved de normale kursus- og eksamenstilmeldinger i henholdsvis juni eller december. Når studenten eller gruppen har fundet et projekt skal dette yderligere tilmeldes til Gitte Michelsen gittem@fys.ku.dk, D210, HC Ørsted Instituttet. Dette skal gøres senest i starten af blok 1 henholdsvis 3. For projekter der udføres i blok 2-3 og blok 4-1 må de studerende selv finde en vejleder (og projekt). Ligeledes må de selv tilmelde sig til eksamen og projekt hos Gitte Michelsen gittem@fys.ku.dk, D210, HC Ørsted Instituttet.
+
+For hvert projekt, skal vi have:
+Deltagernes navne og personnumre
+Projektets titel
+Vejleder(e) på projektet - for eksterne projekter, skal der også være en vejleder fra Niels Bohr institutet.
+Eksamensform:	
+Projektet afsluttes med en rapport samt en præsentation efterfulgt af en diskussion. Omfanget af projektrapporten forventes at være på ca. 15 sider plus 5 sider per deltager. Den må dog ikke overskride 35 A4-sider med normal skriftstørrelse (excl. bilag). Rapportens sprog aftales med vejleder. Er sproget dansk skal der være et resumé på engelsk, er det engelsk skal der være et resumé på dansk. Resumeet udgør ca. en side. Deltagerene kan enten udarbejde en fælles rapport eller en rapport, hvor hver enkelt deltagers bidrag kan identificeres. Dette skal fremgå af en vedlagt erklæring. Der skal afleveres tre kopier af rapporten. 
+
+Der gives en individuel karakter efter 7 trinsskalaen med ekstern censur på baggrund af projektrapporten og af præsentationen med den efterfølgende diskussion. Hver enkelt deltager præsenterer projektet hver for sig (ca. 15 min.). Den efterfølgende diskussion vedrører hele projektet (ca. 15. min.). Ved præsentationen er udover studenten kun den interne vejleder, censor og eventuelt en ekstern vejleder tilstede. Den interne vejleder leder diskussionen. Ved den individuelle bedømmelse indgår den nævnte erklæring. 
+
+Rapportaflevering
+Projektrapporten afleveres senest fredag kl. 12 i den 6 undervisningsuge i anden blok af projektforløbet. De almindelige regler for afmelding til eksamen gælder med ny eksamen til følge. Man kan dog ved afmelding senest i mellemugen mellem de to blokke flytte færdiggørelsen én og kun én blok. Dette kræver accept af vejlederen. Afleveres en rapport ikke til tiden,gives den ikke-bestået, og man må efterfølgende tilmelde sig på ny og udføre et nyt projekt. I blok 3 er afleveringsdagen fredag den 14. marts. I blok 4 er afleveringsdagen fredag den 30. maj. Rapporten afleveres til Gitte Michelsen (gittem@fys.ku.dk), kontor D210 på H.C. Ørsted Instituttet
