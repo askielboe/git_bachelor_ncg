@@ -2,4 +2,6 @@ qq -> gamma
 qq -> Z
 
 gg -> qq, M12 > 2 x B mass (> 15 GeV)
+
 qq -> qq, (kun med gluoner i s-channel)
+	Andreas 19/2: Har lavet alle uU -> ..
