@@ -1,6 +1,6 @@
 Oversigt over hvor meget afsnit fylder (i tegn, dvs. bokstaver incl. mellemrum).
 
-Antal sider (min/max): 25/53
+Antal sider (min/max): 25/35
 Antal ord (min/max): 9375/13125
 Antal tegn (inkl. mellemrum): 60.000/84.000
 
@@ -10,7 +10,7 @@ Introduction (English):		3.278
 
 Introduktion (Dansk):		3.278
 
-Theory:						2.724
+Theory:				2.724
 
 
 
@@ -23,4 +23,4 @@ Theory:						2.724
 
 
 
-TOTAL:						9.000 / 60.000
+TOTAL:				9.000 / 60.000
