@@ -5,7 +5,19 @@ The idea is to calculate the NCG cross section for $Z^0$ from the following equa
 	&+ (qq \rightarrow Z \rightarrow ee)(qq \rightarrow \gamma \rightarrow ee) + |gg \rightarrow Z \rightarrow ee|^2,
 \end{align}
 where the last term is the additional contribution to the $\sigma_{pp \rightarrow Z / \gamma \rightarrow ee}$ cross-section coming from NCG. To accomplish this we first need to examine the ratio
-\begin{equation}
+\begin{equation} \label{eq:g-gamma-ratio}
 	\frac{\sigma_{gg \rightarrow g \rightarrow uu}}{\sigma_{qq \rightarrow \gamma \rightarrow uu}},
 \end{equation}
-ie. how many gluons is available in the protons compared to quarks.
+ie. given a mass, how many gluons are available in the protons compared to quarks.
+\\ \\
+To be able to compare these two values we set $\alpha_s = \alpha_{QED} = 1$.
+\\ \\
+Since both the photons and gluons are massless they should have the same distribution (up to a scaling factor). In addition we also have a color-factor for the gluons which isn't present for the photon, but since $Z^0$ is colorless we can only have colorless $gg \rightarrow g \rightarrow uu$ diagrams. So how many possible diagrams are there?
+\\ \\
+When we have calculated the ratio \ref{eq:g-gamma-ratio} we use the following expression for determining the cross-section for gluon $\rightarrow$ $Z^0$ decays:
+\begin{align}
+	M^{34}_{gg \rightarrow Z^0 \rightarrow e^+e^-} = \alpha_{NCG} C_q C_g \frac{M^{34}_{gg \rightarrow g \rightarrow u\bar{u}} M^{34}_{q\bar{q} \rightarrow Z^0 \rightarrow e^+e^-}} {M^{34}_{qq \rightarrow \gamma \rightarrow uu}},
+\end{align}
+where $C_q$ and $C_g$ are the available number of quarks and gluons and $M^{34}$ is the invariant mass of the two particles in the final state. Because the quarks have different charges we have to be careful in the choice of the particular quarks we choose. The strength of the electromagnetic interaction (interactions including $\gamma$) is dependent on the charges of the particles involved. Such that $u$ and $c$ which both have positive charge of $2/3$ couples more strongly to the $\gamma$ than the $d$, $s$ and $b$ which all have negative charge of $-1/2$. $Z^0$ and gluons ($g$), on the other hand, do not couple to charge, so the strengths of vertices involving these are independent of the types of quarks involved.
+\\ \\
+Because of this fact we make the calculation only for $u\bar{u}$ pairs and sum over the result.
