@@ -1,16 +1,54 @@
-Oversigt over hvor meget afsnit fylder (i tegn, dvs. bokstaver incl. mellemrum).
+Oversigt over hvor meget vi skal fylde (i tegn, dvs. bokstaver incl. mellemrum).
 
 Antal sider (min/max): 25/35
 Antal ord (min/max): 9375/13125
 Antal tegn (inkl. mellemrum): 60.000/84.000
 
-Antal tegn i afsnit:
+DEN ALTUOVERTRUFFENDE DISPOSITION:
 
-Introduction (English):		3.278
+Introduction:
+	- SM of particle physics
+	- The problem with gravity
+	- How NCG attempts to solve this problem
+	- New predictions of NCG and how to test it at LHC
 
-Introduktion (Dansk):		3.278
+Theory:
+	- QFT
+		- Gauge groups, particles, generations
+		- Lagrangian, the action and how it leads to feynman rules
+		- Feynman, diagrams and how they relate tu rules
+	- GR
+		- Spacetime, manifold (continuity)
+		- Hvad kræver GR som er uforeneligt med QFT!?
+	- NCG
+		- [x_i, x_j] != 0
+		- Ikke kommutavitet som en løsning på uforeneligheden mellem QFT og GR
+		- Den nye kommutator fører til ny action som fører til nye feynmanregeler som fører til nye koblinger
+		- Z <-> gg koblingen og hvorfor den er interessant
 
-Theory:				2.724
+Methods:
+	- Planen
+		- Udregn forholdet 
+
+	- LHC
+		- Opbygning, protonsammenstød
+		- Luminosity
+		- Cross sections
+
+	- ComHEP
+		- What does the program do?
+		- LanHEP and why it didn't work
+		- How do WE do it? (model, processes, cuts, distributions, itmx)
+		- Statistics
+
+Results:
+	- Ny Z cross-section
+	- Constraints på konstanter
+
+
+Conclusion:
+	- LHC Results
+		- What if we actually see a much larger Z cross section? Can we then confirm NCG or could there be other (new) explanations?
 
 
 
@@ -19,8 +57,3 @@ Theory:				2.724
 
 
 
-
-
-
-
-TOTAL:				9.000 / 60.000
