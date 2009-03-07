@@ -13,7 +13,7 @@ Introduction:
 	- New predictions of NCG and how to test it at LHC
 
 Theory:
-	- QFT
+	- SM
 		- The path integral
 		- Gauge groups, particles, generations
 		- Lagrangian, the action and how it leads to feynman rules
@@ -21,7 +21,7 @@ Theory:
 		- Renormalization
 
 	- GR and QG (Quantum Gravity)
-		- Matter and energy defines coordinatesystems (spacetime 'bending')
+		- Matter and energy defines coordinate systems (spacetime 'bending')
 		- Fields become non-conservative
 		- The path integral in GR
 		- Quantum fluctuations + dependance on path => infinities
