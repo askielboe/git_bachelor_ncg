@@ -1,0 +1,4 @@
+<------ Introduction ------>
+The reason is that in the gravitational field of two or more bodies, or sources, the way from A to B is very dependant on the road we choose.
+
+The problem is that when we try to include gravity in the quantum mechanical description (quantum gravity) we end up with a theory that is non-renormalizable.
