@@ -14,21 +14,30 @@ Introduction:
 
 Theory:
 	- QFT
+		- The path integral
 		- Gauge groups, particles, generations
 		- Lagrangian, the action and how it leads to feynman rules
-		- Feynman, diagrams and how they relate tu rules
-	- GR
-		- Spacetime, manifold (continuity)
-		- Hvad kræver GR som er uforeneligt med QFT!?
+		- Feynman diagrams and how they relate to Feynman rules
+		- Renormalization
+
+	- GR and QG (Quantum Gravity)
+		- Matter and energy defines coordinatesystems (spacetime 'bending')
+		- Fields become non-conservative
+		- The path integral in GR
+		- Quantum fluctuations + dependance on path => infinities
+		- Non-renormalizability
+		- Theories (strings, NCG) tries to solve this by defining a minium lenght-scale
+		  to smear out quantum fluctuations in hope of making QG renormalizable.
+
 	- NCG
+		- How NCG defines the minimum lenght-scale
 		- [x_i, x_j] != 0
-		- Ikke kommutavitet som en løsning på uforeneligheden mellem QFT og GR
 		- Den nye kommutator fører til ny action som fører til nye feynmanregeler som fører til nye koblinger
-		- Z <-> gg koblingen og hvorfor den er interessant
+		- Z <-> gg koblingen og hvorfor den er interessant (i forhold til at teste teorien ved LHC)
 
 Methods:
 	- Planen
-		- Udregn forholdet 
+		- Udregn forholdet
 
 	- LHC
 		- Opbygning, protonsammenstød
