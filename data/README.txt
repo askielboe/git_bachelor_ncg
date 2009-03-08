@@ -26,3 +26,17 @@ uU_to_uU_20_500.txt
 uU_to_sS_20_500.txt
 uU_to_cC_20_500.txt
 uU_to_bB_20_500.txt
+
+>--------------------------------------------------------------
+The following data sets are made with s-channel virtual gluons.
+Beam energy of 7000 GeV.
+Elementary charge EE and strong coupling constant GG both equal to 1.
+Cuts are T3 min = 50, T4 min = 50 and no max.
+Itmax = 1 (to avoid optimization on negative values)
+nCall = 10^8.
+Number of bins = 300.
+
+gg_g_uu_20_200.txt
+gg_g_uu_200_500.txt
+gg_g_uu_500_1000.txt
+gg_g_uu_1000_2000.txt
