@@ -1,8 +1,25 @@
-[x] Lav plots for gg -> uu, M34 = 20-2000
-	Er lavet med EE = GG = 1, T3 = T4 = 50
-	Data ligger i data-mappen på svn
+Plan og logbog over udskejelser i CompHEP.
 
-[ ] Lav plots for uu -> gg, M34 = 20-200
+X = Færdiggjort
+/ = Igangværende
+
+Vi har redigeret model-filen så at EE = GG = 1.
+De oprindelige værdier er; EE = 0.31345, GG = 1.21358.
+
+Alle data-filer findes i rå tilstand i /trunk/data/ og samlede (i gnuplot-venligt format, eller endet) i /trunk/data/analyse/.
+
+(---------------DATO 09/03-2009------------------)
+[------------------------------------------------]
+LAV COMPHEP FOR GLUONER
+
+[X] Saml data for gg -> uu, M34 = 20-2000
+	Er lavet med EE = GG = 1, T3 = T4 = 50
+	/analyse/gg_g_uu_20_2000_EE_GG_eq_1.txt
+
+[------------------------------------------------]
+LAV COMPHEP FOR UP-KVARKER
+
+[/] Lav plots for uu -> gg, M34 = 20-200
 	Kører nu! Med EE = GG = 1, T3 = T4 = 50
 
 [ ] Lav plots for uu -> gg, M34 = 200-500
@@ -12,3 +29,29 @@
 [ ] Lav plots for uu -> gg, M34 = 1000-2000
 
 [ ] Saml data for uu -> gg, M34 = 20-2000
+
+[------------------------------------------------]
+LAV COMPHEP FOR DOWN-KVARKER
+
+[ ] Lav plots for dd -> gg, M34 = 20-200
+
+[ ] Lav plots for dd -> gg, M34 = 200-500
+
+[ ] Lav plots for dd -> gg, M34 = 500-1000
+
+[ ] Lav plots for dd -> gg, M34 = 1000-2000
+
+[ ] Saml data for dd -> gg, M34 = 20-2000
+
+[------------------------------------------------]
+LAV COMPHEP FOR STRANGE-KVARKER
+
+[ ] Lav plots for ss -> gg, M34 = 20-200
+
+[ ] Lav plots for ss -> gg, M34 = 200-500
+
+[ ] Lav plots for ss -> gg, M34 = 500-1000
+
+[ ] Lav plots for ss -> gg, M34 = 1000-2000
+
+[ ] Saml data for ss -> gg, M34 = 20-2000
