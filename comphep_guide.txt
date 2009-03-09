@@ -1,0 +1,27 @@
+1) SM, feynman gauge
+
+2) Enter scattering process
+	Z -> f,fbar: pb (7500 GeV), pb (7500 GeV) -> e,E (including all diagrams)
+???	gg -> qq: G (7500 GeV), G -> 
+	qq -> qq: pb (7500 GeV), pb (7500 GeV) -> j3,j3 (include with G)
+
+3) View diagrams
+	Filter out so we are only left with s-channel virtual gluons.
+
+4) View squared diagrams
+
+5) Symbolic calculations
+
+6) C-compiler
+
+7) Cuts
+	Run 1: Parameter = M34 (invariant mass), Min = 20, Max = 500.
+
+8) Numerical session
+	Itmx = 5, nCall = 998.560
+	Set Distributions: Parameter = M34 (invariant mass), Min = 20, Max = 500.
+	Start Integration
+
+9) Display Distributions, M12, Bins = 300
+
+10) (Press ENTER) Write table
