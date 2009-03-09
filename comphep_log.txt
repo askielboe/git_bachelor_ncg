@@ -19,10 +19,11 @@ LAV COMPHEP FOR GLUONER
 [------------------------------------------------]
 LAV COMPHEP FOR UP-KVARKER
 
-[/] Lav plots for uu -> gg, M34 = 20-200
-	Kører nu! Med EE = GG = 1, T3 = T4 = 50
+[X] Lav plots for uu -> gg, M34 = 20-200
+	Gemt som tab_1.txt i /comphep/work/results på HEPPC21
 
-[ ] Lav plots for uu -> gg, M34 = 200-500
+[/] Lav plots for uu -> gg, M34 = 200-500
+	Kører nu!
 
 [ ] Lav plots for uu -> gg, M34 = 500-1000
 
