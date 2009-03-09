@@ -40,3 +40,7 @@ gg_g_uu_20_200.txt
 gg_g_uu_200_500.txt
 gg_g_uu_500_1000.txt
 gg_g_uu_1000_2000.txt
+uu_g_gg_20_200_EE_GG_eq_1.txt
+uu_g_gg_200_500_EE_GG_eq_1.txt
+uu_g_gg_500_1000_EE_GG_eq_1.txt
+uu_g_gg_1000_2000_EE_GG_eq_1.txt
