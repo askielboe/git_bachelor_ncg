@@ -1,32 +1,14 @@
-% % % % % % % % % % % % % % % % % % % TITLE % % % % % % % % % % % % % % % % % % %
-Titlen skal tilføjes!
+[x] Lav plots for gg -> uu, M34 = 20-2000
+	Er lavet med EE = GG = 1, T3 = T4 = 50
+	Data ligger i data-mappen på svn
 
-% % % % % % % % % % % % % % % % % % % ABSTRACT % % % % % % % % % % % % % % % % % % %
-Skrives når vi er færdige med opgaven da denne skal indeholde konklusion.
+[ ] Lav plots for uu -> gg, M34 = 20-200
+	Kører nu! Med EE = GG = 1, T3 = T4 = 50
 
-% % % % % % % % % % % % % % % % % % % INTRODUKTION % % % % % % % % % % % % % % % % % % %
-Skriv introduktionen. Kort om hvad højenergifysik er og hvilke udfordringer vi har.
+[ ] Lav plots for uu -> gg, M34 = 200-500
 
-Vent evt. med dette afsnit til til sidst.
+[ ] Lav plots for uu -> gg, M34 = 500-1000
 
-Skal både være på Dansk + Engelsk!
+[ ] Lav plots for uu -> gg, M34 = 1000-2000
 
-% % % % % % % % % % % % % % % % % % % TEORI % % % % % % % % % % % % % % % % % % %
-a1) Standardmodel -> Problems with gravity -> NCG
-	Overordnet afsnit med introduktion til SM, GR og NCG.
-	
-a2) Feynman Rules
-	Lagrangefunktion -> Feynmanregler -> Tværsnit
-
-% % % % % % % % % % % % % % % % % % % BEREGNINGER % % % % % % % % % % % % % % % % % % %
-b1) LanHep / CompHep
-	Hvad har vi prøvet? Skriv om hvordan anti-symmetrien af theta gør at disse programmer ikke er så effektive.
-
-b2) Løsning
-	Hvad er vi så kommet frem til, beskrivelse af hvordan vi løser opgaven med en symmetrisk theta?
-	
-% % % % % % % % % % % % % % % % % % % RESULTATER % % % % % % % % % % % % % % % % % % %
-
-% % % % % % % % % % % % % % % % % % % KONKLUSION % % % % % % % % % % % % % % % % % % %
-
-% % % % % % % % % % % % % % % % % % % EFTERMÆGLE % % % % % % % % % % % % % % % % % % %
+[ ] Saml data for uu -> gg, M34 = 20-2000
