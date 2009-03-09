@@ -20,14 +20,16 @@ LAV COMPHEP FOR GLUONER
 LAV COMPHEP FOR UP-KVARKER
 
 [X] Lav plots for uu -> gg, M34 = 20-200
-	Gemt som tab_1.txt i /comphep/work/results på HEPPC21
+	Uploaded til SVN i /trunk/data/
 
-[/] Lav plots for uu -> gg, M34 = 200-500
-	Kører nu!
+[X] Lav plots for uu -> gg, M34 = 200-500
+	Uploaded til SVN i /trunk/data/
 
-[ ] Lav plots for uu -> gg, M34 = 500-1000
+[X] Lav plots for uu -> gg, M34 = 500-1000
+	Uploaded til SVN i /trunk/data/
 
-[ ] Lav plots for uu -> gg, M34 = 1000-2000
+[X] Lav plots for uu -> gg, M34 = 1000-2000
+	Uploaded til SVN i /trunk/data/
 
 [ ] Saml data for uu -> gg, M34 = 20-2000
 
