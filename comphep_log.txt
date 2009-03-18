@@ -6,6 +6,14 @@ X = Færdiggjort
 Vi har redigeret model-filen så at EE = GG = 1.
 De oprindelige værdier er; EE = 0.31345, GG = 1.21358.
 
+The following data sets are made with s-channel virtual gluons.
+Beam energy of 7000 GeV.
+Elementary charge EE and strong coupling constant GG both equal to 1.
+Cuts are T3 min = 50, T4 min = 50 and no max.
+Itmax = 1 (to avoid optimization on negative values)
+nCall = 10^8.
+Number of bins = 300.
+
 Alle data-filer findes i rå tilstand i /trunk/data/ og samlede (i gnuplot-venligt format, eller endet) i /trunk/data/analyse/.
 
 (---------------DATO 09/03-2009------------------)

@@ -33,11 +33,12 @@ Theory:
 		- How NCG defines the minimum lenght-scale
 		- [x_i, x_j] != 0
 		- Den nye kommutator fører til ny action som fører til nye feynmanregeler som fører til nye koblinger
+			- (se artikel: The Zgg Decays in the Noncommutative Standard Model)
 		- Z <-> gg koblingen og hvorfor den er interessant (i forhold til at teste teorien ved LHC)
 
 Methods:
-	- Planen
-		- Udregn forholdet
+	- The Plan
+		- To calculate the ratio of available quarks in the protons as compared to gluons
 
 	- LHC
 		- Opbygning, protonsammenstød
