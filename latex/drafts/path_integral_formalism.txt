@@ -1,13 +1,13 @@
 When making predictions in quantum mechanics we make use of the path integral formalism formulated by Richard Feynman in 1948 [CITATION]. The path integral formalism takes in to account all possible paths that a particle, or another quantum mechanical system, going from a state $|i>$ to a state $|f>$ can take. This can be changes in position, momentum, energy or other intrinsic variables. Generally though, and this is actually a central point in quantum mechanics, and one that cannot be taken lightly, we are not interested in the path taken, but only in the fact that at some time $t_{i}$ the particle was in a state $|i>$ and at some later time $t_{f}$ the particle is in a state $|f>$. In order to arrive at this quantum probability-amplitude we must sum, or integrate, over  the infinitely many paths, that the system can take to go from  initial to final state. The amplitude is given as [CITATION]
 
 \begin{equation}
-	<f|U(t_f,t_i|i> = \mathcal{N} \int \mathcal{D}x e^{i\mathcal{S}},
+	\left \langle f \right | U(t_f,t_i) \left | i \right \rangle = \mathcal{N} \int \mathcal{D}x e^{i\mathcal{S}},
 \end{equation}
 
-where $U$ is the time translation operator, \mathcal{D} is given by the relation 
+where $U$ is the time translation operator, $\mathcal{D}$ is an abbreviation given by the relation 
 
 \begin{equation}
-	\int $\mathcal{D}$ x \equiv \lim_{N \to \infty} \int dx_1 \dots dx_N
+	\int \mathcal{D} x \equiv \lim_{N \to \infty} \int dx_1 \dots dx_N
 \end{equation}
 
 and the action $\mathcal{S}$ is related to the Lagrangian by the action principle
@@ -16,4 +16,3 @@ and the action $\mathcal{S}$ is related to the Lagrangian by the action principl
 	\mathcal{S} = \int_{t_i}^{t_f} L(\dot{x},x)dt.
 \end{equation}
 
-Note that this formalism is similar to the action principle in classical mechanics.
