@@ -14,7 +14,8 @@ Introduction:
 
 Theory:
 	- SM
-		- The path integral
+		- The Lagrangian and action of a system
+		- The path integral formalism
 		- Gauge groups, particles, generations
 		- Lagrangian, the action and how it leads to feynman rules
 		- Feynman diagrams and how they relate to Feynman rules

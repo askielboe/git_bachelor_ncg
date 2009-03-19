@@ -4,3 +4,6 @@ The reason is that in the gravitational field of two or more bodies, or sources,
 The problem is that when we try to include gravity in the quantum mechanical description (quantum gravity) we end up with a theory that is non-renormalizable.
 
 A lot of effort has been put in to unifying the encompassing physical theory of the Universe on the very largest scales, GR, with the theory of Universe at the smallest scales, the SM. So far no one have been successful, but a lot of interesting theoretical candidates exists.
+
+<---------- SM ----------->
+
