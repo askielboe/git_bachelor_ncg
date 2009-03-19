@@ -1,0 +1,155 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sparticles}[1996/10/24 v1.0a supersymmetric particles]
+
+%
+% \SSp is an abbreviation for a wide tilde on supersymmetric particles
+% (this only looks good for normal text-- use \tilde{} when in subscripts)
+% For masses, use \MSS{particle}
+%
+\newcommand*{\SSp}[1]{\ensuremath{\widetilde{#1}}}
+\def\@MSS#1_#2^#3{\ensuremath{M_{\tilde{#1}_{#2}^{#3}}}}
+\def\MSS#1{\@MSS #1\relax}
+%
+%  Common particles
+%
+%New Schiz:
+\newcommand{\lilhzero}{\ensuremath{h^{0}}}
+\newcommand{\bighzero}{\ensuremath{H^{0}}}
+\newcommand{\pseudo}{\ensuremath{A^{0}}}
+\newcommand{\hcharg}{\ensuremath{h^{\pm}}}
+\newcommand{\gluino}{\ensuremath{\widetilde{g}}}
+% Neutralinos:
+\newcommand{\chionez}{\ensuremath{\widetilde{\chi}_1^0}}
+\newcommand{\chitwoz}{\ensuremath{\widetilde{\chi}_2^0}}
+\newcommand{\chithreez}{\ensuremath{\widetilde{\chi}_3^0}}
+\newcommand{\chifourz}{\ensuremath{\widetilde{\chi}_4^0}}
+% Charginos:
+\newcommand{\chionep}{\ensuremath{\widetilde{\chi}_1^+}}
+\newcommand{\chionem}{\ensuremath{\widetilde{\chi}_1^-}}
+\newcommand{\chionepm}{\ensuremath{\widetilde{\chi}_1^\pm}}
+\newcommand{\chionemp}{\ensuremath{\widetilde{\chi}_1^\mp}}
+\newcommand{\chitwop}{\ensuremath{\widetilde{\chi}_2^+}}
+\newcommand{\chitwom}{\ensuremath{\widetilde{\chi}_2^-}}
+\newcommand{\chitwopm}{\ensuremath{\widetilde{\chi}_2^\pm}}
+\newcommand{\chitwomp}{\ensuremath{\widetilde{\chi}_2^\mp}}
+% Selectrons:
+\newcommand{\emss}{\ensuremath{\widetilde{e}^-}}
+\newcommand{\erp}{\ensuremath{\widetilde{e}_R^+}}
+\newcommand{\elp}{\ensuremath{\widetilde{e}_L^+}}
+\newcommand{\erm}{\ensuremath{\widetilde{e}_R^-}}
+\newcommand{\elm}{\ensuremath{\widetilde{e}_L^-}}
+\newcommand{\erpm}{\ensuremath{\widetilde{e}_R^\pm}}
+\newcommand{\elpm}{\ensuremath{\widetilde{e}_L^\pm}}
+\newcommand{\ermp}{\ensuremath{\widetilde{e}_R^\mp}}
+\newcommand{\elmp}{\ensuremath{\widetilde{e}_L^\mp}}
+\newcommand{\erlpm}{\ensuremath{\widetilde{e}_{R/L}^\pm}}
+\newcommand{\erlmp}{\ensuremath{\widetilde{e}_{R/L}^\mp}}
+% Smuons:
+\newcommand{\mur}{\ensuremath{\widetilde{\mu}_R}}
+\newcommand{\mul}{\ensuremath{\widetilde{\mu}_L}}
+\newcommand{\murp}{\ensuremath{\widetilde{\mu}_R^+}}
+\newcommand{\mulp}{\ensuremath{\widetilde{\mu}_L^+}}
+\newcommand{\murm}{\ensuremath{\widetilde{\mu}_R^-}}
+\newcommand{\mulm}{\ensuremath{\widetilde{\mu}_L^-}}
+\newcommand{\murpm}{\ensuremath{\widetilde{\mu}_R^\pm}}
+\newcommand{\mulpm}{\ensuremath{\widetilde{\mu}_L^\pm}}
+% Staus:
+\newcommand{\taur}{\ensuremath{\widetilde{\tau}_R}}
+\newcommand{\taul}{\ensuremath{\widetilde{\tau}_L}}
+\newcommand{\taurp}{\ensuremath{\widetilde{\tau}_R^+}}
+\newcommand{\taulp}{\ensuremath{\widetilde{\tau}_L^+}}
+\newcommand{\taurm}{\ensuremath{\widetilde{\tau}_R^-}}
+\newcommand{\taulm}{\ensuremath{\widetilde{\tau}_L^-}}
+\newcommand{\taurpm}{\ensuremath{\widetilde{\tau}_R^\pm}}
+\newcommand{\taulpm}{\ensuremath{\widetilde{\tau}_L^\pm}}
+\newcommand{\tauone}{\ensuremath{\widetilde{\tau}_1}}
+\newcommand{\tautwo}{\ensuremath{\widetilde{\tau}_2}}
+\newcommand{\tauonep}{\ensuremath{\widetilde{\tau}_1^+}}
+\newcommand{\tautwop}{\ensuremath{\widetilde{\tau}_2^+}}
+\newcommand{\tauonem}{\ensuremath{\widetilde{\tau}_1^-}}
+\newcommand{\tautwom}{\ensuremath{\widetilde{\tau}_2^-}}
+\newcommand{\tauonepm}{\ensuremath{\widetilde{\tau}_1^\pm}}
+\newcommand{\tautwopm}{\ensuremath{\widetilde{\tau}_2^\pm}}
+% sleptons
+\newcommand{\lepr}{\ensuremath{\widetilde{\ell}_R}}
+\newcommand{\lepl}{\ensuremath{\widetilde{\ell}_L}}
+\newcommand{\leppm}{\ensuremath{\widetilde{\ell}^\pm}}
+\newcommand{\lepmp}{\ensuremath{\widetilde{\ell}^\mp}}
+\newcommand{\leprp}{\ensuremath{\widetilde{\ell}_R^+}}
+\newcommand{\leplp}{\ensuremath{\widetilde{\ell}_L^+}}
+\newcommand{\leprm}{\ensuremath{\widetilde{\ell}_R^-}}
+\newcommand{\leplm}{\ensuremath{\widetilde{\ell}_L^-}}
+\newcommand{\leprpm}{\ensuremath{\widetilde{\ell}_R^\pm}}
+\newcommand{\leplpm}{\ensuremath{\widetilde{\ell}_L^\pm}}
+% Sneutrinos:
+\newcommand{\sneu}{\ensuremath{\widetilde{\nu}}}
+\newcommand{\asneu}{\ensuremath{\overline{\widetilde{\nu}}}}
+\newcommand{\sneue}{\ensuremath{\widetilde{\nu}_e}}
+\newcommand{\asneue}{\ensuremath{\overline{\widetilde{\nu}}_e}}
+\newcommand{\sneuel}{\ensuremath{\widetilde{\nu}_{eL}}}
+\newcommand{\asneuel}{\ensuremath{\overline{\widetilde{\nu}}_{eL}}}
+\newcommand{\sneuer}{\ensuremath{\widetilde{\nu}_{eR}}}
+\newcommand{\asneuer}{\ensuremath{\overline{\widetilde{\nu}}_{eR}}}
+\newcommand{\sneum}{\ensuremath{\widetilde{\nu}_\mu}}
+\newcommand{\asneum}{\ensuremath{\overline{\widetilde{\nu}}_\mu}}
+\newcommand{\sneuml}{\ensuremath{\widetilde{\nu}_{\mu L}}}
+\newcommand{\asneuml}{\ensuremath{\overline{\widetilde{\nu}}_{\mu L}}}
+\newcommand{\sneumr}{\ensuremath{\widetilde{\nu}_{\mu R}}}
+\newcommand{\asneumr}{\ensuremath{\overline{\widetilde{\nu}}_{\mu R}}}
+\newcommand{\sneut}{\ensuremath{\widetilde{\nu}_\tau}}
+\newcommand{\asneut}{\ensuremath{\overline{\widetilde{\nu}}_\tau}}
+\newcommand{\sneutl}{\ensuremath{\widetilde{\nu}_{\tau L}}}
+\newcommand{\asneutl}{\ensuremath{\overline{\widetilde{\nu}}_{\tau L}}}
+\newcommand{\sneutr}{\ensuremath{\widetilde{\nu}_{\tau R}}}
+\newcommand{\asneutr}{\ensuremath{\overline{\widetilde{\nu}}_{\tau R}}}
+\newcommand{\sneul}{\ensuremath{\widetilde{\nu}_\ell}}
+\newcommand{\asneul}{\ensuremath{\overline{\widetilde{\nu}}_\ell}}
+\newcommand{\sneulpm}{\ensuremath{\widetilde{\nu}_{\ell^\pm}}}
+\newcommand{\sneulmp}{\ensuremath{\widetilde{\nu}_{\ell^\mp}}}
+% squarks
+\newcommand{\squark}{\ensuremath{\widetilde{q}}}
+\newcommand{\quarkr}{\ensuremath{\widetilde{q}_R}}
+\newcommand{\quarkl}{\ensuremath{\widetilde{q}_L}}
+\newcommand{\topr}{\ensuremath{\widetilde{t}_R}}
+\newcommand{\topl}{\ensuremath{\widetilde{t}_L}}
+\newcommand{\topone}{\ensuremath{\widetilde{t}_1}}
+\newcommand{\toptwo}{\ensuremath{\widetilde{t}_2}}
+\newcommand{\bottomr}{\ensuremath{\widetilde{b}_R}}
+\newcommand{\bottoml}{\ensuremath{\widetilde{b}_L}}
+\newcommand{\bottomone}{\ensuremath{\widetilde{b}_1}}
+\newcommand{\bottomtwo}{\ensuremath{\widetilde{b}_2}}
+\newcommand{\upss}{\ensuremath{\widetilde{u}}}
+\newcommand{\upr}{\ensuremath{\widetilde{u}_R}}
+\newcommand{\upl}{\ensuremath{\widetilde{u}_L}}
+\newcommand{\downr}{\ensuremath{\widetilde{d}_R}}
+\newcommand{\downl}{\ensuremath{\widetilde{d}_L}}
+\newcommand{\stranger}{\ensuremath{\widetilde{s}_R}}
+\newcommand{\strangel}{\ensuremath{\widetilde{s}_L}}
+\newcommand{\charmr}{\ensuremath{\widetilde{c}_R}}
+\newcommand{\charml}{\ensuremath{\widetilde{c}_L}}
+% gauginos
+\newcommand{\winoz}{\ensuremath{\widetilde{W}^0}}
+\newcommand{\winop}{\ensuremath{\widetilde{W}^+}}
+\newcommand{\winom}{\ensuremath{\widetilde{W}^-}}
+\newcommand{\winopm}{\ensuremath{\widetilde{W}^\pm}}
+\newcommand{\winoonep}{\ensuremath{\widetilde{W_1}^+}}
+\newcommand{\winoonem}{\ensuremath{\widetilde{W_1}^-}}
+\newcommand{\winotwop}{\ensuremath{\widetilde{W_2}^+}}
+\newcommand{\winotwom}{\ensuremath{\widetilde{W_2}^-}}
+\newcommand{\bino}{\ensuremath{\widetilde{B}^0}}
+\newcommand{\Higgsino}{\ensuremath{\widetilde{H}}}
+\newcommand{\Higgsinop}{\ensuremath{\widetilde{H}^+}}
+\newcommand{\Higgsinom}{\ensuremath{\widetilde{H}^-}}
+%\newcommand{\gluino}{\ensuremath{\widetilde{g}}}
+\newcommand{\photino}{\ensuremath{\widetilde{\gamma}}}
+
+% e pairs
+\newcommand{\epem}{\ensuremath{e^+e^-}}
+% W pairs
+\newcommand{\WpWm}{\ensuremath{W^+W^-}}
+% Groups
+\newcommand{\Uone}{\textit{U}(1)}
+\newcommand{\SUtwo}{\textit{SU}(2)}
+\newcommand{\SUthree}{\textit{SU}(3)}
+
+\endinput
