@@ -14,11 +14,11 @@ Introduction:
 
 Theory:
 	- SM
-		- Gauge groups, particles, generations
-		- The Lagrangian and action of a system
+		- Gauge groups, particles, generations (JUL)
+		- The Lagrangian and action of a system (AND)
 		- Lagrangian, the action and how it leads to feynman rules
 		- Feynman diagrams and how they relate to Feynman rules
-		- The path integral formalism
+		- The path integral formalism (AND)
 		- Renormalization
 
 	- GR and QG (Quantum Gravity)

@@ -1,0 +1,13 @@
+In mechanical theory the action of a system is a property related to the development of the system as it evolves in time. The action is associated with the Lagrangian of the system, which is a quantity that describes how the action changes as a function of time, ie. the rate of change. Thus we can write the action in terms of the Lagrangian as
+
+\begin{equation}
+	S = \int_\mathcal{P} L \textrm{d}t.
+\end{equation}
+
+In quantum field theory one generalizes the action to an integral over all space-time. In this case we integrate the \emph{Lagrangian density} $\mathcal{L}$ to get
+
+\begin{equation}
+	S = \int_\mathcal{P} \mathcal{L} \textrm{d}^4 x.
+\end{equation}
+
+The \emph{equations of motion} for the system are derived by minimizing the action. This is called the \emph{principle of least action}.
