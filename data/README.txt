@@ -74,12 +74,12 @@ Itmax = 1 (to avoid optimization on negative values)
 nCall = 10^8.
 Number of bins = 300.
 
-v2_gg_uu_20_200.txt
-v2_gg_uu_200_500.txt
-v2_gg_uu_500_1000.txt
-v2_gg_uu_1000_2000.txt	NOT YET MADE! (RUNNING)
+v2_gg_uu_20_200.txt	DONE!
+v2_gg_uu_200_500.txt	DONE!
+v2_gg_uu_500_1000.txt	DONE!
+v2_gg_uu_1000_2000.txt	DONE!
 
-v2_uu_gg_20_200.txt	NOT YET MADE! (RUNNING)
+v2_uu_gg_20_200.txt	DONE!
 v2_uu_gg_200_500.txt	NOT YET MADE!
 v2_uu_gg_500_1000.txt	NOT YET MADE!
 v2_uu_gg_1000_2000.txt	NOT YET MADE!
