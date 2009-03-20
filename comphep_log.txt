@@ -3,7 +3,7 @@ Plan og logbog over udskejelser i CompHEP.
 X = Færdiggjort
 / = Igangværende
 
-Vi har redigeret model-filen så at EE = GG = 1.
+For nogle plots er model-filen redigeret så at EE = GG = 1.
 De oprindelige værdier er; EE = 0.31345, GG = 1.21358.
 
 The following data sets are made with s-channel virtual gluons.
@@ -15,28 +15,33 @@ Number of bins = 300.
 
 Alle data-filer findes i rå tilstand i /trunk/data/ og samlede (i gnuplot-venligt format, eller endet) i /trunk/data/analyse/.
 
-(---------------DATO 09/03-2009------------------)
+(---------------DATO 20/03-2009------------------)
+[------------------ NY PLAN ---------------------]
+EE = 0.31345, GG = 1.21358 og Beam energy = 7000 GeV
+
 [------------------------------------------------]
 LAV COMPHEP FOR GLUONER (nCall = 10^8)
 
-[X] Saml data for gg -> uu, M34 = 20-2000
-	Er lavet med EE = GG = 1, T3 = T4 = 50
-	/analyse/gg_g_uu_20_2000_EE_GG_eq_1.txt
+[/] Lav plots for gg -> uu, M34 = 20-200
+
+[ ] Lav plots for gg -> uu, M34 = 200-500
+
+[ ] Lav plots for gg -> uu, M34 = 500-1000
+
+[ ] Lav plots for gg -> uu, M34 = 1000-2000
+
+[ ] Saml data for gg -> uu, M34 = 20-2000
 
 [------------------------------------------------]
 LAV COMPHEP FOR UP-KVARKER (nCall = 10^8)
 
-[X] Lav plots for uu -> gg, M34 = 20-200
-	Uploaded til SVN i /trunk/data/
+[ ] Lav plots for uu -> gg, M34 = 20-200
 
-[X] Lav plots for uu -> gg, M34 = 200-500
-	Uploaded til SVN i /trunk/data/
+[ ] Lav plots for uu -> gg, M34 = 200-500
 
-[X] Lav plots for uu -> gg, M34 = 500-1000
-	Uploaded til SVN i /trunk/data/
+[ ] Lav plots for uu -> gg, M34 = 500-1000
 
-[X] Lav plots for uu -> gg, M34 = 1000-2000
-	Uploaded til SVN i /trunk/data/
+[ ] Lav plots for uu -> gg, M34 = 1000-2000
 
 [ ] Saml data for uu -> gg, M34 = 20-2000
 
@@ -52,16 +57,3 @@ LAV COMPHEP FOR DOWN-KVARKER (nCall = 5^8)
 [ ] Lav plots for dd -> gg, M34 = 1000-2000
 
 [ ] Saml data for dd -> gg, M34 = 20-2000
-
-[------------------------------------------------]
-LAV COMPHEP FOR STRANGE-KVARKER
-
-[ ] Lav plots for ss -> gg, M34 = 20-200
-
-[ ] Lav plots for ss -> gg, M34 = 200-500
-
-[ ] Lav plots for ss -> gg, M34 = 500-1000
-
-[ ] Lav plots for ss -> gg, M34 = 1000-2000
-
-[ ] Saml data for ss -> gg, M34 = 20-2000
