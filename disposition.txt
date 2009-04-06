@@ -13,12 +13,16 @@ Introduction:
 	- New predictions of NCG and how to test it at LHC
 
 Theory:
-	- SM
-		- Gauge groups, particles, generations (JUL)
+	- Quantum Mechanics
 		- The Lagrangian and action of a system (AND)
-		- Lagrangian, the action and how it leads to feynman rules
-		- Feynman diagrams and how they relate to Feynman rules
 		- The path integral formalism (AND)
+		- Quantum field theory
+		- Gauge transformations and gauge groups
+	- SM
+		- The Standard Model of particle physics
+		- Particles, generations (JUL)
+		- Feynman diagrams
+		- Feynman rules
 		- Renormalization
 
 	- GR and QG (Quantum Gravity)
