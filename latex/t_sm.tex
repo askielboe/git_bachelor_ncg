@@ -1,16 +1,28 @@
 \section{Theory}
 \subsection{The Standard Model}
-The particles and interactions of the SM are described in the language of Quantum Mechanics (QM) and Quantum Field Theory (QFT), which have a natural way of unifying the mathematical concepts in a concise way.
+The particles and interactions of the SM are described in the language of Quantum Mechanics (QM) and Quantum Field Theory (QFT) %, which have a natural way of unifying the mathematical concepts in a concise way.
 
-The particles are divided into two main groups; fermions and bosons. Where fermions are defined as having half-integral spin and are described by Fermi-Dirac statistics, these include the leptons and quarks. Fermions constitutes all known matter and as such they are sometimes described as matter particles. Bosons on the other hand have zero or integral spin and are described by Bose-Einstein statistics. Some of these, namely the gauge bosons, are responsible for the weak, strong and electromagnetic interactions. Therefore the gauge bosons are often called the force-carriers of their respective interactions. It may be appropriate to note that the formalism of quantum mechanics makes no clear distinction between the concepts of matter and force -particles.
+The particles are divided into two main groups; fermions and bosons. Fermions are defined as having half-integral spin and are described by Fermi-Dirac statistics, these include the leptons and quarks. Fermions constitutes all known matter and as such they are sometimes described as matter-particles. Bosons, on the other hand, have zero or integral spin and are described by Bose-Einstein statistics. Some of these, namely the gauge bosons, are responsible for the weak, strong and electromagnetic interactions. Therefore the gauge bosons are often called the force-carriers of their respective interactions. It may be appropriate to note that the formalism of quantum mechanics makes no clear distinction between the concepts of matter-particles and force -particles.
 
 % Billede med partikel-generationer fra Wikipedia.
 \includefigure{fig:particle_generations}{0.3}{./images/particle_generations.jpg}{The fundamental particles in the Standard Model. Fermions and bosons, listed in their respective generations. (Source: Wikimedia Commons).}
 
-\subsubsection{The action principle}			
+\subsubsection{Principle of least action}
+In modern physics the action $\mathcal{S}$ is a quantity realted to the time evolution of a physical system. Namly the action is the change in phase of the wave function of a system. The Lagrangian is then defined as the rate of change of the phase and is given as
+
+\begin{equation}
+	\mathcal{S} = \int_{t_i \mathcal{P}}^{t_f} L \textrm{d}t,
+\end{equation}
+where we integrate over all intermediate states taken by the system. The principle of least action then states that the path actually taken by the system is the one that minimizes the action, or more precicely one where the action is stationary. That is the variation of the line integral going from $t_i$ to $t_f$ is zero \cite{GOLDSTEIN, 1959};
+
+\begin{equation}
+	\delta \mathcal{S} = \delta \int_{t_i}^{t_f} L \textrm{d}t = 0.
+\end{equation}
+
+Using this principle, and knowing the Lagrangian of the system, we can derive the equations of motion of the system.			
 
 \subsubsection{The path integral formalism}
-When making predictions in quantum mechanics we make use of the path integral formalism formulated by Richard Feynman in 1948 [CITATION]. The path integral formalism takes in to account all possible paths that a particle, or another quantum mechanical system, going from a state $\ket{i}$ to a state $\ket{f}$ can take. This can be changes in position, momentum, energy or other intrinsic variables. Generally though, and this is actually a central point in quantum mechanics, and one that cannot be taken lightly, we are not interested in the path taken, but only in the fact that at some time $t_{i}$ the particle was in a state $\ket{i}$ and at some later time $t_{f}$ the particle is in a state $\ket{f}$. In order to arrive at this quantum probability-amplitude we must sum, or integrate, over  the infinitely many paths, that the system can take to go from initial to final state. The amplitude is given as \cite{richter_path_integrals}
+When making predictions in quantum mechanics we make use of the path integral formalism formulated by Richard Feynman in 1948 [CITATION]. The path integral formalism takes in to account all possible paths that a particle, or another quantum mechanical system, going from a state $\ket{i}$ to a state $\ket{f}$ can take. This can be changes in position, momentum, energy or other intrinsic variables and is represented as an intermediate state of the system. Generally though, and this is actually a central point in quantum mechanics, and one that cannot be taken lightly, we are not interested in the path taken, but only in the fact that at some time $t_{i}$ the particle was in a state $\ket{i}$ and at some later time $t_{f}$ the particle is in a state $\ket{f}$. In order to arrive at this quantum probability-amplitude we must sum, or integrate, over the infinitely many paths, that the system can take to go from initial to final state. Doing this the amplitude is given as \cite{richter_path_integrals}
 
 \begin{equation}
 	\bra{f} U(t_f,t_i) \ket{i} = \mathcal{N} \int \mathcal{D}x e^{i\mathcal{S}},
@@ -22,11 +34,12 @@ where $\mathcal{N}$ is a constant of the system, $U$ is the time translation ope
 	\int \mathcal{D} x \equiv \lim_{N \to \infty} \int dx_1 \dots dx_N
 \end{equation}
 
-and the action $\mathcal{S}$ is related to the Lagrangian by the action principle
+and the action $\mathcal{S}$ is related to the Lagrangian by the action principle, given in the 1-D case by
 
 \begin{equation}
-	\mathcal{S} = \int_{t_i}^{t_f} L(\dot{x},x)dt.
+	\mathcal{S} = \int_{t_i}^{t_f} L(x,\dot{x},t)dt,
 \end{equation}
+where $x, \dot{x} \equiv \frac{dx}{dt}$ are generalized coordinates.
 
 \subsubsection{Gauge transformations}
 
