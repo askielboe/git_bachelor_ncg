@@ -20,6 +20,18 @@
 \usepackage{sparticles} 	%Package for displaying sparticle names. 
 \usepackage{feynmf}		%Package for feynman diagrams.
 
+\newcommand{\bra}[1]{
+  \mid #1 \rangle
+}
+
+\newcommand{\ket}[1]{
+  \langle #1 \mid
+}
+
+\newcommand{\ket}[2]{
+  \langle #1 \mid #2 \rangle
+}
+
 % % % % % % % % % % % % % % % % % % % FIGURER % % % % % % % % % % % % % % % % % % %
 \newcommand{\includefigure}[4]{
 \begin{figure}[htbp] \centering

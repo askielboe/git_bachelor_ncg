@@ -65,7 +65,7 @@ dd_g_gg_1000_2000.txt
 >--------------------------------------------------------------
 >------------------------- VERISON 2 --------------------------
 >--------------------------------------------------------------
-The following data sets are made in CompHEP 4.5.1
+The following data sets are made in CompHEP 4.5.1 unless otherwise stated
 s-channel virtual gluons.
 Beam energy of 7000 GeV (pp).
 Elementary charge EE = 0.31345 and strong coupling constant GG = 1.21358.
@@ -80,7 +80,7 @@ v2_gg_uu_500_1000.txt	DONE!
 v2_gg_uu_1000_2000.txt	DONE!
 
 v2_uu_gg_20_200.txt	DONE!
-v2_uu_gg_200_500.txt	NOT YET MADE!
+v2_uu_gg_200_500.txt	NOT YET MADE! (CompHEP 4.5.0rc6)
 v2_uu_gg_500_1000.txt	NOT YET MADE!
 v2_uu_gg_1000_2000.txt	NOT YET MADE!
 

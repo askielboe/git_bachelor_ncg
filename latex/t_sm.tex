@@ -7,13 +7,13 @@ The particles are divided into two main groups; fermions and bosons. Where fermi
 % Billede med partikel-generationer fra Wikipedia.
 \includefigure{fig:particle_generations}{0.3}{./images/particle_generations.jpg}{The fundamental particles in the Standard Model. Fermions and bosons, listed in their respective generations. (Source: Wikimedia Commons).}
 
-\subsubsection{The action principle}
+\subsubsection{The action principle}			
 
 \subsubsection{The path integral formalism}
-When making predictions in quantum mechanics we make use of the path integral formalism formulated by Richard Feynman in 1948 [CITATION]. The path integral formalism takes in to account all possible paths that a particle, or another quantum mechanical system, going from a state $|i>$ to a state $|f>$ can take. This can be changes in position, momentum, energy or other intrinsic variables. Generally though, and this is actually a central point in quantum mechanics, and one that cannot be taken lightly, we are not interested in the path taken, but only in the fact that at some time $t_{i}$ the particle was in a state $|i>$ and at some later time $t_{f}$ the particle is in a state $|f>$. In order to arrive at this quantum probability-amplitude we must sum, or integrate, over  the infinitely many paths, that the system can take to go from initial to final state. The amplitude is given as \cite{richter_path_integrals}
+When making predictions in quantum mechanics we make use of the path integral formalism formulated by Richard Feynman in 1948 [CITATION]. The path integral formalism takes in to account all possible paths that a particle, or another quantum mechanical system, going from a state $\ket{i}$ to a state $\ket{f}$ can take. This can be changes in position, momentum, energy or other intrinsic variables. Generally though, and this is actually a central point in quantum mechanics, and one that cannot be taken lightly, we are not interested in the path taken, but only in the fact that at some time $t_{i}$ the particle was in a state $\ket{i}$ and at some later time $t_{f}$ the particle is in a state $\ket{f}$. In order to arrive at this quantum probability-amplitude we must sum, or integrate, over  the infinitely many paths, that the system can take to go from initial to final state. The amplitude is given as \cite{richter_path_integrals}
 
 \begin{equation}
-	\left \langle f \right | U(t_f,t_i) \left | i \right \rangle = \mathcal{N} \int \mathcal{D}x e^{i\mathcal{S}},
+	\bra{f} U(t_f,t_i) \ket{i} = \mathcal{N} \int \mathcal{D}x e^{i\mathcal{S}},
 \end{equation}
 
 where $\mathcal{N}$ is a constant of the system, $U$ is the time translation operator, $\mathcal{D}$ is an abbreviation given by the relation 
