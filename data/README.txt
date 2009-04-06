@@ -85,8 +85,8 @@ v2_gg_uu_1000_2000.txt	DONE!
 
 v2_uu_gg_20_200.txt	DONE!
 v2_uu_gg_200_500.txt	DONE! (CompHEP 4.5.0rc6)
-v2_uu_gg_500_1000.txt	NOT YET MADE! (CompHEP 4.5.0rc6) - working
-v2_uu_gg_1000_2000.txt	NOT YET MADE!
+v2_uu_gg_500_1000.txt	DONE! (CompHEP 4.5.0rc6)
+v2_uu_gg_1000_2000.txt	NOT YET MADE! (CompHEP 4.5.0rc6) - working
 
 v2_dd_gg_20_200.txt	NOT YET MADE!
 v2_dd_gg_200_500.txt	NOT YET MADE!

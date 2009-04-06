@@ -13,11 +13,11 @@ Introduction:
 	- New predictions of NCG and how to test it at LHC
 
 Theory:
-	- Quantum Mechanics
+	- Quantum Mechanics (AND)
 		- The Lagrangian and action of a system (AND)
 		- The path integral formalism (AND)
-		- Quantum field theory
-		- Gauge transformations and gauge groups
+		- Quantum field theory (AND)
+		- Gauge transformations and gauge groups (AND)
 	- SM
 		- The Standard Model of particle physics
 		- Particles, generations (JUL)
