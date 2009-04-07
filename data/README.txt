@@ -78,17 +78,62 @@ Itmax = 1 (to avoid optimization on negative values)
 nCall = 10^8.
 Number of bins = 300.
 
-v2_gg_uu_20_200.txt	DONE!
-v2_gg_uu_200_500.txt	DONE!
-v2_gg_uu_500_1000.txt	DONE!
-v2_gg_uu_1000_2000.txt	DONE!
+v2_gg_uu_20_200.txt		DONE!
+v2_gg_uu_200_500.txt		DONE!
+v2_gg_uu_500_1000.txt		DONE!
+v2_gg_uu_1000_2000.txt		DONE!
+e
+v2_uu_gg_20_200.txt		DONE!
+v2_uu_gg_200_500.txt		DONE! (CompHEP 4.5.0rc6)
+v2_uu_gg_500_1000.txt		DONE! (CompHEP 4.5.0rc6)
+v2_uu_gg_1000_2000.txt		DONE! (CompHEP 4.5.0rc6)
 
-v2_uu_gg_20_200.txt	DONE!
-v2_uu_gg_200_500.txt	DONE! (CompHEP 4.5.0rc6)
-v2_uu_gg_500_1000.txt	DONE! (CompHEP 4.5.0rc6)
-v2_uu_gg_1000_2000.txt	DONE! (CompHEP 4.5.0rc6)
+v2_dd_gg_20_200.txt		NOT YET MADE!
+v2_dd_gg_200_500.txt		NOT YET MADE!
+v2_dd_gg_500_1000.txt		NOT YET MADE!
+v2_dd_gg_1000_2000.txt		NOT YET MADE!
 
-v2_dd_gg_20_200.txt	NOT YET MADE!
-v2_dd_gg_200_500.txt	NOT YET MADE!
-v2_dd_gg_500_1000.txt	NOT YET MADE!
-v2_dd_gg_1000_2000.txt	NOT YET MADE!
+>--------------------------------------------------------------
+>------------------------- VERISON 3 --------------------------
+>--------------------------------------------------------------
+The following data sets are made in CompHEP 4.5.0rc6
+Std. Model, Feynman Gauge
+Only s-channel propagators!
+Beam energy of 7000 GeV (pp).
+Elementary charge EE = 0.31345 and strong coupling constant GG = 1.21358.
+Cuts are T3 min = 50, T4 min = 50 and no max.
+Itmax = 5
+nCall = 10^7.
+>--------------------------------------------------------------
+qq -> a:
+>--------------------------------------------------------------
+v3_uu_a_mm_20_500.txt		DONE!
+v3_uu_a_mm_500_2000.txt 	DONE!
+
+v3_uu_z_mm_20_500.txt		DONE!
+v3_uu_z_mm_500_2000.txt		DONE!
+
+v3_uu_za_mm_20_500.txt		DONE!
+v3_uu_za_mm_500_2000.txt	DONE!
+
+v3_uu_z_mm_20_500.txt		NOT YET MADE!
+v3_uu_z_mm_500_2000.txt		NOT YET MADE!
+>--------------------------------------------------------------
+P_pp^qq
+>--------------------------------------------------------------
+v3_uu_a_dd_20_200.txt		NOT YET MADE!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

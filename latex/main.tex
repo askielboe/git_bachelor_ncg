@@ -23,15 +23,15 @@
 % % % % % % % % % % % % % % % % Bra-Ket % % % % % % % % % % % % % % % %
 
 \newcommand{\bra}[1]{
-  \mid #1 \rangle
+  |#1 \rangle
 }
 
 \newcommand{\ket}[1]{
-  \langle #1 \mid
+  \langle #1|
 }
 
 \newcommand{\ket}[2]{
-  \langle #1 \mid #2 \rangle
+  \langle #1|#2 \rangle
 }
 
 % % % % % % % % % % % % % % % % FIGURER % % % % % % % % % % % % % % % %
@@ -76,19 +76,19 @@
 \pagestyle{fancy} % with this we ensure that the chapter and section headings are in lowercase.
  
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} 
-\fancyhf{} 					% delete current header and footer
+\fancyhf{} 				% delete current header and footer
 \fancyhead[LE,RO]{\bfseries\thepage} 
 \fancyhead[LO]{\bfseries\rightmark} 
 \fancyhead[RE]{\bfseries\leftmark} 
 \renewcommand{\headrulewidth}{0.5pt} 
 \renewcommand{\footrulewidth}{0pt} 
-\addtolength{\headheight}{0.5pt} 		% space for the rule 
+\addtolength{\headheight}{0.5pt} 	% space for the rule 
 \fancypagestyle{plain}{
-	\fancyhead{}				% get rid of headers on plain pages 
-	\renewcommand{\headrulewidth}{0pt} 	% and the line 
+\fancyhead{}				% get rid of headers on plain pages 
+\renewcommand{\headrulewidth}{0pt} 	% and the line 
 }
 
-% % % % % % % % % %% % % % % BEGIN DOCUMENT % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % BEGIN DOCUMENT % % % % % % % % % % % % % % %
 \begin{document}
 \title{Bachelor's Project\\Search for NCG in hadronic Z decays.}
 \author{Aandreas Skielboe og Julie Hougaard}
@@ -111,13 +111,13 @@ In the following report we will explore the consequences of noncommutative geome
 
 \include{introduction}
 
-% % % % % % % % % % % % % % % THEORY % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % THEORY % % % % % % % % % % % % % % % % % % 
 
 \include{t_sm}
 \include{t_gr}
 \include{t_ncg}
 
-% % % % % % % % % % % % % % % METHODS % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % METHODS % % % % % % % % % % % % % % % % %
 
 \include{methods}
 
@@ -126,22 +126,22 @@ In the following report we will explore the consequences of noncommutative geome
 
 \include{results}
 
-% % % % % % % % % % % % % % % % % % % CONCLUSION % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % CONCLUSION % % % % % % % % % % % % % % % % %
 
 \include{conclusions}
 
-% % % % % % % % % % % % BIBTEX % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % BIBTEX % % % % % % % % % % % % % % % % % %
 
 \clearpage
 
 \bibliographystyle{unsrt}
-\bibliography{ncg_citations}	% Navn paa BibTex -filen
+\bibliography{ncg_citations}		% Navn paa BibTex -filen
 
 \clearpage
 
 \pagenumbering{alph}
 
-% % % % % % % % % % APPENDICES % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % APPENDICES % % % % % % % % % % % % % % % % %
 
 \section{Appendix A}
 
@@ -157,6 +157,6 @@ In the following report we will explore the consequences of noncommutative geome
 
 %\section{Appendix D}
 
-% % % % % % % % % % % % % % SLUT PRUT % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % SLUT PRUT % % % % % % % % % % % % % % % % % %
 
 \end{document}
