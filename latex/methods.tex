@@ -1,18 +1,44 @@
 \section{Methods}
-The idea is to calculate the NCG cross section for $Z^0$ from the following equation
+The idea is to calculate the NCG cross section for the new contribution gg $\rightarrow Z^0$ in the interaction pp $\rightarrow \mu \bar \mu$. To find this contribution we have to examine the different amplitudes in the total cross section:
+
 \begin{align}
-	\sigma_{pp \rightarrow Z / \gamma \rightarrow ee} &= |qq \rightarrow Z \rightarrow ee|^2 + |qq \rightarrow \gamma \rightarrow ee|^2 \nonumber \\
-	&+ (qq \rightarrow Z \rightarrow ee)(qq \rightarrow \gamma \rightarrow ee) + |gg \rightarrow Z \rightarrow ee|^2,
+\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} &= |A_{q \bar q \rightarrow \gamma} + A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2} \nonumber \\
+&= |A_{q \bar q \rightarrow \gamma}|^{2} + |A_{q \bar q \rightarrow Z}|^ {2} + |A_{gg \rightarrow Z}|^{2} + A_{q \bar q \rightarrow Z }A_{qq \rightarrow \gamma},
 \end{align}
-where the last term is the additional contribution to the $\sigma_{pp \rightarrow Z / \gamma \rightarrow ee}$ cross-section coming from NCG. To accomplish this we first need to examine the ratio
-\begin{equation} \label{eq:g-gamma-ratio}
-	\frac{\sigma_{gg \rightarrow g \rightarrow uu}}{\sigma_{qq \rightarrow \gamma \rightarrow uu}},
+
+The last term is the interference part between $\gamma$ and Z, the second last is the cross section coming from NCG, that we are interestet in. The two first terms we already know:
+
+\begin{align}
+A_{q \bar q \rightarrow Z} &= \sigma_{q \bar q \rightarrow Z} (\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q}) \nonumber \\ 
+A_{q \bar q \rightarrow \gamma} &= \sigma_{q \bar q \rightarrow  \gamma}( \mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q})
+\end{align}
+
+Here the symbol $\oplus$ means that we multiply distibutions, bin by bin individual, $\mathcal{M}$ is the invariant mass for the two particles in the final state and P$_{pp}$ is the parton luminosity function. Know our job is to find the last one, the amplitude of two gluons coupling to Z. Lets therefore take af look at the cross section for the Z-production. 
+
+\begin{equation}
+\sigma_{q \bar q/gg \rightarrow Z} = |A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2}=|A_{q \bar q \rightarrow Z}|^{2}+|A_{gg \rightarrow Z}|^{2}
 \end{equation}
-ie. given a mass, how many gluons are available in the protons compared to quarks.
-\\ \\
-To be able to compare these two values we set $\alpha_s = \alpha_{QED} = 1$.
-\\ \\
-Since both the photons and gluons are massless they should have the same distribution (up to a scaling factor). In addition we also have a color-factor for the gluons which isn't present for the photon, but since $Z^0$ is colorless we can only have colorless $gg \rightarrow g \rightarrow uu$ diagrams. So how many possible diagrams are there?
+
+We notice that this is not the total Z-production since the inteference part disappear. We can only create inteference if we have the same initial and final state, here we have different initial states. If we could write $A_{gg \rightarrow Z}$ as af percentage of $A_{q \bar q \rightarrow Z}$ then:
+
+\begin{equation}
+\sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \oplus \textrm{P}_{pp}(\mathcal{M}_{gg})=\sigma_{q \bar q}(\mathcal{M}_{q \bar q}) \oplus \Theta_{NCG}^{\Lambda}\textrm{P}_{pp}(\mathcal{M}_{gg})
+\end{equation}
+
+where $\Theta_{NCG}$ is the NCG .... $\Lambda$ indicates the mass in the vertex gg $\rightarrow$ Z. With this in mind we can write the cross section as:
+
+\begin{align}
+\sigma_{q \bar q/gg \rightarrow Z} &= \sigma_{q \bar q \rightarrow Z} (\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q})+ \sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \oplus \textrm{P}_{pp}(\mathcal{M}_{gg})\nonumber \\ 
+&= \sigma_{q \bar q}(\mathcal{M}_{q \bar q}) \oplus (\textrm{P}_{pp}(\mathcal{M}_{q \bar q})+\Theta_{NCG}^{\Lambda}\textrm{P}_{pp}(\mathcal{M}_{gg}))
+\end{align}
+
+Well, all we know need to know is the ratio P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$. If we can construct two processes: $\sigma_{pp}^{A}=\sigma^{A} \oplus$ P$_{pp}^{gg}$ and $\sigma_{pp}^{B}=\sigma^{B} \oplus$ P$_{pp}^{q \bar q}$, such that $\sigma^{A}=\sigma^{B}$, then $\sigma_{pp}^{A}/\sigma_{pp}^{B}$ equals  P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ up to a scaling factor.
+
+Since both the photons and gluons are massless they should have the same distribution or at least the distrubutions should be proportional. Thats why we choose interaction$^{A}$ to be $gg \rightarrow g \rightarrow q \bar q$ and interaction$^{B}$ to be $q \bar q \rightarrow \gamma \rightarrow q \bar q$.
+
+
+
+In addition we also have a color-factor for the gluons which isn't present for the photon, but since $Z^0$ is colorless we can only have colorless $gg \rightarrow g \rightarrow uu$ diagrams. So how many possible diagrams are there?
 \\ \\
 When we have calculated the ratio \eqref{eq:g-gamma-ratio} we use the following expression for determining the cross-section for gluon $\rightarrow$ $Z^0$ decays:
 \begin{align}
@@ -21,5 +47,3 @@ When we have calculated the ratio \eqref{eq:g-gamma-ratio} we use the following 
 where $C_q$ and $C_g$ are the available number of quarks and gluons and $M^{34}$ is the invariant mass of the two particles in the final state. Because the quarks have different charges we have to be careful in the choice of the particular quarks we choose. The strength of the electromagnetic interaction (interactions including $\gamma$) is dependent on the charges of the particles involved. Such that $u$ and $c$ which both have positive charge of $2/3$ couples more strongly to the $\gamma$ than the $d$, $s$ and $b$ which all have negative charge of $-1/2$. $Z^0$ and gluons ($g$), on the other hand, do not couple to charge, so the strengths of vertices involving these are independent of the types of quarks involved.
 \\ \\
 Because of this fact we make the calculation only for $u\bar{u}$ pairs and sum over the result.
-
-
