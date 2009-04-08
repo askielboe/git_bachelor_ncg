@@ -115,14 +115,11 @@ v3_uu_z_mm_500_2000.txt		DONE!
 
 v3_uu_za_mm_20_500.txt		DONE!
 v3_uu_za_mm_500_2000.txt	DONE!
-
-v3_uu_z_mm_20_500.txt		NOT YET MADE!
-v3_uu_z_mm_500_2000.txt		NOT YET MADE!
 >--------------------------------------------------------------
 P_pp^qq
 >--------------------------------------------------------------
-v3_uu_a_dd_20_200.txt		NOT YET MADE!
-
+v3_uu_a_dd_20_500.txt		DONE!
+v3_uu_a_dd_500_2000.txt		DONE!
 
 
 

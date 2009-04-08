@@ -1,0 +1,23 @@
+\begin{figure}[!htb]
+\begin{center}
+	
+	\begin{fmffile}{one} 	%one.mf will be created for this feynman diagram  
+	  \fmfframe(1,7)(1,7){ 	%Sets dimension of Diagram
+	   \begin{fmfgraph*}(110,62) %Sets size of Diagram
+	    \fmfleft{i1,i2}	%Sets there to be 2 sources 
+	    \fmfright{o1,o2}    %Sets there to be 2  outputs
+	    \fmflabel{$e^-$}{i1} %Labels one of the left sources
+	    \fmflabel{$e^+$}{i2} %Labels one of the left sources
+	    \fmflabel{${\ensuremath{\erlpm}}$}{o1} %Labels one of the right outputs
+	    \fmflabel{${\ensuremath{\erlpm}}$}{o2} %Labels one of the right outputs
+	    \fmf{fermion}{i1,v1,i2} %Connects the sources with a vertex.
+	    \fmf{fermion}{o1,v2,o2} %Connects the outputs with a vertex.
+	    \fmf{photon,label=$\gamma/Z^0$}{v1,v2} %Labels the conneting line.
+	   \end{fmfgraph*}
+	  }
+	\end{fmffile}
+	&&&&
+	
+	\caption{S-Channel left, T-Channel right}\label{fey1}
+	\end{center}
+	\end{figure}
