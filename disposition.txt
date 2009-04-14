@@ -14,12 +14,13 @@ Introduction:
 
 Theory:
 	- Quantum Mechanics (AND)
-		- The Lagrangian and action of a system (AND)
+		- Principle og least action
 		- The path integral formalism (AND)
+		- The Lagrangian and action of a system (AND)
 		- Quantum field theory (AND)
 		- Gauge transformations and gauge groups (AND)
 	- SM
-		- The Standard Model of particle physics
+		- The gauge gruops of the SM
 		- Particles, generations (JUL)
 		- Feynman diagrams
 		- Feynman rules
