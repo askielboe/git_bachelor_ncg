@@ -193,7 +193,7 @@
       <object idref="PointArray4"/> 
      </void> 
      <void property="textString"> 
-      <string>u</string> 
+      <string>e^-</string> 
      </void> 
     </object> 
    </void> 
@@ -220,7 +220,7 @@
       <object idref="PointArray5"/> 
      </void> 
      <void property="textString"> 
-      <string>\bar u</string> 
+      <string>e^+</string> 
      </void> 
     </object> 
    </void> 
@@ -247,7 +247,8 @@
       <object idref="PointArray6"/> 
      </void> 
      <void property="textString"> 
-      <string>\bar d</string> 
+      <string>e^+
+</string> 
      </void> 
     </object> 
    </void> 
@@ -274,7 +275,7 @@
       <object idref="PointArray7"/> 
      </void> 
      <void property="textString"> 
-      <string>d</string> 
+      <string>e^-</string> 
      </void> 
     </object> 
    </void> 

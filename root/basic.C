@@ -68,14 +68,7 @@ void loadhist() {
 }
 
 void drawhist(Int_t plotnum) {
-//	if (plotnum = -1) {
-//		printf("Syntax: dividehist(Number of plot to make (1,2), Save the plot to .png (0=no, 1=yes), Name of file )");
-//		printf("Plot 1: uu -> g -> dd, gg -> g -> uu and uu -> A -> dd.");
-//		printf("Plot 2: -1 x 64(gg -> g -> uu) / 9(uu -> g -> dd)");
-//	}
-	
 	if (plotnum == 1) {
-//		clearhist();
 		TCanvas *c1 = new TCanvas("c1","uu -> g -> dd",1000,750);
 		hist1->Draw("e");
 		TCanvas *c2 = new TCanvas("c2","gg -> g -> uu",1000,750);
@@ -85,7 +78,6 @@ void drawhist(Int_t plotnum) {
 	}
 	
 	else if (plotnum == 2) {
-//		clearhist();
 		TH1F *histdiv = hist1->Clone("histdiv");
 		histdiv->SetTitle(" -1 x 64(gg -> g -> uu) / 9(uu -> g -> dd) ");
 		histdiv->GetXaxis()->SetTitle("GeV");
@@ -101,8 +93,3 @@ void drawhist(Int_t plotnum) {
 	else if (plotnum == 3) {
 	}
 }
-void clearhist() {
-	delete c1;
-	delete c2;
-	delete c3;
-}	
