@@ -1,6 +1,6 @@
 \section{Theory}
-\subsection{Quantum mechanics}
-The particles and interactions of the SM are described in the language of QM and QFT %, which have a natural way of unifying the mathematical concepts in a concise way.
+\subsection{Quantum field theory}
+The particles and interactions of the SM are described in the language of quantum mechanics and quantum field theory.
 
 \subsubsection{Principle of least action}
 The action $\mathcal{S}$ is a functional\footnote{A functional is something that takes as its argument a function and returns a scalar.} realted to the time evolution of a physical system. Namly the action is the change in phase of the wave function of the system. The Lagrangian is defined as the rate of change of the phase and given as
@@ -37,38 +37,71 @@ and the action $\mathcal{S}$ is related to the Lagrangian by the action principl
 \end{equation}
 where $x, \dot{x} \equiv \frac{dx}{dt}$ are generalized coordinates.
 
-\subsubsection{Quantum field theory}
-Equation \eqref{eq:path} is called the propagator in QFT. This equation descibes the propability amplitude that a particle will go from the initial state to the final state in time $t_f - t_i$.
+Equation \eqref{eq:path} is called the propagator in QFT. This equation describes the probability amplitude that a particle will go from the initial state to the final state in time $t_f - t_i$.
+
+\subsubsection{Symmetry groups}
+Noethe's Theorem states that for any transformation under which a physical system is invariant there exists a conserved quantity of that system. The classical examples are translations and rotations in the three spatial dimensions. If the system is invariant under those two transformations this corresponding to the conservation of linear and angular momentum. Thus these transformations forms a symmetry group of the theory. The two, physically equivalent situations, can be described by different mathematical configurations depending on the reference frame. The two descriptions are related to each other by this symmetry group.
 
 \subsubsection{Gauge transformations and gauge groups}
-Symmetries and Noethe's Theorem.
+In quantum electrodynamics the wave equation is invariant under local (space-time-dependent) phase transformations, corresponding to rotations in the complex phase space of the wave function. These transformations can be represented by
+
+\begin{equation} \label{eq:localphase}
+    \psi \rightarrow e^{i\alpha(\mathbf{x})} \psi
+\end{equation}
+
+and together they form the symmetry group SU(1).
+
+This is all good, however for the derivative operator $\partial_\mu$ to be well-defined for all points in space-time we have to replace it by the covariant derivative
+
+\begin{equation} \label{eq:covariant}
+	\partial_\mu \Rightarrow D_\mu = \partial_\mu - \textrm{i}e A_\mu.
+\end{equation}
+
+Here we have introduced a new field $A_\mu$, which is simply the photon field of QED. So the invariance under local SU(1) transformations led us to the conclusion, that for our theories to be gauge invariant, we have to add a new field to the theory and in this case it was the photon field. The photon is a gauge boson of the standard model.
+
+This is the essential principle of gauge theories, one that have led to the discovery of many new fields and particles.
+
+Following this logic the gauge group governing weak interaction is combined group SU(1) $\times$ SU(2), where SU(2) is the group of $2 \times 2$ complex unitary matrices\footnote{More specifically SU(2) is a Lie group and its Lie algebra is the set of anti-Hermition $2 \times 2$ matrices with trace 0.}. The generators of SU(2) are the Pauli matrices
+
+\begin{equation}
+	\sigma_1 =
+	\begin{pmatrix}
+	0&1\\
+	1&0
+	\end{pmatrix},
+	\sigma_2 = 
+	\begin{pmatrix}
+	0&-i\\
+	i&0
+	\end{pmatrix},
+	\sigma_3 = 
+	\begin{pmatrix}
+	1&0\\
+	0&-1
+	\end{pmatrix}.
+\end{equation}
+
+The gauge boson associated with the weak force are the $W^+$, $W^-$ and the $Z^0$ bosons.
+
+The gauge bosons mediating the strong interaction are characterized by the SU(3) gauge group. The generators of SU(3) are the 8 Gell-Mann matrices giving rise to 8 gauge bosons of the strong interaction know as gluons, each having a property called color. Because of this color feature the gauge theory of the strong interaction is called Quantum Chromodynamics (QCD).
+
+Combining QED and QCD into U(1) $\times$ SU(2) $\times$ SU(3) we arrive at what is know as the Standard Model (SM) of particle physics.
 
 \subsection{The Standard Model}
+The Standard Model of particle physics is a non abelian gauge theory consisting of the gauge group $SU$
+
+\subsubsection{Particles of the standard model}
 
 In the Standard Model of particle physics we divide the particles into two main groups; fermions and bosons. Fermions are defined as having half-integral spin and are described by Fermi-Dirac statistics, these include the leptons and quarks. Fermions constitutes all known matter and as such they are sometimes described as matter-particles. Bosons, on the other hand, have zero or integral spin and are described by Bose-Einstein statistics. Some of these, namely the gauge bosons, are responsible for the weak, strong and electromagnetic interactions. Therefore the gauge bosons are often called the force-carriers of their respective interactions. It may be appropriate to note that the formalism of quantum mechanics makes no clear distinction between the concepts of matter-particles and force-particles. Below is a table with all known quarks, leptons and gauge bosons. With the exception of neutrinos, which have to be detected in other ways, all of them have been seen in particle accelerator experiments.
 
 % Billede med partikel-generationer fra Wikipedia.
 \includefigure{fig:particle_generations}{0.3}{./images/particle_generations.jpg}{The fundamental particles in the Standard Model. Fermions and bosons, listed in their respective generations. (Source: Wikimedia Commons).}
 
-\subsubsection{The gauge groups of the SM}
-The gauge boson mediating the electromagnetic force is the photon ($\gamma$). The theory is derived from the U(1) gauge group, which is just the group of phase rotations.
-
-\begin{equation}
-    \psi \rightarrow e^{i\alpha} \psi
-\end{equation}
-
-The weak interaction is derived from the SU(2) group of unitary matrices with determinant 1. The gauge boson associated with this group are the $W^+$, $W^-$ and the $Z^0$ bosons.
-
-Combining these two theories we arrived at what is know as Quantum Electrodynamics (QED). The theory which is described by the gauge group (U(1) $\times$ SU(2)).
-
-The gauge bosons mediating the strong interaction are characterized by the SU(3) gauge group. The generators of which are the 8 Gell-Mann matrices giving rise to 8 gauge bosons of the strong interaction know as gluons, each having a property called color. Because of this color feature the gauge theory of the strong interaction is called Quantum Chromodynamics (QCD).
-
-Combining QED and QCD into U(1) $\times$ SU(2) $\times$ SU(3) we arrive at what is know as the Standard Model (SM) of particle physics.
-
-\subsubsection{Particles and generations}
-
-
 \subsubsection{Feynman diagrams}
 When calculating amplitudes for particle interactions in the SM it can be very instructive to make use of \emph{Feynman diagrams}. This approach was proposed by american phycisist Richard P. Feynman in 1949\cite{feynman1949sta}. A typical space-time interaction between two electrons is represented as a Feynman diagram in Figure \ref{fig:feynmandiagram}.
 
 %\include{feyn_electrons}
+
+Using these diagrams Feynman were able to greatly simplify how we think about and calculate interactions in the SM. Having drawn a diagram as in \ref{fig:feynmandiagram} we want to know the probability amplitude for this process. That is, we want to know with what probability this occurs. Given the diagram one can simply write down the amplitude using so called Feynman rules associated with the different parts of the diagram. We won't go in to detail with writing down the complete feynman rules, but we can learn a lot by looking closer at the vertices.
+
+Each vertex represents an interaction, electroweak
