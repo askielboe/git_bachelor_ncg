@@ -3,7 +3,7 @@
 The particles and interactions of the SM are described in the language of quantum mechanics and quantum field theory.
 
 \subsubsection{Principle of least action}
-The action $\mathcal{S}$ is a functional\footnote{A functional is something that takes as its argument a function and returns a scalar.} realted to the time evolution of a physical system. Namly the action is the change in phase of the wave function of the system. The Lagrangian is defined as the rate of change of the phase and given as
+The action $\mathcal{S}$ is a functional\footnote{A functional is something that takes as its argument a function and returns a scalar.} related to the time evolution of a physical system. Namely the action is the change in phase of the wave function of the system. The Lagrangian is defined as the rate of change of the phase and given as
 
 \begin{equation}
 	\mathcal{S} = \int_{t_i \mathcal{P}}^{t_f} L \textrm{d}t,
@@ -98,7 +98,7 @@ In the Standard Model of particle physics we divide the particles into two main 
 \includefigure{fig:particle_generations}{0.3}{./images/particle_generations.eps}{The fundamental particles in the Standard Model. Fermions and bosons, listed in their respective generations. (Source: Wikimedia Commons).}
 
 \subsubsection{Feynman diagrams}
-When calculating amplitudes for particle interactions in the SM it can be very instructive to make use of \emph{Feynman diagrams}. This approach was proposed by american phycisist Richard P. Feynman in 1949\cite{feynman1949sta}. A typical space-time interaction, the annihilation of an electron and a positron, is represented as a Feynman diagram in Figure \ref{fig:feynmandiagram}.
+When calculating amplitudes for particle interactions in the SM it can be very instructive to make use of \emph{Feynman diagrams}. This approach was proposed by american physicist Richard P. Feynman in 1949\cite{feynman1949sta}. A typical space-time interaction, the annihilation of an electron and a positron, is represented as a Feynman diagram in Figure \ref{fig:feynmandiagram}.
 
 \begin{figure}[htp]
 \centering
@@ -106,12 +106,24 @@ When calculating amplitudes for particle interactions in the SM it can be very i
 \caption{Feynman diagram for the annihilation of an electron and a positron to a photon which subsequently splits up into another electron-positron pair. Time is positive moving from left to right in the diagram.} \label{fig:feynmandiagram}
 \end{figure}
 
-\begin{figure}[htp]
-\centering
-	\input{./jaxo/uu-a-dd.tex}
-\caption{Another diagram.}
-\end{figure}
+% \begin{figure}[htp]
+% \centering
+% 	\input{./jaxo/uu-a-dd.tex}
+% \caption{Another diagram.}
+% \end{figure}
 
-Using these diagrams Feynman were able to greatly simplify how we think about and calculate interactions in the SM. Having drawn a diagram as in \ref{fig:feynmandiagram} we want to know the probability amplitude for this process. That is, we want to know with what probability this occurs. Given the diagram one can simply write down the amplitude using so called Feynman rules associated with the different parts of the diagram. We won't go in to detail with writing down the complete feynman rules, but we can learn a lot by looking closer at the vertices.
+Using these diagrams Feynman were able to greatly simplify how we think about and calculate interactions in the SM. Having drawn a diagram as in \ref{fig:feynmandiagram} we now want calculate the probability for this process to happen. Given the diagram one can simply write down the amplitude using so called Feynman rules associated with the different parts of the diagram. We won't go in to detail with writing down the complete feynman rules, but we can learn a lot by looking closer at the vertices.
 
-Each vertex represents an interaction, electroweak
+Each vertex represents an interaction. Depending on the nature of this interaction we assign a constant related to the coupling between the lines going in to this vertex. This constant is proportional to the probability for the process to happen. For the diagram in Figure \ref{fig:feynmandiagram} the force acting at the vertices is the electromagnetic force. The strength of this force is determined by the fine structure constant
+
+\begin{equation}
+	\alpha = \frac{e^2}{4\pi\varepsilon_0\hbar c},
+\end{equation}
+
+where $e$ is the charge of the positron, $\varepsilon_0$ is the permittivity of free space, $c$ is the speed of light in vacuum and $\hbar$ is the reduced Planck constant. In natural units, setting $c = \hbar = 1$, $\alpha$ is approximately equal to
+
+\begin{equation}
+	 \alpha \approx \frac{1}{137}.
+\end{equation}
+
+Constants like these are called coupling constants because they relate to the coupling of different particles interacting with each other.
