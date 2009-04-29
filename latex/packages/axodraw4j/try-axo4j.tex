@@ -1,0 +1,468 @@
+\documentclass{article}
+
+\usepackage{axodraw4j}
+\usepackage{color}
+\usepackage[text={7in,10in}]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+Exercise axodraw4j
+
+\begin{center}
+Overall setting of default sizes: \\
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(400,200)
+    \ArrowLine(40,63)(101,0)
+    \SetArrowScale{2}
+    \SetArrowInset{0.8}
+    \SetWidth{0.5}
+    \SetColor{Black}
+    \ArrowLine(134,0)(195,0)
+%
+% Change arrow scale:
+    \SetColor{Red}
+    \SetArrowScale{3}
+    \ArrowLine(140,63)(201,0)
+%
+% Override arrowscale:
+    \SetColor{Blue}
+    \ArrowLine[arrowscale = 1.5](164,63)(225,0)
+%
+% Use new arrowup
+    \SetColor{Black}
+    \ArrowArc(10,150)(40,-90,90)
+%
+% Exercise lines:
+    \SetColor{OliveGreen}
+    \DashDoubleLine(100,100)(150,200){4}{3}
+    \DashDoubleLine[arrow,arrowwidth=4.5](150,200)(200,100){4}{3}
+    \DoubleLine[double,arrow,arrowwidth=4.5](200,100)(270,100){4}
+    \Line[double,arrow,arrowwidth=4.5](200,120)(270,120)
+  \end{picture}
+}
+}
+\end{center}
+
+%=================================================
+
+\begin{center}
+Following 
+  should be left: blue line double arrow, red line double noarrow
+                  red line noarrow, red dash line arrow.\\
+  Then right: Black line arrow, noarrow, arrow, green Bezier.
+\framebox{
+  \begin{picture}(400,100)
+    \SetWidth{3}
+%    \SetScale{1.5}
+    \SetColor{Red}
+    \DashLine(0,45)(60,0){10}
+    \DoubleLine(67.5,60)(0,45){4}
+    \DashArrowLine(60,0)(135,75){2}
+    \SetColor{Blue}
+    \ArrowDoubleLine(135,75)(67.5,60){6}
+    \Line[arrow,double,sep=4](135,75)(167.5,60)
+    \SetColor{Black}
+    \Line[arrow,arrowlength=8,arrowwidth=10,dash,dashsize=3,double,sep=3](150,30)(200,60)
+    \ArrowLine[arrow=false,dash,dashsize=5](200,60)(250,20)
+    \ArrowLine(250,20)(300,40)
+    \SetColor{Green}
+    \Bezier(150,30)(200,60)(250,20)(300,40)
+  \end{picture}
+}
+\end{center}
+
+%=================================================
+\newpage
+\begin{center}
+Exercise all options: \\
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(350,250)
+    \SetArrowScale{2}
+    \SetWidth{0.5}
+    \SetColor{Black}
+    \ArrowLine(000,0)(100,30)
+    \Text(0,0)[l]{pos=0.2}
+    \ArrowLine[arrowscale=3,arrowpos=0.2](050,0)(150,30)
+    \ArrowLine[arrowwidth=5](100,0)(200,30)
+    \ArrowLine[arrowlength=20,arrowinset=0.6](150,0)(250,30)
+    \ArrowLine[arrowlength=50, arrowwidth=3](200,0)(300,30)
+    %
+    \SetColor{BrickRed}
+    \Text(0,100)[l]{pos=0.8}
+    \ArrowLine[arrowpos=0.8](000,50)(100,80)
+    \ArrowLine[arrow=false](050,50)(150,80)
+    \ArrowLine[arrowlength=10,arrowwidth=5](100,50)(200,80)
+    \ArrowLine[arrowlength=10,arrowwidth=5,arrowinset=0](150,50)(250,80)
+    \ArrowLine[arrowlength=10,arrowwidth=5,arrowinset=0.5](200,50)(300,80)
+    \ArrowLine[arrowlength=10,arrowwidth=5,arrowinset=1](250,50)(350,80)
+    %
+    \SetColor{Blue}
+    \ArrowLine[arrowpos=0.8, double=true,sep=5](000,150)(100,100)
+    \ArrowLine[arrowpos=0.8, double=false,linesep=2](050,150)(150,100)
+    \ArrowLine[arrowpos=0.8, double=true,linesep=3](100,150)(200,100)
+%    \ArrowLine[arrowpos=0.8, double, dash, dashsize=10](150,150)(250,100)
+    \ArrowLine[arrowpos=0.8, double=false, dash, dashsize=20](150,150)(250,100)
+    \ArrowLine[arrowpos=0.8, double, dash, dashsize=3](200,150)(300,100)
+    %
+    \SetColor{Red}
+    \PText(0,200)(30)[l]{pos=0.2}
+    \ArrowArc[arrowpos=0.2,double](050,200)(30,20,150)
+    \ArrowArc[arrowpos=0.2,double,arrowlength=30, arrowwidth=2.5](150,200)(30,20,150)
+    \LongArrowArc[arrowpos=0.2,double,arrowlength=30, arrowwidth=2.5](250,200)(30,20,150)
+  \end{picture}
+}
+}
+\end{center}
+
+%=================================================
+
+\begin{center}
+Test arcs: \\
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(300,230)
+    \SetArrowScale{2}
+    \SetWidth{0.5}
+    \Text(0,0)[l]{pos=0.2}
+    \SetColor{Black}
+    \ArrowArc[arrowpos=0.2,double](050,50)(30,20,360)
+    \ArrowArc[arrowpos=0.2,double,arrowlength=30,arrowwidth=2.5](150,50)(30,20,360)
+    \LongArrowArc[double](250,50)(30,50,360)
+    %
+    \SetColor{BrickRed}
+    \DashArrowArc[arrowpos=0.3](50,120)(30,40,360){2}
+    \ArrowArcn[arrowpos=0.2](150,120)(30,100,360)
+    \LongArrowArcn(250,120)(30,100,360)
+    %
+    \SetColor{Blue}
+    \DashArrowArcn[arrowpos=0.2](50,190)(30,100,360){10}
+    \Arc[arrow,clock,dash,dashsize=20,arrowpos=0.2](150,190)(30,100,360)
+    \Arc[double,arrow,clock,dashsize=20,arrowpos=0.2](200,190)(30,100,360)
+    \Arc[double,arrow,clock,dash,dashsize=20,arrowpos=0.2](250,190)(30,100,360)
+    %
+  \end{picture}
+}
+}
+\end{center}
+
+%=================================================
+\newpage
+\begin{center}
+Test new arc command: \\
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(400,330)
+    \SetArrowScale{2}
+    \SetWidth{0.5}
+    \Text(0,0)[l]{pos=0.2}
+    \SetColor{Black}
+    \Arc(050,50)(30,30,320)
+    \Arc[arrow,arrowpos=0.2,double](150,50)(30,30,320)
+    \Arc[arrow,arrowpos=0.2,double,sep=8,arrowwidth=10](250,50)(30,30,320)
+    \Arc[arrow,arrowpos=0.2,dash](350,50)(30,30,320)
+    %
+    \SetColor{BrickRed}
+    \Arc[arrow,arrowpos=0.3,clock](050,150)(30,30,320)
+    \Arc[arrow,arrowpos=0.2](150,150)(30,30,320)
+    \Arc[arrow,arrowpos=0.2,double](250,150)(30,30,320)
+    \Arc[arrow,arrowpos=0.2,dash,clock=false](350,150)(30,30,320)
+    %
+    \SetColor{Blue}
+    \Arc[arrow,arrowpos=0.3,clock](050,250)(30,30,320)
+    \Arc[arrow,arrowpos=0.3](150,250)(30,30,320)
+    \CArc(250,250)(30,320,30)
+    \CArc(350,250)(30,30,320)
+    %
+  \end{picture}
+}
+}
+\end{center}
+
+%=================================================
+\begin{center}
+Test lines, and commands for setting arrow parameters globally: \\
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(300,150)
+    \SetArrowScale{2}
+    \SetWidth{0.5}
+    \SetArrowAspect{10}
+    \Text(0,0)[l]{pos=0.2}
+%
+    \SetColor{Black}
+    \ArrowDoubleLine[arrowpos=0.2,arrowwidth=3](50,0)(150,30){2}
+    \DashArrowDoubleLine[arrowpos=0.3](100,0)(200,30){2}{8}
+    \ArrowLine[arrowpos=0.2](150,0)(250,30)
+    \LongArrow(200,0)(300,30)
+    \SetArrowAspect{1.25}
+%
+    \SetArrowInset{0.9}
+    \SetArrowPosition{0.7}
+    \DashArrowLine(50,50)(150,80){3}
+    \DashLine(100,50)(200,80){3}
+    \DoubleLine(150,50)(250,80){2}
+    \DashDoubleLine(200,50)(300,80){2}{5}
+% 
+    \SetColor{Blue}
+    \Line[arrowpos=0.0,arrow,dash,double,dashsize=8,sep=2](0,100)(100,130)
+    \Line[arrowpos=0.2,arrow,dash,dashsize=8,sep=2](50,100)(150,130)
+    \Line[arrowpos=0.2,arrow,double,dashsize=8,sep=2](100,100)(200,130)
+    \Line[arrowpos=0.2,arrow,double,dash,dashsize=8,sep=2](150,100)(250,130)
+  \end{picture}
+}
+}
+\end{center}
+
+%=================================================
+\newpage
+\begin{center}
+Other commands: \\
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(400,600)(0,-100)
+    \SetArrowScale{2}
+    \SetArrowInset{0.8}
+    \SetWidth{0.5}
+    %
+    \SetColor{OliveGreen}
+    \PhotonArc(50,-50)(30,10,240){5}{6}
+    \PhotonArc[clock,double,sep=5](150,-50)(30,10,240){5}{6}
+    \GluonArc(250,-50)(30,10,240){5}{6}
+    \GluonArc[clock,double,sep=5](350,-50)(30,10,240){5}{6}
+    % 
+    \SetColor{Red}
+    \Gluon(10,10)(100,50){5}{6}
+    \Gluon[double,linesep=5](10,50)(100,90){5}{6}
+    \Photon(110,10)(200,50){5}{6}
+    \Photon[double,linesep=5](110,60)(200,100){5}{6}
+    \ZigZag(210,10)(300,50){5}{6}
+    %
+    \SetColor{Brown}
+    \Text(20,120)[c]{Text}
+    \SetColor{Blue}
+    \Vertex(48,113){20}
+    \SetColor{Brown}
+    \EBox(50,120)(100,170)
+    \SetColor{Blue}
+    \Vertex(148,113){20}
+    \SetColor{Brown}
+    \BBox(150,120)(200,170)
+    \SetColor{Blue}
+    \Vertex(248,113){20}
+    \SetColor{Brown}
+    \GBox(250,120)(300,170){0.9}
+    \SetColor{Blue}
+    \Vertex(348,113){20}
+    \SetColor{Brown}
+    \CBox(350,120)(400,170){Red}{Green}
+    %
+    \CBoxc(180,190)(330,20){Blue}{Red}
+    \Boxc(50,210)(20,40)
+    \BBoxc(150,210)(20,40)
+    \GBoxc(50,210)(20,40){0.8}
+    %
+    \SetColor{Black}
+    %
+    \SetColor{Red}
+    \ZigZag(50,240)(150,300){5}{5}
+    \LogAxis(180,310)(280,240)(2,3,3,1)
+    \LinAxis(230,310)(350,290)(2,3,3,2,1)
+    \CArc(50,350)(30,20,150)
+    \DashCArc(150,350)(30,20,150){5}
+    \Vertex(200,350){5}
+    \SetColor{Blue}
+    \BCirc(210,350){10}
+    \SetColor{Red}
+    \Vertex(250,350){10}
+    \SetColor{Blue}
+    \GCirc(260,350){10}{0.8}
+    \SetColor{Red}
+    \Vertex(300,350){10}
+    \SetColor{Blue}
+    \CCirc(310,350){10}{ForestGreen}{Brown}
+    %
+    \SetColor{Blue}
+    \DashCurve{(10,400)(20,420)(50,400)(70,450)}{2}
+    \Curve{(110,400)(120,420)(150,400)(170,450)}
+    \Bezier(210,400)(250,450)(250,400)(300,420)
+    \DashBezier(310,400)(350,450)(350,400)(400,420){4}
+    \Bezier[dash,dashsize=10](210,450)(250,500)(250,450)(300,470)
+    \Bezier[dash](310,450)(350,500)(350,450)(400,470)
+  \end{picture}
+}
+}
+\end{center}
+
+%=================================================
+
+\newpage
+\begin{center}
+  \newcommand\showarrows[1]{
+    \mbox{}\\
+    ArrowScale=#1:\\
+    \framebox{
+    \fcolorbox{white}{white}{
+       \begin{picture}(400,120)
+       \SetArrowScale{#1}
+                    \onewidth{20}
+       \SetWidth{1} \onewidth{40}
+       \SetWidth{2} \onewidth{60}
+       \SetWidth{3} \onewidth{80}
+       \SetWidth{4} \onewidth{100}
+       \end{picture}
+    }}  
+    \\ 
+  }
+  \newcommand\onewidth[1]{
+       \Line[arrow](0,#1)(90,#1)
+       \Line[arrow,double,sep=2](100,#1)(190,#1)
+       \Line[arrow,double,sep=4](200,#1)(290,#1)
+       \Line[arrow,double,sep=8](300,#1)(390,#1)
+  }
+  Test default size of arrows and line separation:
+  \showarrows{1}
+  The lines are, from left to right:
+  (single), (double, sep=2 (default)), (double, sep=4), (double, sep=8);
+  and from top to bottom: width = 4, 3, 2, 1, 0.5 (default)
+\end{center}
+
+\begin{center}
+Test setting of default parameters for arrows, when some but not all
+arrow dimensions are set:
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(400,200) (0,0)
+    \SetWidth{1}
+    \SetColor{Black}
+    \Line[arrow](0,190)(90,190)
+    \Line[arrow,arrowinset=0.9](100,190)(190,190)
+    \Line[arrow,arrowwidth=10](200,190)(290,190)
+    \Line[arrow,arrowlength=10](300,190)(390,190)
+%
+    \Line[double,sep=8,arrow](0,140)(90,140)
+    \Line[double,sep=8,arrow,arrowinset=0.9](100,140)(190,140)
+    \Line[double,sep=8,arrow,arrowwidth=10](200,140)(290,140)
+    \Line[double,sep=8,arrow,arrowlength=10](300,140)(390,140)
+%
+    \Arc[double,sep=8,arrow,arrowinset=0.8,arrowpos=0.1](50,60)(40,0,180)
+    \Line[arrow,arrowinset=0.9](150,60)(240,70)
+    \Line[arrow,arrowinset=1](250,60)(340,70)
+  \end{picture}
+}}
+\end{center}
+
+%=================================================
+\newpage
+Loops and arcs, to test flip option
+
+Source: JD2, with
+\begin{tabular}[t]{ccc}
+  Loop, not flipped.  & Anticlockwise arc, not flipped & Clockwise arc, not flipped \\
+  Loop, flipped.      & Anticlockwise arc, flipped & Clockwise arc, flipped \\
+\end{tabular}
+
+(a) As exported from JD 2-SNAPSHOT
+\begin{center}
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(386,227) (47,-92)
+    \SetWidth{0.5}
+    \SetColor{Black}
+    \ArrowArc(96,83)(48,180,540)
+    \ArrowArcn(104,-43)(48,540,180)
+    \ArrowArc(240,83)(48,-0,180)
+    \ArrowArcn(384,83)(48,180,-0)
+    \ArrowArcn(240,-45)(48,180,-0)
+    \ArrowArc(368,-45)(48,-0,180)
+  \end{picture}
+}}
+\end{center}
+(b) Converted to use \verb+\Arc+ with flip option, and with arrowpos=0.3
+\begin{center}
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(386,227) (47,-92)
+    \SetArrowPosition{0.3}
+    \SetWidth{0.5}
+    \SetColor{Black}
+    \Arc[arrow](96,83)(48,180,540)
+    \Arc[arrow,flip](104,-43)(48,180,540)
+    \Arc[arrow](240,83)(48,-0,180)
+    \Arc[arrow,clock](384,83)(48,180,-0)
+    \Arc[arrow,flip](240,-45)(48,-0,180)
+    \Arc[arrow,clock,flip](368,-45)(48,180,-0)
+  \end{picture}
+}}
+\end{center}
+
+%=================================================
+\newpage
+\begin{center}
+Test flip on \verb+\Line+ and \verb+\Arc+, with no-flip, flip with
+default arrow, and flip with specified arrowsize:\\
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(400,200)
+    \Line[double,arrow,arrowpos=0.7](0,110)(100,130)
+    \Line[double,arrow,flip,arrowpos=0.7](100,110)(200,130)
+    \Line[double,arrowwidth=7,arrow,flip,arrowpos=0.7](200,110)(300,130)
+    \Arc[arrow,arrowpos=0.7,dash](100,40)(40,10,260)
+    \Arc[arrow,arrowpos=0.7,dash,flip](200,40)(40,10,260)
+    \Arc[arrow,arrowwidth=5,arrowpos=0.7,dash,flip](300,40)(40,10,260)
+  \end{picture}
+}
+}
+\end{center}
+
+\begin{center}
+Test clock on \verb+\PhotonArc+ and \verb+\GluonArc+:
+\begin{tabular}{c|cccc}
+  Angle range & 10--260   & 10--260 & 260--10   & 260--10 \\
+  Orientation & anticlock.& clock.  & anticlock.& clock.
+\end{tabular}
+\\
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(400,200)
+    \PhotonArc(50,140)(40,10,260){4}{10}
+    \PhotonArc[clock](150,140)(40,10,260){4}{10}
+    \PhotonArc(250,140)(40,260,10){4}{10}
+    \PhotonArc[clock](350,140)(40,260,10){4}{10}
+    \GluonArc(50,40)(40,10,260){4}{10}
+    \GluonArc[clock](150,40)(40,10,260){4}{10}
+    \GluonArc(250,40)(40,260,10){4}{10}
+    \GluonArc[clock](350,40)(40,260,10){4}{10}
+  \end{picture} 
+}
+}
+\end{center}
+
+\begin{center}
+Test Photon and gluon loops
+\begin{tabular}{c|cccc}
+  Angle range & 10--370   & 10--370 & 370--10   & 370--10 \\
+  Orientation & anticlock.& clock.  & anticlock.& clock.
+\end{tabular}
+\\
+\framebox{
+\fcolorbox{white}{white}{
+  \begin{picture}(400,200)
+    \PhotonArc(50,140)(40,10,370){4}{10}
+    \PhotonArc[clock](150,140)(40,10,370){4}{10}
+    \PhotonArc(250,140)(40,370,10){4}{10}
+    \PhotonArc[clock](350,140)(40,370,10){4}{10}
+    \GluonArc(50,40)(40,10,370){4}{10}
+    \GluonArc[clock](150,40)(40,10,370){4}{10}
+    \GluonArc(250,40)(40,370,10){4}{10}
+    \GluonArc[clock](350,40)(40,370,10){4}{10}
+  \end{picture} 
+}
+}
+\end{center}
+
+%=================================================
+
+\end{document}
