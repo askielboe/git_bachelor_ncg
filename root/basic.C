@@ -102,16 +102,86 @@ void drawhist(Int_t nr) {
 			break;
 	
 		case 2:
-			TH1F *histdiv = hist1->Clone("histdiv");
-			histdiv->SetTitle(" -1 x 64(gg -> g -> uu) / 9(uu -> g -> dd) ");
+			TH1F *histdiv = hist1->Clone("histdiv"); // This is just to get the same number of bins, etc.
+			histdiv->SetTitle("-1 x 64(gg -> g -> uu) / 9(uu -> g -> dd)");
 			histdiv->GetXaxis()->SetTitle("GeV");
-    		histdiv->GetYaxis()->SetTitle("ratio");
+			histdiv->GetYaxis()->SetTitle("ratio");
 			histdiv->Reset();
-			// Divide the two histograms and divide by -9/64,
-			// minus sign from taking only s-channel contribution.
+			
+			// // // // // // // // // // // // // // // // // // //
+			// Divide the two histograms and divide by -9/64,     //
+			// minus sign from taking only s-channel contribution.//
+			// // // // // // // // // // // // // // // // // // //
 			histdiv->Divide(hist2,hist1,-64,9);
-			TCanvas *c1 = new TCanvas("c1"," (gg -> g -> uu) / (uu -> g -> dd) ",1000,750);
+			
+			// And plot the ratio distribution.
+			TCanvas *c1 = new TCanvas("c1","-1 x 64(gg -> g -> uu) / 9(uu -> g -> dd)",1000,750);
+			c1->SetLogy();
 			histdiv->Draw("e");
+			
+			// // // // // // // // // // // // // // // // // // // //
+			// Multiply histogram by NCG constant (is it constant??).//
+			// // // // // // // // // // // // // // // // // // // //
+			TH1F *histmultiply = hist1->Clone("histmultiply"); // This is just to get the same number of bins, etc.
+			histmultiply->SetTitle("theta_NCG x -1 x 64(gg -> g -> uu) / 9(uu -> g -> dd)");
+			histmultiply->GetXaxis()->SetTitle("GeV");
+			histmultiply->GetYaxis()->SetTitle("theta_NCG x ratio");
+			histmultiply->Reset();
+			
+			// Making the theta histogram.
+			Double_t theta = 2;
+			TH1F *histtheta = hist1->Clone("histtheta");
+			histtheta->Reset();
+
+			Int_t i;
+			for (i = 1; i <= 1820; i++) {
+				histtheta->SetBinContent(i,theta);
+			}
+			
+			// Doing the multiplication.
+			histmultiply->Multiply(histdiv,histtheta,1,1);
+			
+			// Lets draw it.
+			TCanvas *c2 = new TCanvas("c2","theta_NCG x -1 x 64(gg -> g -> uu) / 9(uu -> g -> dd)",1000,750);
+			c2->SetLogy();
+			histmultiply->Draw("e");
+			
+			// // // // // // // // // // // // // // // // // // 
+			// Calculating (1+theta*P_gg/P_qq).                //
+			// // // // // // // // // // // // // // // // // // 
+			TH1F *histaddone = hist1->Clone("histaddone"); // This is just to get the same number of bins, etc.
+			histaddone->Reset();
+			
+			// Making the 1 histogram.
+			Double_t one = 2;
+			TH1F *histone = hist1->Clone("histone");
+			histone->Reset();
+
+			Int_t i;
+			for (i = 1; i <= 1820; i++) {
+				histone->SetBinContent(i,1);
+			}
+			
+			// Adding the one histogram.
+			histaddone->Add(histone);
+			
+			// // // // // // // // // // // // // // // // // // 
+			// Calculating sigma_qq*P_qq * (1+theta*P_gg/P_qq).//
+			// // // // // // // // // // // // // // // // // //
+			TH1F *histqqgg = hist1->Clone("histqqgg"); // This is just to get the same number of bins, etc.
+			histqqgg->SetTitle("|A_qq|^2 + |A_gg|^2 = sigma_qq*P_qq * (1 + theta*P_gg/P_qq)");
+			histqqgg->GetXaxis()->SetTitle("GeV");
+			histqqgg->GetYaxis()->SetTitle("cross section");
+			histqqgg->Reset();
+			
+			// Doing the multiplication.
+			histqqgg->Multiply(hist4,histaddone,1,1);
+			
+			// Drawing the result!
+			TCanvas *c3 = new TCanvas("c3","|A_qq|^2 + |A_gg|^2 = sigma_qq*P_qq * (1 + theta*P_gg/P_qq)",1000,750);
+			c3->SetLogy();
+			histqqgg->Draw("e");
+			
 			break;
 
 		// default:
