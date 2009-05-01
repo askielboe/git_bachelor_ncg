@@ -1,5 +1,6 @@
 #include "Riostream.h"
 #include "TH1F.h"
+#include "math.h"
 void makehist(const char* filename, TH1F *h1, Int_t& nlines) {
 	string d, pin, pout;
 	Double_t x,y,z, ecm_start, ecm_end;
@@ -92,12 +93,15 @@ void drawhist(Int_t nr) {
 	switch(nr) {
 		case 1:
 			TCanvas *c1 = new TCanvas("c1","u,u -> g -> d,d",1000,750);
+			c1->SetLogy();
 			hist1->Draw("e");
 			TCanvas *c2 = new TCanvas("c2","g,g -> g -> u,u",1000,750);
 			hist2->Draw("e");
 			TCanvas *c3 = new TCanvas("c3","u,u -> A -> d,d",1000,750);
+			c3->SetLogy();
 			hist3->Draw("e");
 			TCanvas *c4 = new TCanvas("c4","u,u -> Z -> mu,mu",1000,750);
+			c4->SetLogy();
 			hist4->Draw("e");
 			break;
 	
@@ -129,12 +133,13 @@ void drawhist(Int_t nr) {
 			histmultiply->Reset();
 			
 			// Making the theta histogram.
-			Double_t theta = 2;
 			TH1F *histtheta = hist1->Clone("histtheta");
 			histtheta->Reset();
 
 			Int_t i;
+			Double_t theta;
 			for (i = 1; i <= 1820; i++) {
+				theta = 1;
 				histtheta->SetBinContent(i,theta);
 			}
 			
@@ -149,15 +154,14 @@ void drawhist(Int_t nr) {
 			// // // // // // // // // // // // // // // // // // 
 			// Calculating (1+theta*P_gg/P_qq).                //
 			// // // // // // // // // // // // // // // // // // 
-			TH1F *histaddone = hist1->Clone("histaddone"); // This is just to get the same number of bins, etc.
-			histaddone->Reset();
+			TH1F *histaddone = histmultiply->Clone("histaddone"); // This is just to get the same number of bins, etc.
 			
 			// Making the 1 histogram.
-			Double_t one = 2;
 			TH1F *histone = hist1->Clone("histone");
 			histone->Reset();
 
 			Int_t i;
+			Double_t one = 1;
 			for (i = 1; i <= 1820; i++) {
 				histone->SetBinContent(i,1);
 			}
