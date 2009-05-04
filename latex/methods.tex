@@ -1,25 +1,25 @@
 \section{Methods}
-The idea is to calculate the NCG cross section for the new contribution gg $\rightarrow Z^0$ in the interaction pp $\rightarrow \mu \bar \mu$. To find this contribution we have to examine the different amplitudes in the total cross section:
+The idea is to calculate the NCG cross section for the new contribution gg $\rightarrow Z^0$ in the interaction pp $\rightarrow \mu \bar \mu$. To find this contribution we have to examine the different amplitudes in the total cross section [DEFINE THE CONCEPT OF CROSS SECTION]  \footnote{We will return to define the concept of cross section in section ???.}
 
 \begin{align}
 \sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} &= |A_{q \bar q \rightarrow \gamma} + A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2} \nonumber \\
-&= |A_{q \bar q \rightarrow \gamma}|^{2} + |A_{q \bar q \rightarrow Z}|^ {2} + |A_{gg \rightarrow Z}|^{2} + A_{q \bar q \rightarrow Z }A_{qq \rightarrow \gamma},
+&= |A_{q \bar q \rightarrow \gamma}|^{2} + |A_{q \bar q \rightarrow Z}|^ {2} + |A_{gg \rightarrow Z}|^{2} + A_{q \bar q \rightarrow Z }A_{qq \rightarrow \gamma}.
 \end{align}
 
-The last term is the interference part between $\gamma$ and Z, the second last is the cross section coming from NCG, that we are interestet in. The two first terms we already know:
+The last term is the interference part between $\gamma$ and Z, the second last is the cross section coming from NCG, that we are interested in. The two first terms we already know
 
 \begin{align}
 A_{q \bar q \rightarrow Z} &= \sigma_{q \bar q \rightarrow Z} (\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q}) \nonumber \\ 
-A_{q \bar q \rightarrow \gamma} &= \sigma_{q \bar q \rightarrow  \gamma}( \mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q})
+A_{q \bar q \rightarrow \gamma} &= \sigma_{q \bar q \rightarrow  \gamma}( \mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q}).
 \end{align}
 
-Here the symbol $\oplus$ means that we multiply distibutions, bin by bin individual, $\mathcal{M}$ is the invariant mass for the two particles in the final state and P$_{pp}$ is the parton luminosity function. Know our job is to find the last one, the amplitude of two gluons coupling to Z. Lets therefore take af look at the cross section for the Z-production.
+Here the symbol $\oplus$ means that we multiply distributions, bin by bin individually, $\mathcal{M}$ is the invariant mass for the two particles in the final state and P$_{pp}$ is the parton luminosity function [DEN MÅ VI OGSÅ HELLERE LIGE DEFINERE]. Now our job is to calculate the last term, the amplitude of two gluons coupling to Z. Lets therefore take a look at the cross section for the Z-production.
 
 \begin{equation}
 \sigma_{q \bar q/gg \rightarrow Z} = |A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2}=|A_{q \bar q \rightarrow Z}|^{2}+|A_{gg \rightarrow Z}|^{2}.
 \end{equation}
 
-We notice that this is not the total Z-production since the inteference part disappear. We can only create inteference if we have the same initial and final state, here we have different initial states. If we could write $A_{gg \rightarrow Z}$ as af percentage of $A_{q \bar q \rightarrow Z}$ then we would have
+We notice that this is not the total Z-production since the interference part disappear. We can only create interference if we have the same initial and final state, here we have different initial states. If we could [MEN DET GØR VI JO, SÅ DET KAN VI VEL!?] write $A_{gg \rightarrow Z}$ as a percentage of $A_{q \bar q \rightarrow Z}$ then we would have
 
 \begin{equation}
 \sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \oplus \textrm{P}_{pp}(\mathcal{M}_{gg})=\sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \theta_{NCG}^{\Lambda}\textrm{P}_{pp}(\mathcal{M}_{gg})
@@ -35,10 +35,10 @@ where $\theta_{NCG}$ is the NCG .... $\Lambda$ indicates the mass in the vertex 
 
 Well, all we now need to know is the ratio P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ since $ \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}$ is what CompHEP gives us when we make the interaction: $u \bar u \rightarrow Z \rightarrow \mu \bar \mu $. If we can construct two processes: $\sigma_{pp}^{A}=\sigma^{A} \oplus$ P$_{pp}^{gg}$ and $\sigma_{pp}^{B}=\sigma^{B} \oplus$ P$_{pp}^{q \bar q}$, such that $\sigma^{A}=\sigma^{B}$, then $\sigma_{pp}^{A}/\sigma_{pp}^{B}$ equals  P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ up to a scaling factor.
 
-Since both the photons and gluons are massless they should have the same distribution or at least the distrubutions should be proportional. Thats why we choose interaction A to be $gg \rightarrow g \rightarrow q \bar q$ and interaction B to be $q \bar q \rightarrow \gamma \rightarrow q \bar q$. The coupling constants are respectively $\alpha_{s}$ and $\alpha_{qed}$\\
+Since both the photons and gluons are massless they should have the same distribution or at least the distributions should be proportional. Thats why we choose interaction A to be $gg \rightarrow g \rightarrow q \bar q$ and interaction B to be $q \bar q \rightarrow \gamma \rightarrow q \bar q$. The coupling constants are respectively $\alpha_{s}$ and $\alpha_{qed}$\\
 
 
-We could also choose B to be  $q \bar q \rightarrow g \rightarrow q \bar q$, and maby this would be even smarter because now A and B share $\alpha_{s}$. If we take a glance at the Feynmann diagrams for the three interactions we can simply by counting find the different color factors:
+We could also choose B to be  $q \bar q \rightarrow g \rightarrow q \bar q$, and maybe this would be even smarter because now A and B share $\alpha_{s}$. If we take a glance at the Feynmann diagrams for the three interactions we can simply by counting find the different color factors:
 \begin{align}
 	CF_{gg \rightarrow g \rightarrow q \bar q}&=\frac{1}{8} \cdot \frac{1}{8} \cdot 8=\frac{8}{64}\\
 	CF_{q \bar q \rightarrow \gamma \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3} \cdot 8=\frac{8}{9}\\
@@ -54,7 +54,7 @@ This gives us the two ratios:
 
 Where $C(r) = \frac{1}{2}$ for the fundamental representation of SU(3) and the factor of two accounts for the symmetry of swapping the two particles in the initial state.
 
-Now we are actually ready to create the wanted cross sections with CompHEP. We collide two protons with beam energy 7000 GeV and then looks at diffferent outcomes:
+Now we are actually ready to create the wanted cross sections with CompHEP. We collide two protons with beam energy 7000 GeV and then looks at different outcomes:
 
 \begin{align}
 gg \rightarrow g \rightarrow u \bar u \nonumber \\ \nonumber
@@ -64,7 +64,7 @@ u \bar u \rightarrow Z \rightarrow \mu \bar \mu \\ \nonumber
 u \bar u \rightarrow \gamma \rightarrow \mu \bar \mu 
 \end{align}
 
-We have made cuts in the transverse momentum of the outcoming particles (from 50 GeV) and also in their invariant mass (from 20 to 1820 GeV). 
+We have made cuts in the transverse momentum of the out-coming particles (from 50 GeV) and also in their invariant mass (from 20 to 1820 GeV). 
 
 
 \subsubsection{CompHEP}
@@ -75,7 +75,7 @@ Cannot introduse any Lorentz violating terms
 transform the symbolic calculations into the lagrange formulation
 
 
- CompHEP is a package for automatic calculations of elementary particle decays and collision processes in the lowest order of perturbation theory (the tree level approximation). The main idea behind the program is to make calculations and data manipulations from Lagrangians to final distributions with a high level of automation. There are several packages created to solve the problem in a similar way: FeynArts/FeynCalc, GRACE, HELAS, MadGraph. CompHEP is a GUI computer system with context help. A user makes all manupulations by means of graphical menus.
+ CompHEP is a package for automatic calculations of elementary particle decays and collision processes in the lowest order of perturbation theory (the tree level approximation). The main idea behind the program is to make calculations and data manipulations from Lagrangians to final distributions with a high level of automation. There are several packages created to solve the problem in a similar way: FeynArts/FeynCalc, GRACE, HELAS, MadGraph. CompHEP is a GUI computer system with context help. A user makes all manipulations by means of graphical menus.
 
 The notations used in CompHEP are very similar to those used in particle physics.
 

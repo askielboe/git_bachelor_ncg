@@ -39,29 +39,34 @@ where $x, \dot{x} \equiv \frac{dx}{dt}$ are generalized coordinates.
 
 Equation \eqref{eq:path} is called the propagator in QFT. This equation describes the probability amplitude that a particle will go from the initial state to the final state in time $t_f - t_i$.
 
-\subsubsection{Symmetry groups}
-Noethe's Theorem states that for any transformation under which a physical system is invariant there exists a conserved quantity of that system. The classical examples are translations and rotations in the three spatial dimensions. If the system is invariant under those two transformations this corresponding to the conservation of linear and angular momentum. Thus these transformations forms a symmetry group of the theory. The two, physically equivalent situations, can be described by different mathematical configurations depending on the reference frame. The two descriptions are related to each other by this symmetry group.
+\subsubsection{Symmetry groups and gauge theories}
+Noethe's Theorem states that for any transformation under which a physical system is invariant there exists a conserved quantity of that system. The classical examples are translations and rotations in the three spatial dimensions. If the system is invariant under those two transformations this corresponds to the conservation of linear and angular momentum. Thus these transformations forms a symmetry group of the theory. The two, physically equivalent situations, can be described by different mathematical configurations depending on the reference frame. The two descriptions are related to each other by this symmetry group.
 
-\subsubsection{Gauge transformations and gauge groups}
-In quantum electrodynamics the wave equation is invariant under local (space-time-dependent) phase transformations, corresponding to rotations in the complex phase space of the wave function. These transformations can be represented by
+In physics, any field theory in which the Lagrangian is invariant under some kind of continuous transformation is called a gauge theory, the invariance referred to as a gauge invariance. The group of transformations under which the Lagrangian is invariant is called the gauge group of the theory\footnote{For a historical account of the development of gauge theories, at a level relevant for the present discussion, see \cite{gross1992gtp}.}.
+
+\subsubsection{Quantum electrodynamics and SU(1)}
+In quantum electrodynamics the wave equation is invariant under local, space-time dependent, phase transformations, corresponding to rotations in the complex phase space of the wave function. In practice this invariance comes about when, in order to make predictions of physical observable, we have to take the absolute square of the wave function. Doing this information about the phase of the complex wave function is lost and we are left with only the absolute size of the complex number. This means that we can never physically measure the phase of the wave function, only its amplitude. Because of this, if we want the wave functions to represent actual physical systems, we have to insist that our equations be invariant under all local phase transformations of $\psi$ given by
 
 \begin{equation} \label{eq:localphase}
-    \psi \rightarrow e^{i\alpha(\mathbf{x})} \psi
+    \psi \rightarrow e^{i\alpha(\mathbf{x})} \psi.
 \end{equation}
 
-and together they form the symmetry group SU(1).
+Together these transformations form the mathematical symmetry group SU(1). This is simply the group of all transformations of the form \eqref{eq:localphase}.  So far this does not seem to pose any problems for us. Adding a phase may change the wave function, but all predictions made about the position of the particle, described by this function, are left invariant. Specifically
 
-This is all good, however for the derivative operator $\partial_\mu$ to be well-defined for all points in space-time we have to replace it by the covariant derivative
+\begin{equation}
+	|\psi|^2 \rightarrow |e^{i\alpha(\mathbf{x})} \psi|^2 = |\psi|^2.
+\end{equation}
+
+However for the derivative operator $\partial_\mu$ to be well-defined for all points in space-time we have to replace it by the covariant derivative
 
 \begin{equation} \label{eq:covariant}
-	\partial_\mu \Rightarrow D_\mu = \partial_\mu - \textrm{i}e A_\mu.
+	\partial_\mu \rightarrow D_\mu = \partial_\mu - \textrm{i}e A_\mu.
 \end{equation}
 
-Here we have introduced a new field $A_\mu$, which is simply the photon field of QED. So the invariance under local SU(1) transformations led us to the conclusion, that for our theories to be gauge invariant, we have to add a new field to the theory and in this case it was the photon field. The photon is a gauge boson of the standard model.
+The covariant derivative compensates for the fact, that when making the local phase change we, when calculating the derivative, pick up an extra factor in front of the exponential in the wave function. So we have introduced a new vector field $A_\mu$, designed to exactly cancel this extra factor, making sure that gauge invariance is satisfied under local continuous SU(1) transformations. The field, it turns out, is actually just the electromagnetic field know from classical theory of electromagnetism. When $A_\mu$ is quantized in the context of quantum field theory the quanta of this field are the photons, know as the gauge bosons of QED. By insistence on local gauge invariance of the Lagrangian of the free electron we get the electromagnetic field, and corresponding interactions, almost for free. This is a good example of the power and simplicity of the gauge principle.
 
-This is the essential principle of gauge theories, one that have led to the discovery of many new fields and particles.
-
-Following this logic the gauge group governing weak interaction is combined group SU(1) $\times$ SU(2), where SU(2) is the group of $2 \times 2$ complex unitary matrices\footnote{More specifically SU(2) is a Lie group and its Lie algebra is the set of anti-Hermition $2 \times 2$ matrices with trace 0.}. The generators of SU(2) are the Pauli matrices
+\subsubsection{Gauging the SU(2) and SU(3) Lie groups}
+The previous discussion outlines many of the essential principles of gauge theories. Following this logic the gauge group governing weak interaction turns out to be the composed group SU(1) $\times$ SU(2), where SU(2) is the group of $2 \times 2$ complex unitary matrices\footnote{More specifically SU(2) is a Lie group and its Lie algebra is the set of anti-Hermition $2 \times 2$ matrices with trace 0. For more information about Lie groups and Lie algebras see \cite{fulton1991rtf}.}. Thus electromagnetism and the weak interaction responsible for radioactive decay are combined into one theory, the electroweak theory. The generators of SU(2) are the Pauli matrices
 
 \begin{equation}
 	\sigma_1 =
@@ -83,47 +88,63 @@ Following this logic the gauge group governing weak interaction is combined grou
 
 The gauge boson associated with the weak force are the $W^+$, $W^-$ and the $Z^0$ bosons.
 
-The gauge bosons mediating the strong interaction are characterized by the SU(3) gauge group. The generators of SU(3) are the 8 Gell-Mann matrices giving rise to 8 gauge bosons of the strong interaction know as gluons, each having a property called color. Because of this color feature the gauge theory of the strong interaction is called Quantum Chromodynamics (QCD).
+The gauge bosons mediating the strong interaction are characterized by the SU(3) gauge group. The generators of SU(3) are the 8 Gell-Mann matrices
+\begin{align} \label{eq:gellmannmatrices}
+	\lambda_1 &= \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+	\lambda_2 = \begin{pmatrix} 0 & -i & 0 \\ i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+	\lambda_3 = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{pmatrix} 
+	\lambda_4 = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{pmatrix} \nonumber \\
+	\lambda_5 &= \begin{pmatrix} 0 & 0 & -i \\ 0 & 0 & 0 \\ i & 0 & 0 \end{pmatrix}
+	\lambda_6 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix} 
+	\lambda_7 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & -i \\ 0 & i & 0 \end{pmatrix} 
+	\lambda_8 = \frac{1}{\sqrt{3}} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -2 \end{pmatrix},
+\end{align}
 
-Combining QED and QCD into U(1) $\times$ SU(2) $\times$ SU(3) we arrive at what is know as the Standard Model (SM) of particle physics.
+giving rise to 8 gauge bosons of the strong interaction know as gluons, each having a property called color. Because of this color feature the gauge theory of the strong interaction is called Quantum Chromodynamics (QCD). The reason for having 8 gluons is that we need 8 matrices to span the 'color' space laid out by the Gell-Mann matrices, while requiring that they have determinant 1. This is in fact the same reason why we need three Pauli matrices to span the group of SU(2) [KAN MAN SIGE DET, MATEMATISK?].
 
 \subsection{The Standard Model}
-The Standard Model of particle physics is a non abelian gauge theory consisting of the gauge group $SU$
+Combining electroweak theory and quantum chromo dynamics using the group U(1) $\times$ SU(2) $\times$ SU(3) theorists are able to account for a great variety of elementary particles and interactions, and make profoundly accurate predictions. This theory is know as the Standard Model of particle physics. The Standard Model is a non abelian gauge theory. \footnote{Non abelian meaning that, save for U(1), the generators of the gauge groups are non-commuting.}
 
 \subsubsection{Particles of the standard model}
-
-In the Standard Model of particle physics we divide the particles into two main groups; fermions and bosons. Fermions are defined as having half-integral spin and are described by Fermi-Dirac statistics, these include the leptons and quarks. Fermions constitutes all known matter and as such they are sometimes described as matter-particles. Bosons, on the other hand, have zero or integral spin and are described by Bose-Einstein statistics. Some of these, namely the gauge bosons, are responsible for the weak, strong and electromagnetic interactions. Therefore the gauge bosons are often called the force-carriers of their respective interactions. It may be appropriate to note that the formalism of quantum mechanics makes no clear distinction between the concepts of matter-particles and force-particles. Below is a table with all known quarks, leptons and gauge bosons. With the exception of neutrinos, which have to be detected in other ways, all of them have been seen in particle accelerator experiments.
 
 % Billede med partikel-generationer fra Wikipedia.
 \includefigure{fig:particle_generations}{0.3}{./images/particle_generations.eps}{The fundamental particles in the Standard Model. Fermions and bosons, listed in their respective generations. (Source: Wikimedia Commons).}
 
+In the Standard Model of particle physics we divide the particles into two main groups; fermions and bosons. Fermions are defined as having half-integral spin and are described by Fermi-Dirac statistics, these include the leptons and quarks. Fermions constitutes all known matter and as such they are sometimes described as matter-particles. Bosons, on the other hand, have zero or integral spin and are described by Bose-Einstein statistics. Some of these, namely the gauge bosons, are responsible for the weak, strong and electromagnetic interactions. Therefore the gauge bosons are often called the force-carriers of their respective interactions. It may be appropriate to note that the formalism of quantum mechanics makes no clear distinction between the concepts of matter-particles and force-particles. Below is a table with all known quarks, leptons and gauge bosons. With the exception of neutrinos, which have to be detected in other ways, all of them have been seen in particle accelerator experiments.
+
 \subsubsection{Feynman diagrams}
-When calculating amplitudes for particle interactions in the SM it can be very instructive to make use of \emph{Feynman diagrams}. This approach was proposed by american physicist Richard P. Feynman in 1949\cite{feynman1949sta}. A typical space-time interaction, the annihilation of an electron and a positron, is represented as a Feynman diagram in Figure \ref{fig:feynmandiagram}.
+When calculating amplitudes for particle interactions in the SM it can be very instructive to make use of \emph{Feynman diagrams}. This approach was proposed by american physicist Richard P. Feynman in 1949\cite{feynman1949sta}. A typical space-time interaction the production of two muons from the interaction between an up and an anti-up quark, is represented as a Feynman diagram in Figure \ref{feyn:uu_a_mm}. Space is extending top-down in the diagram while time is increasing from left to right. Arrows pointing along the flow of time, to the right, are particles, while arrows pointing against the flow of time, to the left, are anti-particles.
 
 \begin{figure}[htp]
 \centering
-	\input{./jaxo/ee-a-ee.tex}
-\caption{Feynman diagram for the annihilation of an electron and a positron to a photon which subsequently splits up into another electron-positron pair. Time is positive moving from left to right in the diagram.} \label{fig:feynmandiagram}
+	\input{./jaxo/uu_a_mm_axis.tex}
+\caption{Feynman diagram for the interaction between two quarks, the up and the anti-up, and a virtual photon to produce a muon and an anti-muon. Time is increasing from left to right in the diagram.} \label{fig:feyn:uu_a_mm}
 \end{figure}
 
-% \begin{figure}[htp]
-% \centering
-% 	\input{./jaxo/uu-a-dd.tex}
-% \caption{Another diagram.}
-% \end{figure}
+Using these diagrams Feynman were able to greatly simplify how we think about and calculate interactions in the SM. Having drawn a diagram as in \ref{fig:feyn:uu_a_mm} we now want calculate the probability for this process to happen. Given the diagram one can write down the amplitude using so called \emph{Feynman rules} associated with the different parts of the diagram\footnote{For a list of Feynman rules see appendix C in \cite{zee2005qft}.}. We won't go in to detail with writing down the complete feynman rules for \ref{fig:feyn:uu_a_mm}, but we can learn a lot by looking at the vertices.
 
-Using these diagrams Feynman were able to greatly simplify how we think about and calculate interactions in the SM. Having drawn a diagram as in \ref{fig:feynmandiagram} we now want calculate the probability for this process to happen. Given the diagram one can simply write down the amplitude using so called Feynman rules associated with the different parts of the diagram. We won't go in to detail with writing down the complete feynman rules, but we can learn a lot by looking closer at the vertices.
-
-Each vertex represents an interaction. Depending on the nature of this interaction we assign a constant related to the coupling between the lines going in to this vertex. This constant is proportional to the probability for the process to happen. For the diagram in Figure \ref{fig:feynmandiagram} the force acting at the vertices is the electromagnetic force. The strength of this force is determined by the fine structure constant
+Each vertex represents an interaction. Depending on the nature of this interaction we assign a constant related to the coupling between the lines going in to this vertex. This constant is proportional to the probability for the process to happen. For the diagram in Figure \ref{fig:feyn:uu_a_mm} the force acting at the vertices is the electromagnetic force. The strength of this force is determined by the fine structure constant
 
 \begin{equation}
-	\alpha = \frac{e^2}{4\pi\varepsilon_0\hbar c},
+	\alpha_{\textrm{\tiny{QED}}} = \frac{e^2}{4\pi\varepsilon_0\hbar c},
 \end{equation}
 
-where $e$ is the charge of the positron, $\varepsilon_0$ is the permittivity of free space, $c$ is the speed of light in vacuum and $\hbar$ is the reduced Planck constant. In natural units, setting $c = \hbar = 1$, $\alpha$ is approximately equal to
+where $e$ is the charge of the positron, $\varepsilon_0$ is the permittivity of free space, $c$ is the speed of light in vacuum and $\hbar$ is the reduced Planck constant. In natural units, setting $c = 1$ and $\hbar = 1$, and at low energies $\alpha_{\textrm{\tiny{QED}}}$ is approximately equal to
 
 \begin{equation}
-	 \alpha \approx \frac{1}{137}.
+	 \alpha_{\textrm{\tiny{QED}}} \approx \frac{1}{137}.
 \end{equation}
 
-Constants like these are called coupling constants because they relate to the coupling of different particles interacting with each other.
+Constants like these are appropriately called coupling constants\footnote{At increasing energies these constants are no longer constant, but are observed to be running, therefore they are also called running coupling constants. At energies around [GUT ENERGI] the fundamental forces are thought to combine into one grand unified force with one coupling strength $\alpha_{\textrm{\tiny{GUT}}}$. GUT stands for \emph{Grand Unified Theory}.}. The coupling constant associated with the strong force we will label $\alpha{\textrm{\tiny{S}}}$.
+
+The process in Figure \ref{fig:feyn:uu_a_mm} is not the only way to produce a muon/anti-muon pair from a up/anti-up pair. Just take a look at Figure \ref{fig:feyn:uu_a_mm_2}. In this case the photon splits up into a electron/positron pair which again annihilates into a photon, that goes on as if nothing had happened. Because of Heisenberg's uncertainty relation we can never, in any thinkable experiment, decide which one of the two processes actually happened, so we have to take them both into consideration. To calculate the total probability amplitude for the process $u \bar u \rightarrow \mu \mu^+$ we then have to include diagrams of these higher order perturbations as well. In fact we can add as many electron/positron pairs as we like. In principle, if we want to know the exact probability, we would have to include infinitely many diagrams, or processes, in our calculation. What saves us is the fact that as we add more vertices the overall probability is multiplied by factors of $\alpha^2 << 1$ for each vertex, so disaster is easily avoided by the use of well know perturbation theory.
+
+\begin{figure}[htp]
+\centering
+	\input{./jaxo/uu_a_mm_2.tex}
+\caption{Higher order contribution to the process of Figure \ref{fig:feyn:uu_a_mm}. The circle in the middle represents production of a virtual electron/positron pair which again annihilates to produce a photon.} \label{fig:feyn:uu_a_mm_2}
+\end{figure}
+
+But the loop type diagrams as the one in Figure \ref{fig:feyn:uu_a_mm_2} poses another, more fundamental problem. Just as we had to sum over all possible diagrams, we have to integrate over all possible momenta of the virtual electron/positron pair [DEFINE VIRTUAL PARTICLE] in the loop. This integral turns out to be horribly divergent, we have an infinite number of ways in which momentum can be divided between the pair. Again we are saved, but this time the argument is a lot more subtle. The infinities are removed by the technique of renormalization.
+
+\subsubsection{Renormalization}
