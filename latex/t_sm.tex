@@ -113,12 +113,12 @@ Combining electroweak theory and quantum chromo dynamics using the group U(1) $\
 In the Standard Model of particle physics we divide the particles into two main groups; fermions and bosons. Fermions are defined as having half-integral spin and are described by Fermi-Dirac statistics, these include the leptons and quarks. Fermions constitutes all known matter and as such they are sometimes described as matter-particles. Bosons, on the other hand, have zero or integral spin and are described by Bose-Einstein statistics. Some of these, namely the gauge bosons, are responsible for the weak, strong and electromagnetic interactions. Therefore the gauge bosons are often called the force-carriers of their respective interactions. It may be appropriate to note that the formalism of quantum mechanics makes no clear distinction between the concepts of matter-particles and force-particles. Below is a table with all known quarks, leptons and gauge bosons. With the exception of neutrinos, which have to be detected in other ways, all of them have been seen in particle accelerator experiments.
 
 \subsubsection{Feynman diagrams}
-When calculating amplitudes for particle interactions in the SM it can be very instructive to make use of \emph{Feynman diagrams}. This approach was proposed by american physicist Richard P. Feynman in 1949 \cite{feynman1949sta}. A typical space-time interaction the production of two muons from the interaction between an up and an anti-up quark, is represented as a Feynman diagram in Figure \ref{fig:feyn:uu_a_mm}. Space is extending top-down in the diagram while time is increasing from left to right. Arrows pointing along the flow of time, to the right, are particles, while arrows pointing against the flow of time, to the left, are anti-particles.
+When calculating amplitudes for particle interactions in the SM it can be very instructive to make use of \emph{Feynman diagrams}. This approach was proposed by american physicist Richard P. Feynman in 1949 \cite{feynman1949sta}. A typical space-time interaction is the scattering of an electron and a positron by virtual annihalation followed by pair production. This process is represented as a Feynman diagram in Figure \ref{fig:feyn:ee_a_ee}. Space is extending top-down in the diagram while time is increasing from left to right. Arrows pointing along the flow of time, to the right, are particles, while arrows pointing against the flow of time, to the left, are anti-particles.
 
 \begin{figure}[htp]
 \centering
-	\input{./jaxo/uu_a_mm_axis.tex}
-\caption{Feynman diagram for the interaction between two quarks, the up and the anti-up, and a virtual photon to produce a muon and an anti-muon. Time is increasing from left to right in the diagram.} \label{fig:feyn:uu_a_mm}
+	\input{./jaxo/ee_a_ee_axis.tex}
+\caption{Feynman diagram for the electromagnetic scattering of an electron and a positron. Time is increasing from left to right in the diagram.} \label{fig:feyn:ee_a_ee}
 \end{figure}
 
 The wavy line in the middle is a so called \emph{virtual particle}, in this case a virtual photon. It is virtual in the sense that we never actually measure it without disturbing the process and thereby destroying it. We can only ever measure the initial-state (incoming) particles and the final-state (outgoing) particles. Another reason why these, intermediate particles, are called virtual is suggested by looking at Figure \ref{fig:feyn:ee_a}. In the center-of-mass (CM) frame of the electron and positron, the two have exactly equal and opposite momenta. Together they have zero momentum in the CM-frame. Therefore the two particles can never annihilate to create a single photon, which always have momentum, given that it always travels at the speed $c$.
@@ -126,41 +126,64 @@ The wavy line in the middle is a so called \emph{virtual particle}, in this case
 \begin{figure}[htp]
 \centering
 	\input{./jaxo/ee_a.tex}
-\caption{Example of a virtual process in which an electron and a positron annihilates to crate a virtual photon seemingly violating conservation of momentum at the vertex. This process can never happen on its own, but it can form part of other diagrams in a similar way to that in Figure \ref{fig:feyn:uu_a_mm}.} \label{fig:feyn:ee_a}
+\caption{Example of a virtual process in which an electron and a positron annihilates to crate a virtual photon seemingly violating conservation of momentum at the vertex. This process can never happen on its own, but it can form part of other diagrams in a similar way to that in Figure \ref{fig:feyn:ee_a_ee}.} \label{fig:feyn:ee_a}
 \end{figure}
 
 To uphold energy and momentum conservation at the vertex the virtual photon have to have an energy different from that of a free photon. In principle it can take on \emph{any} value. The virtual photon is said to be \emph{off mass shell} or simply \emph{off-shell}\footnote{See chapter 2 in \cite{griffiths1987iep} for more about virtual particles.}.
 
-Using these diagrams Feynman were able to greatly simplify how we think about and calculate interactions in the SM. Having drawn a diagram as in Figure \ref{fig:feyn:uu_a_mm} we now want calculate the probability for this process to happen, that is to say we want the \emph{cross section} $\sigma$ of the process\footnote{See Appendix [DEN MED CROSS SECTIONS].}. Given the diagram one can write down the \emph{amplitude} $\mathcal{M}$ for this process, using so called \emph{Feynman rules} associated with the different parts of the diagram. Given $\mathcal{M}$ we can calculate the cross section using Fermi's Golden Rule. The amplitude, or the \emph{matrix element} at is is some times called, $\mathcal{M}$ accounts for the dynamics taking place in the interaction, while the Golden Rule, or \emph{phase space} factor, takes care of the kinematics.
+\subsubsection{Feynman rules and process amplitudes}
+Using these diagrams Feynman were able to greatly simplify how we think about and calculate interactions in the SM. Having drawn a diagram as in Figure \ref{fig:feyn:ee_a_ee} we now want calculate the probability for this process to happen, that is to say we want the \emph{cross section} $\sigma$ of the process\footnote{See Appendix [DEN MED CROSS SECTIONS].}. Given the diagram one can write down the \emph{amplitude} $\mathcal{M}$ for this process, using so called \emph{Feynman rules} associated with the different parts of the diagram. Given $\mathcal{M}$ we can calculate the cross section using Fermi's Golden Rule. The amplitude, or the \emph{matrix element} at is is some times called, $\mathcal{M}$ accounts for the dynamics taking place in the interaction, while the Golden Rule, or \emph{phase space} factor, takes care of the kinematics.
 
-To derive the actual feynman rules is way beyond this text, but we may still learn a lot by examining the results. Each vertex represents an interaction. Depending on the nature of this interaction we assign a number $g$ related to the coupling between the lines going in to this vertex. This number is proportional to the probability for the process to happen. For the diagram in Figure \ref{fig:feyn:uu_a_mm} the force acting at the vertices is the electromagnetic force. The strength of this force is determined by the fine structure constant [ELLER HVAD!?!?! JEG ER LIDT FORVIRRET OVER ENHEDER ETC ATM.]
+To derive the actual feynman rules is way beyond this text, but we may still learn a lot by examining the results. Each vertex represents an interaction. Depending on the nature of this interaction we assign a number $g$ related to the coupling between the lines going in to this vertex. This number is proportional to the probability for the process to happen. For the diagram in Figure \ref{fig:feyn:ee_a_ee} the force acting at the vertices is the electromagnetic force. The strength of this force is determined by the fine structure constant [ELLER HVAD!?!?! JEG ER LIDT FORVIRRET OVER ENHEDER ETC ATM.]
 
 \begin{equation}
-	\alpha = g_{\textrm{\tiny{QED}}} = \frac{e^2}{4\pi\varepsilon_0\hbar c},
+	\alpha = g_e = \frac{e^2}{4\pi\varepsilon_0\hbar c},
 \end{equation}
 
-where $e$ is the charge of the positron, $\varepsilon_0$ is the permittivity of free space, $c$ is the speed of light in vacuum and $\hbar$ is the reduced Planck constant. In natural units, setting $c = 1$ and $\hbar = 1$, and at low energies $\alpha_{\textrm{\tiny{QED}}}$ is approximately equal to
+where $e$ is the charge of the positron, $\varepsilon_0$ is the permittivity of free space, $c$ is the speed of light in vacuum and $\hbar$ is the reduced Planck constant. In natural units, setting $c = 1$ and $\hbar = 1$, and at low energies $\alpha$ is approximately equal to
 
 \begin{equation}
-	 g_{\textrm{\tiny{QED}}} \approx \frac{1}{137}.
+	 g_e \approx \frac{1}{137}.
 \end{equation}
 
 Constants like these are appropriately called coupling constants\footnote{At increasing energies these constants are no longer constant, but are observed to be running, therefore they are also called running coupling constants. At energies of around $10^{14}$ GeV the fundamental forces are thought to combine into one grand unified force with one coupling strength $\alpha_{\textrm{\tiny{GUT}}}$. GUT stands for \emph{Grand Unified Theory}.} and they are always dimensionless.
 
 The other parts of the diagram get their own factors according to the feynman rules. Each external, incoming or outgoing, line get a factor related to the type of particle and its direction, ie. if its a particle or an antiparticle. Internal lines, also called propagators get different factors because they don't lie on their mass shell and are what we call virtual particles. We then use delta functions to impose energy momentum conversation at the vertices and finally we integrate over internal momenta\footnote{Remember we can never measure the virtual particles, so we have to take into account all the different states the propagator can have been in, that is all the different momenta it could have had. As they all contribute to the amplitude.}.
 
+Following the above rules including some more technical manipulations we can write down the complete amplitude. In case of Figure \ref{fig:feyn:ee_a_ee} the matrix element is given by \cite{griffiths1987iep}
+
+\begin{equation}
+	\mathcal{M} = -\frac{g_e^2}{(p_1 + p_2)^2} (\bar u(3) \gamma^\mu v(4)) (\bar v(2) \gamma_\mu u(1)),
+\end{equation}
+where [SKRIV HVAD u OG v ER!]. Now that we have written down the amplitude for our process, the next step is to calculate the actual cross section for the process. To do this we use Fermi's Golden Rule.
+
+\subsubsection{Fermi's golden rule for scattering}
+Fermi's golden rule states that for scattering between incoming particles with 4-momenta $p_1, p_2$ producing $n$ particles with momenta $p_3 \dots , p_n$ the scattering cross section is given by \cite{griffiths1987iep}
+\begin{align}
+	\sigma = &\frac{S\hbar^2}{4\sqrt{(p_1 \cdot p_2)^2 - (m_1 m_2 c^2)^2}} \int |\mathcal{M}|^2 (2 \pi)^4 \delta^4(p_1+p_2-p_3 \dots -p_n) \\
+	&\times \prod_{j=3}^n 2\pi \delta(p_j^2 - m_j^2c^2)\theta(p_j^0) \frac{\textrm{d}p_j}{(2\pi)^2}.
+\end{align}
+Here $S$ is a factor taking care of double counting of identical particles in the final state and $\theta$ is the Heaviside step function defined by
+\begin{equation}
+	 \theta(x) = 
+	\begin{cases} 
+	  0,  & \mbox{for }x < 0 \\
+	  1,  & \mbox{for }x > 0 
+	\end{cases}.
+\end{equation}
+
 \subsubsection{Perturbation theory and renormalization}
-The process in Figure \ref{fig:feyn:uu_a_mm} is not the only way to produce a muon/anti-muon pair from a up/anti-up pair. Just take a look at Figure \ref{fig:feyn:uu_a_mm_2}. In this case the photon splits up into a electron/positron pair which again annihilates into a photon, that goes on as if nothing had happened. Because of Heisenberg's uncertainty relation we can never, in any thinkable experiment, decide which one of the two processes actually happened, so we have to take them both into consideration. To calculate the total probability amplitude for the process $u \bar u \rightarrow \mu \mu^+$ we then have to include diagrams of these higher order perturbations as well. In fact we can add as many electron/positron pairs as we like. In principle, if we want to know the exact probability, we would have to include infinitely many diagrams, or processes, in our calculation. What saves us is the fact that as we add more vertices the overall probability is multiplied by factors of $\alpha^2 << 1$ for each vertex, so the total amplitude is convergent and disaster is avoided by the use of perturbation theory.
+The diagram in Figure \ref{fig:feyn:ee_a_ee} is not the only way that this process can happen. Just take a look at Figure \ref{fig:feyn:ee_a_ee_2}. In this case the virtual photon splits up into a electron/positron pair which again annihilates into a photon. We can't decide which one happened without disturbing the process all together, therefore we have to take them both into consideration. To calculate the total amplitude for the process $u \bar u \rightarrow \mu \mu^+$ we have to include diagrams of these higher order perturbations as well. In fact we can add as many electron/positron pairs as we like. In principle, if we want to know the exact probability, we would have to include infinitely many diagrams in our calculation. What saves us is the fact that as we add more vertices the overall probability is multiplied by factors of $g_e^2 << 1$ for each vertex, so the total amplitude is convergent, and disaster is avoided by the use of perturbation theory.
 
 \begin{figure}[htp]
 \centering
-	\input{./jaxo/uu_a_mm_2.tex}
-\caption{Higher order contribution to the process of Figure \ref{fig:feyn:uu_a_mm}. The circle in the middle represents production of a virtual electron/positron pair which again annihilates to produce a photon, giving rise to a net polarization of the vacuum.} \label{fig:feyn:uu_a_mm_2}
+	\input{./jaxo/ee_a_ee_2.tex}
+\caption{Higher order contribution to the process of Figure \ref{fig:feyn:ee_a_ee}. The circle in the middle represents production of a virtual electron/positron pair which again annihilates to produce a photon, giving rise to a net polarization of the vacuum.} \label{fig:feyn:ee_a_ee_2}
 \end{figure}
 
-But the loop type diagrams as the one in Figure \ref{fig:feyn:uu_a_mm_2} poses another, more fundamental problem. Just as we had to sum over all possible diagrams, we have to integrate over all possible momenta $p$ of the virtual electron/positron pair in the loop. This integral turns out to depend mainly on $1 / p^4$ and the volume element $p^3$, so we end up with an integral of the form
+But the loop type diagrams as the one in Figure \ref{fig:feyn:ee_a_ee_2} poses another, more fundamental problem. Just as we had to sum over all possible diagrams, we have to integrate over all possible momenta $p$ of the virtual electron/positron pair in the loop. This integral turns out to depend mainly on $1 / p^4$ and the volume element $p^3$, so we end up with an integral of the form
 \begin{equation}
-	\int_0^\infty \frac{1}{p^4}p^3 dp,
+	\int^\infty \frac{1}{p^4}p^3 dp = \ln{p}|^\infty = \infty,
 \end{equation}
 which diverges logarithmically. Again we are saved, but this time the argument is a lot more subtle and took many notable physicists many years to develop. The infinities are removed by the technique of renormalization. Essentially what we do is that we normalize by an infinite normalization constant, effectively and exactly canceling the divergent loop integrals. This is somewhat an empirical motivation, as we know that the probability has to be finite (actually is has to be $\leq 1$), but also because we know that the energy of free particles has to be finite. One way to think of it is that we include all loop type vacuum oscillations in the description of the particle. Since we can only ever measure the total energy (including vacuum oscillations in the immediate vicinity of the electron), we simply \emph{renormalize} the otherwise infinite result when calculating the particle's energy, to arrive at the measured value. This not only goes for the masses $m$ of particles, but the couplings $g$ as well \cite{griffiths1987iep}
 \begin{align}
