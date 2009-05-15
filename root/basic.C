@@ -41,38 +41,38 @@ void loadhist() {
 	
 	TFile *f = new TFile("basic.root","RECREATE");
 	
-	TH1F *hist1 = new TH1F("hist1","u,u -> g -> d,d",nbins,ecm_start,ecm_end);
-	hist1->GetXaxis()->SetTitle("E [GeV]");
-    hist1->GetYaxis()->SetTitle("cross section [pb]");
-	lines = 0;
-	makehist("../data/v4_uu_g_dd_20_320.txt", hist1, lines);
-	makehist("../data/v4_uu_g_dd_320_620.txt", hist1, lines);
-	makehist("../data/v4_uu_g_dd_620_920.txt", hist1, lines);
-	makehist("../data/v4_uu_g_dd_920_1220.txt", hist1, lines);
-	makehist("../data/v4_uu_g_dd_1220_1520.txt", hist1, lines);
-	makehist("../data/v4_uu_g_dd_1520_1820.txt", hist1, lines);
-	
-	TH1F *hist2 = new TH1F("hist2","g,g -> g -> u,u",nbins,ecm_start,ecm_end);
-	hist2->GetXaxis()->SetTitle("E [GeV]");
-	hist2->GetYaxis()->SetTitle("cross section [pb]");
-	lines = 0;
-	makehist("../data/v4_gg_g_uu_20_320.txt", hist2, lines);
-	makehist("../data/v4_gg_g_uu_320_620.txt", hist2, lines);
-	makehist("../data/v4_gg_g_uu_620_920.txt", hist2, lines);
-	makehist("../data/v4_gg_g_uu_920_1220.txt", hist2, lines);
-	makehist("../data/v4_gg_g_uu_1220_1520.txt", hist2, lines);
-	makehist("../data/v4_gg_g_uu_1520_1820.txt", hist2, lines);
-	
-	TH1F *hist3 = new TH1F("hist3","u,u -> A -> d,d",nbins,ecm_start,ecm_end);
-	hist3->GetXaxis()->SetTitle("E [GeV]");
-	hist3->GetYaxis()->SetTitle("cross section [pb]");
-	lines = 0;
-	makehist("../data/v4_uu_a_dd_20_320.txt", hist3, lines);
-	makehist("../data/v4_uu_a_dd_320_620.txt", hist3, lines);
-	makehist("../data/v4_uu_a_dd_620_920.txt", hist3, lines);
-	makehist("../data/v4_uu_a_dd_920_1220.txt", hist3, lines);
-	makehist("../data/v4_uu_a_dd_1220_1520.txt", hist3, lines);
-	makehist("../data/v4_uu_a_dd_1520_1820.txt", hist3, lines);
+	// TH1F *hist1 = new TH1F("hist1","u,u -> g -> d,d",nbins,ecm_start,ecm_end);
+	// hist1->GetXaxis()->SetTitle("E [GeV]");
+	//     hist1->GetYaxis()->SetTitle("cross section [pb]");
+	// lines = 0;
+	// makehist("../data/v4_uu_g_dd_20_320.txt", hist1, lines);
+	// makehist("../data/v4_uu_g_dd_320_620.txt", hist1, lines);
+	// makehist("../data/v4_uu_g_dd_620_920.txt", hist1, lines);
+	// makehist("../data/v4_uu_g_dd_920_1220.txt", hist1, lines);
+	// makehist("../data/v4_uu_g_dd_1220_1520.txt", hist1, lines);
+	// makehist("../data/v4_uu_g_dd_1520_1820.txt", hist1, lines);
+	// 
+	// TH1F *hist2 = new TH1F("hist2","g,g -> g -> u,u",nbins,ecm_start,ecm_end);
+	// hist2->GetXaxis()->SetTitle("E [GeV]");
+	// hist2->GetYaxis()->SetTitle("cross section [pb]");
+	// lines = 0;
+	// makehist("../data/v4_gg_g_uu_20_320.txt", hist2, lines);
+	// makehist("../data/v4_gg_g_uu_320_620.txt", hist2, lines);
+	// makehist("../data/v4_gg_g_uu_620_920.txt", hist2, lines);
+	// makehist("../data/v4_gg_g_uu_920_1220.txt", hist2, lines);
+	// makehist("../data/v4_gg_g_uu_1220_1520.txt", hist2, lines);
+	// makehist("../data/v4_gg_g_uu_1520_1820.txt", hist2, lines);
+	// 
+	// TH1F *hist3 = new TH1F("hist3","u,u -> A -> d,d",nbins,ecm_start,ecm_end);
+	// hist3->GetXaxis()->SetTitle("E [GeV]");
+	// hist3->GetYaxis()->SetTitle("cross section [pb]");
+	// lines = 0;
+	// makehist("../data/v4_uu_a_dd_20_320.txt", hist3, lines);
+	// makehist("../data/v4_uu_a_dd_320_620.txt", hist3, lines);
+	// makehist("../data/v4_uu_a_dd_620_920.txt", hist3, lines);
+	// makehist("../data/v4_uu_a_dd_920_1220.txt", hist3, lines);
+	// makehist("../data/v4_uu_a_dd_1220_1520.txt", hist3, lines);
+	// makehist("../data/v4_uu_a_dd_1520_1820.txt", hist3, lines);
 	
 	TH1F *hist4 = new TH1F("hist4","u,u -> Z -> mu,mu",nbins,ecm_start,ecm_end);
 	hist4->GetXaxis()->SetTitle("E [GeV]");
@@ -139,7 +139,7 @@ void drawhist(Int_t nr) {
 			Int_t i;
 			Double_t theta;
 			for (i = 1; i <= 1820; i++) {
-				theta = 1;
+				theta = 0.;
 				histtheta->SetBinContent(i,theta);
 			}
 			
@@ -187,7 +187,28 @@ void drawhist(Int_t nr) {
 			histqqgg->Draw("e");
 			
 			break;
+			
+			// // // // // // // // // // // // // // // // // //
+			// // // //  Integrated Cross-section  // // // // //
+			// // // // // // // // // // // // // // // // // //
+			case 3:
+			TH1F *intcut = hist4->Clone("intcut"); // This is just to get the same number of bins, etc.
+			intcut->SetTitle("Integrated cross section vs. sqrt(s) cut");
+			intcut->GetXaxis()->SetTitle("sqrt(s) lower bin limit [GeV]");
+			intcut->GetYaxis()->SetTitle("Cross section [pb]");
+			intcut->Reset();
 
+			Int_t i;			
+			float int;
+			for (i = 1; i <= 1820; i++) {
+				// int = hist4->Integral(i,1820);
+				intcut->SetBinContent(i,hist4->Integral(i,1820));
+			}
+			
+			TCanvas *c1 = new TCanvas("c1","Integrated cross section vs. sqrt(s) cut",1000,750);
+			c1->SetLogy();
+			intcut->Draw("e");
+			
 		// default:
 		// 	cout << "Please enter a number from 1 to 2.";
 	}
