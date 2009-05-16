@@ -68,44 +68,6 @@ We have made cuts in the transverse momentum of the out-coming particles (from 5
 
 
 \subsubsection{CompHEP}
-CompHEP is a program that can calculate the cross section of a given interaction from the squared feynmann diagram.
 
-Cannot introduse any Lorentz violating terms
-
-transform the symbolic calculations into the lagrange formulation
-
-
- CompHEP is a package for automatic calculations of elementary particle decays and collision processes in the lowest order of perturbation theory (the tree level approximation). The main idea behind the program is to make calculations and data manipulations from Lagrangians to final distributions with a high level of automation. There are several packages created to solve the problem in a similar way: FeynArts/FeynCalc, GRACE, HELAS, MadGraph. CompHEP is a GUI computer system with context help. A user makes all manipulations by means of graphical menus.
-
-The notations used in CompHEP are very similar to those used in particle physics.
-
-CompHEP is based on an idea of the physical model. ComHEP Models are very simular to physical models in high energy physics, like Standards Model or MSSM. The present version of the program has several built-in physical models (see later). Two of them are versions of the Standard Model (SU(3)xSU(2)xU(1)) in the unitary and t'Hooft - Feynman gauges. Users can change particle content of a model, interaction vertices, and other model parameters. It is also possible to create a new model of particle interaction.
-
-The present version does not take into account separate polarization states of particles. All results are presented with averaged initial and summed final polarization states.
-
-The CompHEP package consists of two parts, symbolic and numerical programs. The symbolic part is written in the C programming language. It produces C codes for squared matrix elements, and they are used in the numerical calculation later on.
-
-The symbolic part of CompHEP has the following possibilities:
-
-      select a process by specifying incoming and outgoing particles for the decays of $1 \rightarrow 2, \ldots ,1 \rightarrow 5$ types and the collisions of $2 \rightarrow 2, \ldots , 2 \rightarrow 6$ types;
-      generate Feynman diagrams, display them, and create the corresponding LATEX output
-      exclude some diagrams
-      generate and display squared Feynman diagrams
-      calculate analytical expressions corresponding to squared diagrams by using the fast built-in symbolic calculator;
-      save symbolic results corresponding to the squared diagrams calculated in the Reduce and Mathematica codes for further symbolic manipulations;
-      generate the optimized C codes for the squared matrix elements for further numerical calculations
-      launch the make program in order to prepare the numerical part;
-
-The numerical part of CompHEP offers to:
-
-      convolute the squared matrix element with structure functions and beam spectra: built-in CTEQ and LHAPDF parton distribution functions, the ISR and Beamstrahlung spectra of electrons, the laser photon spectrum, and the Weizsaecker-Williams photon structure functions are available;
-      modify physical parameters (total energy, charges, particle masses, charges, etc.) involved in the process
-      select an evaluation scale for the QCD coupling constant and parton structure functions;
-      introduce various kinematic cuts. Some cuts are built in and there is a special code to define more involved cuts;
-      define a kinematic scheme (a phase space parameterization) for effective Monte Carlo integration;
-      introduce a phase space mapping in order to smooth sharp peaks of squared matrix elements and structure functions
-      perform Monte-Carlo phase space integration by Vegas;
-      generate events;
-      display distributions of various kinematic variables;
-      create graphical and LATEX outputs for the histograms.
+CompHEP is a program for calculations of multiparticle final states in elementary particle decays and collision events in the lowest order of pertubation theory. CompeHEP starts from the level of Feynman rules for a gauge model Lagrangian. There are several built-in models, for instance the SM in Unitary and t-Hooft - Feynman gauge, and some MSSM models, but you can also create a new model of your own or generate it with another program alled LanHEP. If you want to make a new model you cannot introduce any Lorentz violating terms\footnote{-we learned this the hard way!.}. Then CompHEP calculates symbollycally the matrix element for any of the processes chosen. 
 
