@@ -9,7 +9,7 @@ The action $\mathcal{S}$ is a functional\footnote{A functional is something that
 	\mathcal{S} = \int_{t_i \mathcal{P}}^{t_f} L \textrm{d}t,
 \end{equation}
 
-where we integrate over all intermediate states taken by the system evolving from time $t_i$ to $t_f$. The principle of least action then states that the actual path taken by the system is one that minimizes the action, or more precicely one where the action is stationary. In other words the variation of the line integral going from $t_i$ to $t_f$ is zero \cite{goldstein1959};
+where we integrate over all intermediate states taken by the system evolving from time $t_i$ to $t_f$. The principle of least action then states that the actual path taken by the system is one that minimizes the action, or more precisely one where the action is stationary. In other words the variation of the line integral going from $t_i$ to $t_f$ is zero \cite{goldstein1959};
 
 \begin{equation}
 	\delta \mathcal{S} = \delta \int_{t_i}^{t_f} L \textrm{d}t = 0.
@@ -18,8 +18,8 @@ where we integrate over all intermediate states taken by the system evolving fro
 Using Hamilton's principle, and knowing the Lagrangian of the system, one can derive the equations of motion.
 
 \subsubsection{The path integral formalism}
-In 1948 Richard Feynman presented his new formulation of non relativistic quantum mechanics, using what is known as the path integral formalism \cite{feynman1948sta}. The path integral takes into account all possible paths that a particle, or any other quantum mechanical system, going from a state $\ket{i}$ to a state $\ket{f}$ can take. This can be changes in position, momentum, energy or other intrinsic variables and is represented as an intermediate state of the system. Generally, and this is actually a central point in quantum mechanics, we are not interested in the path taken, but only in the fact that at some time $t_{i}$ the particle was in a state $\ket{i}$ and at some later time $t_{f}$ the particle is in a state $\ket{f}$. In order to arrive at this quantum probability-amplitude we must sum, or integrate, over the infinitely many paths, that the system can take to go from initial to final state. Doing this the amplitude is given as  \cite{richter_path_integrals}
-
+In 1948 Richard Feynman presented his new formulation of non relativistic quantum mechanics, using what is known as the path integral formalism \cite{feynman1948sta}. The path integral takes into account all possible paths that a particle, or any other quantum mechanical system, going from a state $\ket{i}$ to a state $\ket{f}$ can take. This can be changes in position, momentum, energy or other intrinsic variables and is represented as an intermediate state of the system. Generally, and this is actually a central point in quantum mechanics, we are not interested in the path taken, but only in the fact that at some time $t_{i}$ the particle was in a state $\ket{i}$ and at some later time $t_{f}$ the particle is in a state $\ket{f}$. In order to arrive at this quantum probability-amplitude we must sum, or integrate, over the infinitely many paths, that the system can take to go from initial to final state. Doing this the amplitude is given as  
+% \cite{richter_path_integrals}
 \begin{equation} \label{eq:path}
 	\bra{f} U(t_f,t_i) \ket{i} = \mathcal{N} \int \mathcal{D}x e^{i\mathcal{S}},
 \end{equation}
@@ -42,7 +42,7 @@ Equation \eqref{eq:path} is called the propagator in QFT. This equation describe
 \subsubsection{Symmetry groups and gauge theories}
 Noethe's Theorem states that for any transformation under which a physical system is invariant there exists a conserved quantity of that system. The classical examples are translations and rotations in the three spatial dimensions. If the system is invariant under those two transformations this corresponds to the conservation of linear and angular momentum. Thus these transformations forms a symmetry group of the theory. The two, physically equivalent situations, can be described by different mathematical configurations depending on the reference frame. The two descriptions are related to each other by this symmetry group.
 
-In physics, any field theory in which the Lagrangian is invariant under some kind of continuous transformation is called a gauge theory, the invariance referred to as a gauge invariance. The group of transformations under which the Lagrangian is invariant is called the gauge group of the theory\footnote{For a historical account of the development of gauge theories, at a level relevant for the present discussion, see  \cite{gross1992gtp}.}.
+In physics, any field theory in which the Lagrangian is invariant under some kind of continuous transformation is called a gauge theory, the invariance referred to as a gauge invariance. The group of transformations under which the Lagrangian is invariant is called the gauge group of the theory.\footnote{For a historical account of the development of gauge theories, at a level relevant for the present discussion, see \cite{gross1992gtp}.}
 
 \subsubsection{Quantum electrodynamics and SU(1)}
 In quantum mechanics the wave equation is invariant under local, space-time dependent, phase transformations, corresponding to rotations in the complex phase space of the wave function. In practice this invariance comes about when, in order to make predictions of physical observable, we have to take the absolute square of the wave function. Doing this information about the phase of the complex wave function is lost and we are left with only the absolute size of the complex number. This means that we can never physically measure the phase of the wave function, only its amplitude. Because of this, if we want the wave functions to represent actual physical systems, we have to insist that our equations be invariant under all local phase transformations\footnote{Actually the argument is a bit more subtle. There is no physical principle that states that the wavefunction \emph{has} to be invariant under local phase transformations, it is just something we assume. And, as it turns out, we can learn a lot from this assumption. \cite{griffiths1987iep}} of $\psi$ given by
@@ -159,8 +159,8 @@ where [SKRIV HVAD u OG v ER!]. Now that we have written down the amplitude for o
 
 \subsubsection{Fermi's golden rule for scattering}
 Fermi's golden rule states that for scattering between incoming particles with 4-momenta $p_1, p_2$ producing $n$ particles with momenta $p_3 \dots , p_n$ the scattering cross section is given by \cite{griffiths1987iep}
-\begin{align}
-	\sigma = &\frac{S\hbar^2}{4\sqrt{(p_1 \cdot p_2)^2 - (m_1 m_2 c^2)^2}} \int |\mathcal{M}|^2 (2 \pi)^4 \delta^4(p_1+p_2-p_3 \dots -p_n) \\
+\begin{align} \label{eq:goldenrule}
+	\sigma = &\frac{S\hbar^2}{4\sqrt{(p_1 \cdot p_2)^2 - (m_1 m_2 c^2)^2}} \int |\mathcal{M}|^2 (2 \pi)^4 \delta^4(p_1+p_2-p_3 \dots -p_n) \nonumber \\
 	&\times \prod_{j=3}^n 2\pi \delta(p_j^2 - m_j^2c^2)\theta(p_j^0) \frac{\textrm{d}p_j}{(2\pi)^2}.
 \end{align}
 Here $S$ is a factor taking care of double counting of identical particles in the final state and $\theta$ is the Heaviside step function defined by
@@ -171,6 +171,7 @@ Here $S$ is a factor taking care of double counting of identical particles in th
 	  1,  & \mbox{for }x > 0 
 	\end{cases}.
 \end{equation}
+Equation \eqref{eq:goldenrule} may look confusing at first, but actually all its saying is that momentum and energy has to be conserved at each vertex and the outgoing energy must be positive. This is what the delta function and the step function takes care of. The rest is basically just integration over outgoing momenta. All the dynamics, is hidden inside matrix element $\mathcal{M}$, derived from the feynman rules of the theory.
 
 \subsubsection{Perturbation theory and renormalization}
 The diagram in Figure \ref{fig:feyn:ee_a_ee} is not the only way that this process can happen. Just take a look at Figure \ref{fig:feyn:ee_a_ee_2}. In this case the virtual photon splits up into a electron/positron pair which again annihilates into a photon. We can't decide which one happened without disturbing the process all together, therefore we have to take them both into consideration. To calculate the total amplitude for the process $u \bar u \rightarrow \mu \mu^+$ we have to include diagrams of these higher order perturbations as well. In fact we can add as many electron/positron pairs as we like. In principle, if we want to know the exact probability, we would have to include infinitely many diagrams in our calculation. What saves us is the fact that as we add more vertices the overall probability is multiplied by factors of $g_e^2 << 1$ for each vertex, so the total amplitude is convergent, and disaster is avoided by the use of perturbation theory.
@@ -181,7 +182,7 @@ The diagram in Figure \ref{fig:feyn:ee_a_ee} is not the only way that this proce
 \caption{Higher order contribution to the process of Figure \ref{fig:feyn:ee_a_ee}. The circle in the middle represents production of a virtual electron/positron pair which again annihilates to produce a photon, giving rise to a net polarization of the vacuum.} \label{fig:feyn:ee_a_ee_2}
 \end{figure}
 
-But the loop type diagrams as the one in Figure \ref{fig:feyn:ee_a_ee_2} poses another, more fundamental problem. Just as we had to sum over all possible diagrams, we have to integrate over all possible momenta $p$ of the virtual electron/positron pair in the loop. This integral turns out to depend mainly on $1 / p^4$ and the volume element $p^3$, so we end up with an integral of the form
+But the loop type diagrams as the one in Figure \ref{fig:feyn:ee_a_ee_2} poses another, more fundamental problem. Just as we had to sum over all possible diagrams, we have to integrate over all possible momenta $p$ of the virtual electron/positron pair in the loop. This integral turns out to depend mainly on $1 / p^4$ and the volume element $p^3$, so we end up with an integral of the form \cite{griffiths1987iep}
 \begin{equation}
 	\int^\infty \frac{1}{p^4}p^3 dp = \ln{p}|^\infty = \infty,
 \end{equation}

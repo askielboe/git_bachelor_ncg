@@ -198,10 +198,8 @@ void drawhist(Int_t nr) {
 			intcut->GetYaxis()->SetTitle("Cross section [pb]");
 			intcut->Reset();
 
-			Int_t i;			
-			float int;
+			Int_t i;
 			for (i = 1; i <= 1820; i++) {
-				// int = hist4->Integral(i,1820);
 				intcut->SetBinContent(i,hist4->Integral(i,1820));
 			}
 			
