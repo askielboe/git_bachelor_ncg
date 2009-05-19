@@ -41,38 +41,38 @@ void loadhist() {
 	
 	TFile *f = new TFile("basic.root","RECREATE");
 	
-	// TH1F *hist1 = new TH1F("hist1","u,u -> g -> d,d",nbins,ecm_start,ecm_end);
-	// hist1->GetXaxis()->SetTitle("E [GeV]");
-	//     hist1->GetYaxis()->SetTitle("cross section [pb]");
-	// lines = 0;
-	// makehist("../data/v4_uu_g_dd_20_320.txt", hist1, lines);
-	// makehist("../data/v4_uu_g_dd_320_620.txt", hist1, lines);
-	// makehist("../data/v4_uu_g_dd_620_920.txt", hist1, lines);
-	// makehist("../data/v4_uu_g_dd_920_1220.txt", hist1, lines);
-	// makehist("../data/v4_uu_g_dd_1220_1520.txt", hist1, lines);
-	// makehist("../data/v4_uu_g_dd_1520_1820.txt", hist1, lines);
-	// 
-	// TH1F *hist2 = new TH1F("hist2","g,g -> g -> u,u",nbins,ecm_start,ecm_end);
-	// hist2->GetXaxis()->SetTitle("E [GeV]");
-	// hist2->GetYaxis()->SetTitle("cross section [pb]");
-	// lines = 0;
-	// makehist("../data/v4_gg_g_uu_20_320.txt", hist2, lines);
-	// makehist("../data/v4_gg_g_uu_320_620.txt", hist2, lines);
-	// makehist("../data/v4_gg_g_uu_620_920.txt", hist2, lines);
-	// makehist("../data/v4_gg_g_uu_920_1220.txt", hist2, lines);
-	// makehist("../data/v4_gg_g_uu_1220_1520.txt", hist2, lines);
-	// makehist("../data/v4_gg_g_uu_1520_1820.txt", hist2, lines);
-	// 
-	// TH1F *hist3 = new TH1F("hist3","u,u -> A -> d,d",nbins,ecm_start,ecm_end);
-	// hist3->GetXaxis()->SetTitle("E [GeV]");
-	// hist3->GetYaxis()->SetTitle("cross section [pb]");
-	// lines = 0;
-	// makehist("../data/v4_uu_a_dd_20_320.txt", hist3, lines);
-	// makehist("../data/v4_uu_a_dd_320_620.txt", hist3, lines);
-	// makehist("../data/v4_uu_a_dd_620_920.txt", hist3, lines);
-	// makehist("../data/v4_uu_a_dd_920_1220.txt", hist3, lines);
-	// makehist("../data/v4_uu_a_dd_1220_1520.txt", hist3, lines);
-	// makehist("../data/v4_uu_a_dd_1520_1820.txt", hist3, lines);
+	TH1F *hist1 = new TH1F("hist1","u,u -> g -> d,d",nbins,ecm_start,ecm_end);
+	hist1->GetXaxis()->SetTitle("E [GeV]");
+	    hist1->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_uu_g_dd_20_320.txt", hist1, lines);
+	makehist("../data/v4_uu_g_dd_320_620.txt", hist1, lines);
+	makehist("../data/v4_uu_g_dd_620_920.txt", hist1, lines);
+	makehist("../data/v4_uu_g_dd_920_1220.txt", hist1, lines);
+	makehist("../data/v4_uu_g_dd_1220_1520.txt", hist1, lines);
+	makehist("../data/v4_uu_g_dd_1520_1820.txt", hist1, lines);
+	
+	TH1F *hist2 = new TH1F("hist2","g,g -> g -> u,u",nbins,ecm_start,ecm_end);
+	hist2->GetXaxis()->SetTitle("E [GeV]");
+	hist2->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_gg_g_uu_20_320.txt", hist2, lines);
+	makehist("../data/v4_gg_g_uu_320_620.txt", hist2, lines);
+	makehist("../data/v4_gg_g_uu_620_920.txt", hist2, lines);
+	makehist("../data/v4_gg_g_uu_920_1220.txt", hist2, lines);
+	makehist("../data/v4_gg_g_uu_1220_1520.txt", hist2, lines);
+	makehist("../data/v4_gg_g_uu_1520_1820.txt", hist2, lines);
+	
+	TH1F *hist3 = new TH1F("hist3","u,u -> A -> d,d",nbins,ecm_start,ecm_end);
+	hist3->GetXaxis()->SetTitle("E [GeV]");
+	hist3->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_uu_a_dd_20_320.txt", hist3, lines);
+	makehist("../data/v4_uu_a_dd_320_620.txt", hist3, lines);
+	makehist("../data/v4_uu_a_dd_620_920.txt", hist3, lines);
+	makehist("../data/v4_uu_a_dd_920_1220.txt", hist3, lines);
+	makehist("../data/v4_uu_a_dd_1220_1520.txt", hist3, lines);
+	makehist("../data/v4_uu_a_dd_1520_1820.txt", hist3, lines);
 	
 	TH1F *hist4 = new TH1F("hist4","u,u -> Z -> mu,mu",nbins,ecm_start,ecm_end);
 	hist4->GetXaxis()->SetTitle("E [GeV]");

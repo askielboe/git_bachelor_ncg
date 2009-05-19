@@ -1,4 +1,20 @@
 \section{Methods}
+
+\subsection{The process of interest $(pp \rightarrow Z^0 \rightarrow \mu \bar\mu)$}
+We have decided to look at a process frequently occurring at the LCH, namely muon pair-production, in which a muon anti-muon pair is produced from the collision of two protons. In the ordinary SM this process can happen in the following two ways; a quark anti-quark pair annihilating to create either a photon or a Z boson decaying into the muon-pair. These two processes are illustrated by a feynman diagram in figure \ref{fig:qq_az_mumu}. In NCG we have the extra vertex $Zgg$ which allows us to draw a diagram like that in figure \ref{fig:gg_z_mumu}. In this care we have taken out two gluons from the proton which collide to produce a Z boson decaying into a muon-pair. Our strategy is to calculate the total cross section for muon pair-production at the LHC
+\begin{equation}
+	\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = |A_{q \bar q \rightarrow \gamma} + A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2},
+\end{equation}
+where $A = \sigma P^{pp}$ is the experimental amplitude, $\sigma$ is the cross section at calculated by Fermi's Golden Rule \eqref{eq:goldenrule} and $P^{pp}$ is the parton luminosity function. [DET HER SKAL VI LIGE HAVE STYR PÅ] We hereby hope to be able to examine these results to set constraints on NCG by current, and someday future experimental data. While the full quantum field theoretical calculation is too advanced, for us to make use of, there exists several numerical application that can be used to gather the results we need for further analysis.
+
+\subsection{CompHEP and LanHEP}
+
+CompHEP is a program for calculations of multi-particle final states in elementary particle decays and collision events in the lowest order of perturbation theory. CompeHEP starts from the level of Feynman rules for a gauge model Lagrangian. There are several built-in models, for instance the SM in Unitary and 't-Hooft - Feynman gauge, and some MSSM models, but you can also create a new model of your own or generate it with another program called LanHEP. In LanHEP one simply inputs the Lagrangian terms for the theory you want to study and the program derives matrix elements for direct use in CompHEP.  Then CompHEP calculates symbolically the matrix element for any of the processes chosen.
+
+Because LanHEP uses a lot of algorithms based on Lorentz invariance one limitation in the program is that you cannot introduce any Lorentz-invariant terms. This causes problems if you want to include a term of the type \eqref{eq:zggterm} where we have an anti-symmetric tensor of the type $\theta^{\mu\nu}$ given in \eqref{eq:ncgtheta}. The antisymmetry between the tensor component give rise to distinctions between directions in space, something that is in clear violation of Lorentz invariance, required by LanHEP. These observations led us to consider different methods by which to study NCG using CompHep.
+
+\subsubsection{Deriving the cross section from CompHEP histograms}
+
 The idea is to calculate the NCG cross section for the new contribution gg $\rightarrow Z^0$ in the interaction pp $\rightarrow \mu \bar \mu$. To find this contribution we have to examine the different amplitudes in the total cross section [DEFINE THE CONCEPT OF CROSS SECTION] [LAV EVT $A$ OM TIL $\mathcal{M}$!?!] \footnote{We will return to define the concept of cross section in section ???.}
 
 \begin{align}
@@ -66,9 +82,6 @@ u \bar u \rightarrow \gamma \rightarrow \mu \bar \mu
 
 We have made cuts in the transverse momentum of the out-coming particles (from 50 GeV) and also in their invariant mass (from 20 to 1820 GeV). 
 
-\subsection{CompHEP}
-
-CompHEP is a program for calculations of multi-particle final states in elementary particle decays and collision events in the lowest order of perturbation theory. CompeHEP starts from the level of Feynman rules for a gauge model Lagrangian. There are several built-in models, for instance the SM in Unitary and 't-Hooft - Feynman gauge, and some MSSM models, but you can also create a new model of your own or generate it with another program called LanHEP. If you want to make a new model you cannot introduce any Lorentz violating terms\footnote{-we learned this the hard way!.}. Then CompHEP calculates symbolically the matrix element for any of the processes chosen.
-
-\subsection{Root}
+\subsection{Calculating results using Root}
+Root is a program...
 
