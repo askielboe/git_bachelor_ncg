@@ -1,16 +1,27 @@
 \section{Methods}
 
 \subsection{The process of interest $(pp \rightarrow Z^0 \rightarrow \mu \bar\mu)$}
-We have decided to look at a process frequently occurring at the LCH, namely muon pair-production, in which a muon anti-muon pair is produced from the collision of two protons. In the ordinary SM this process can happen in the following two ways; a quark anti-quark pair annihilating to create either a photon or a Z boson decaying into the muon-pair. These two processes are illustrated by a feynman diagram in figure \ref{fig:qq_az_mumu}. In NCG we have the extra vertex $Zgg$ which allows us to draw a diagram like that in figure \ref{fig:pp-gg-z-mumu}. In this care we have taken out two gluons from the proton which collide to produce a Z boson decaying into a muon-pair. Our strategy is to calculate the total cross section for muon pair-production at the LHC
+We have decided to look at a process frequently occurring at the LCH, namely muon pair-production, in which a muon anti-muon pair is produced from the collision of two protons. In the ordinary SM this process can happen in the following two ways; a quark anti-quark pair annihilating to create either a photon or a Z boson decaying into the muon-pair. These two processes are illustrated by a feynman diagram in Figure \ref{fig:feyn:pp-qq-z-mumu}. In NCG we have the extra vertex $Zgg$ which allows us to draw a diagram like that in Figure \ref{fig:feyn:pp-gg-z-mumu}. In this case we have taken out two gluons from the proton which collide to produce a Z boson decaying into a muon-pair. Our strategy is to calculate the total cross section for muon pair-production at the LHC
 \begin{equation}
-	\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = |A_{q \bar q \rightarrow \gamma} + A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2},
+	\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = |A_{q \bar q \rightarrow \gamma} + A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z} + A_{gg \rightarrow \gamma} + [INTERFERENS!?]|^{2},
 \end{equation}
-where $A = \sigma P^{pp}$ is the experimental amplitude, $\sigma$ is the cross section at calculated by Fermi's Golden Rule \eqref{eq:goldenrule} and $P^{pp}$ is the parton luminosity function. [DET HER SKAL VI LIGE HAVE STYR PÅ] We hereby hope to be able to examine these results to set constraints on NCG by current, and someday future experimental data. While the full quantum field theoretical calculation is too advanced, for us to make use of, there exists several numerical application that can be used to gather the results we need for further analysis.
+where $A = \sigma P^{pp}$ is the experimental amplitude, $\sigma$ is the cross section at calculated by Fermi's Golden Rule \eqref{eq:goldenrule} and $P^{pp}$ is the parton distribution function. We hereby hope to be able to examine these results to set constraints on NCG by current, and someday future experimental data. While the full quantum field theoretical calculation is too advanced, for us to make use of, there exists several numerical application that can be used to gather the results we need for further analysis.
 
 \begin{figure}[htp]
-\centering
-	\input{./jaxo/pp-gg-z-mumu.tex}
-\caption{The scattering between two protons with two gluons colliding and interacting to create a $Z^0$ boson or a photon decaying into a muon-pair. This process is strictly forbidden in ordinary SM, but is allowed in modifications to the SM by NCG theory.} \label{fig:feyn:pp-gg-z-mumu}
+	\centering
+	\begin{minipage}[b]{0.475\linewidth}
+    \centering
+	  \input{./jaxo/pp-qq-z-mumu.tex}
+	  \caption{Allowed in the SM; scattering between two protons with two quarks colliding and interacting to create a $Z^0$ boson decaying into a muon-pair.} 
+	  \label{fig:feyn:pp-qq-z-mumu}
+	\end{minipage}
+	\hspace{0.5cm}
+	\begin{minipage}[b]{0.475\linewidth}
+    \centering
+	  \input{./jaxo/pp-gg-z-mumu.tex}
+	  \caption{Forbidden in the SM; scattering between two protons with two gluons colliding and interacting to create a $Z^0$ boson decaying into a muon-pair.} %  This process is strictly forbidden in ordinary SM, but is allowed in the modifications made to the SM by including NCG.
+	  \label{fig:feyn:pp-gg-z-mumu}
+	\end{minipage}
 \end{figure}
 
 \subsection{CompHEP and LanHEP}
