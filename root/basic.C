@@ -222,18 +222,18 @@ void drawhist(Int_t nr) {
 			// // // // // // // // // // // // // // // // // //
 			// // // //  2-D Plot of K vs. 1/lambda^2 // // // //
 			// // // // // // // // // // // // // // // // // //
-			case 4:
-			Float_t kgg, lambda, i;
-			Float_t sinwb2 = 0.23120, mz = 92, alpha = 1/137, width = 1;
-			TH2F *khist = new TH2F("khist","K vs 1/lambda^4",30,-100,100,30,-0.1,0.2);
-			
-			for (i = 1; i <= 30; i++) {
-				kgg = i/10 - 0.2;
-				lambda = pow(8/12 * pow(kgg,2) * alpha * pow(mz,5) * sinwb2 * 1/width,1/4);
-				khist->SetBinContent(i,i,lambda,kgg);
-			}
-			
-			khist->Draw();
+			// case 4:
+			// Float_t kgg, lambda, i;
+			// Float_t sinwb2 = 0.23120, mz = 92, alpha = 1/137, width = 1;
+			// TH2F *khist = new TH2F("khist","K vs 1/lambda^4",30,0,110,30,-0.1,0.2);
+			// 
+			// for (i = 1; i <= 30; i++) {
+			// 	kgg = i/10 - 0.2;
+			// 	lambda = pow(8/12 * pow(kgg,2) * alpha * pow(mz,5) * sinwb2 * 1/width,1/4);
+			// 	khist->SetBinContent(i,i,lambda,kgg);
+			// }
+			// 
+			// khist->Draw();
 			
 		// default:
 		// 	cout << "Please enter a number from 1 to 2.";
