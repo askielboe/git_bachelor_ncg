@@ -1,5 +1,6 @@
 #include "Riostream.h"
 #include "TH1F.h"
+#include "TH2F.h"
 #include "math.h"
 void makehist(const char* filename, TH1F *h1, Int_t& nlines) {
 	string d, pin, pout;
@@ -106,6 +107,9 @@ void drawhist(Int_t nr) {
 			break;
 	
 		case 2:
+			Double_t ecm_start=20., ecm_end=1820.;
+			Int_t lines = 0, nbins=1800;
+			
 			TH1F *histdiv = hist1->Clone("histdiv"); // This is just to get the same number of bins, etc.
 			histdiv->SetTitle("-1 x 64(gg -> g -> uu) / 9(uu -> g -> dd)");
 			histdiv->GetXaxis()->SetTitle("GeV");
@@ -138,7 +142,7 @@ void drawhist(Int_t nr) {
 
 			Int_t i;
 			Double_t theta;
-			for (i = 1; i <= 1820; i++) {
+			for (i = 1; i <= nbins; i++) {
 				theta = 0.;
 				histtheta->SetBinContent(i,theta);
 			}
@@ -162,7 +166,7 @@ void drawhist(Int_t nr) {
 
 			Int_t i;
 			Double_t one = 1;
-			for (i = 1; i <= 1820; i++) {
+			for (i = 1; i <= nbins; i++) {
 				histone->SetBinContent(i,1);
 			}
 			
@@ -192,20 +196,44 @@ void drawhist(Int_t nr) {
 			// // // //  Integrated Cross-section  // // // // //
 			// // // // // // // // // // // // // // // // // //
 			case 3:
-			TH1F *intcut = hist4->Clone("intcut"); // This is just to get the same number of bins, etc.
-			intcut->SetTitle("Integrated cross section vs. sqrt(s) cut");
+			Int_t uppercut=1400;
+			TH1F *intcut = new TH1F("intcut","Integrated cross section for uu -> z -> mm vs. sqrt(s) cut",uppercut,20.,uppercut + 20.);
 			intcut->GetXaxis()->SetTitle("sqrt(s) lower bin limit [GeV]");
-			intcut->GetYaxis()->SetTitle("Cross section [pb]");
-			intcut->Reset();
+			intcut->GetYaxis()->SetTitle("Number of events (luminosity = 10 fb^-1) / 10 GeV");
 
 			Int_t i;
-			for (i = 1; i <= 1820; i++) {
+			for (i = 1; i <= uppercut; i++) {
 				intcut->SetBinContent(i,hist4->Integral(i,1820));
 			}
 			
+			// // Scale to number of events at LCH running at 10 fb^-1 // //
+			intcut->Scale(10000.);
+			
 			TCanvas *c1 = new TCanvas("c1","Integrated cross section vs. sqrt(s) cut",1000,750);
 			c1->SetLogy();
-			intcut->Draw("e");
+			intcut->Draw();
+			
+			break;
+//			  ____                 _  _   
+//			 / ___|__ _ ___  ___  | || |  
+//		  	| |   / _` / __|/ _ \ | || |_ 
+//			| |__| (_| \__ \  __/ |__   _|
+//			 \____\__,_|___/\___|    |_|
+			// // // // // // // // // // // // // // // // // //
+			// // // //  2-D Plot of K vs. 1/lambda^2 // // // //
+			// // // // // // // // // // // // // // // // // //
+			case 4:
+			Float_t kgg, lambda, i;
+			Float_t sinwb2 = 0.23120, mz = 92, alpha = 1/137, width = 1;
+			TH2F *khist = new TH2F("khist","K vs 1/lambda^4",30,-100,100,30,-0.1,0.2);
+			
+			for (i = 1; i <= 30; i++) {
+				kgg = i/10 - 0.2;
+				lambda = pow(8/12 * pow(kgg,2) * alpha * pow(mz,5) * sinwb2 * 1/width,1/4);
+				khist->SetBinContent(i,i,lambda,kgg);
+			}
+			
+			khist->Draw();
 			
 		// default:
 		// 	cout << "Please enter a number from 1 to 2.";
