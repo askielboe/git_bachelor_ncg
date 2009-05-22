@@ -9,14 +9,14 @@ where $A = \sigma P^{pp}$ is the experimental amplitude, $\sigma$ is the cross s
 
 \begin{figure}[htp]
 	\centering
-	\begin{minipage}[b]{0.475\linewidth}
+	\begin{minipage}[b]{0.475\linewidth} \label{fig:feyn:parton1}
     \centering
 	  \input{./jaxo/pp-qq-z-mumu.tex}
 	  \caption{Allowed in the SM; scattering between two protons with two quarks colliding and interacting to create a $Z^0$ boson decaying into a muon-pair.} 
 	  \label{fig:feyn:pp-qq-z-mumu}
 	\end{minipage}
 	\hspace{0.5cm}
-	\begin{minipage}[b]{0.475\linewidth}
+	\begin{minipage}[b]{0.475\linewidth} \label{fig:feyn:parton2}
     \centering
 	  \input{./jaxo/pp-gg-z-mumu.tex}
 	  \caption{Forbidden in the SM; scattering between two protons with two gluons colliding and interacting to create a $Z^0$ boson decaying into a muon-pair.} %  This process is strictly forbidden in ordinary SM, but is allowed in the modifications made to the SM by including NCG.
@@ -33,7 +33,7 @@ Because LanHEP uses a lot of algorithms based on Lorentz invariance one limitati
 
 \subsubsection{Deriving the cross section from CompHEP histograms}
 
-The idea is to calculate the NCG cross section for the new contribution gg $\rightarrow Z^0$ in the interaction pp $\rightarrow \mu \bar \mu$. To find this contribution we have to examine the different amplitudes in the total cross section [DEFINE THE CONCEPT OF CROSS SECTION] [LAV EVT $A$ OM TIL $\mathcal{M}$!?!] \footnote{We will return to define the concept of cross section in section ???.}
+The idea is to calculate the NCG cross section for the new contribution gg $\rightarrow Z^0$ in the interaction pp $\rightarrow \mu \bar \mu$. To find this contribution we have to examine the different amplitudes in the total cross section.
 
 \begin{align}
 \sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} &= |A_{q \bar q \rightarrow \gamma} + A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2} \nonumber \\
@@ -50,7 +50,7 @@ A_{q \bar q \rightarrow \gamma} &= \sigma_{q \bar q \rightarrow  \gamma}( \mathc
 Here the symbol $\oplus$ means that we multiply distributions, bin by bin individually, $\mathcal{M}$ is the invariant mass for the two particles in the final state and P$_{pp}$ is the parton luminosity function [DEN MÅ VI OGSÅ HELLERE LIGE DEFINERE]. Now our job is to calculate the last term, the amplitude of two gluons coupling to Z. Lets therefore take a look at the cross section for the Z-production.
 
 \begin{equation}
-\sigma_{q \bar q/gg \rightarrow Z} = |A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2}=|A_{q \bar q \rightarrow Z}|^{2}+|A_{gg \rightarrow Z}|^{2}.
+\hat \sigma_{q \bar q/gg \rightarrow Z} = |A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2}=|A_{q \bar q \rightarrow Z}|^{2}+|A_{gg \rightarrow Z}|^{2}.
 \end{equation}
 
 We notice that this is not the total Z-production since the interference part disappear. We can only create interference if we have the same initial and final state, here we have different initial states. If we could [MEN DET GØR VI JO, SÅ DET KAN VI VEL!?] write $A_{gg \rightarrow Z}$ as a percentage of $A_{q \bar q \rightarrow Z}$ then we would have
@@ -67,25 +67,22 @@ where $\theta_{NCG}$ is the NCG .... $\Lambda$ indicates the mass in the vertex 
 &= \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q}) \left ( 1+\theta_{NCG}^{\Lambda}\frac{\textrm{P}_{pp}(\mathcal{M}_{gg})}{\textrm{P}_{pp}(\mathcal{M}_{q \bar q}} \right )
 \end{align}
 
-Well, all we now need to know is the ratio P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ since $ \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}$ is what CompHEP gives us when we make the interaction: $u \bar u \rightarrow Z \rightarrow \mu \bar \mu $. If we can construct two processes: $\sigma_{pp}^{A}=\sigma^{A} \oplus$ P$_{pp}^{gg}$ and $\sigma_{pp}^{B}=\sigma^{B} \oplus$ P$_{pp}^{q \bar q}$, such that $\sigma^{A}=\sigma^{B}$, then $\sigma_{pp}^{A}/\sigma_{pp}^{B}$ equals  P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ up to a scaling factor.
+Well, all we now need to know is the ratio P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ since $ \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}$ is what CompHEP gives us when we make the interaction: $u \bar u \rightarrow Z \rightarrow \mu \bar \mu $. If we can construct two processes: $A_{pp}^{A}=\sigma^{A} \oplus$ P$_{pp}^{gg}$ and $A_{pp}^{B}=\sigma^{B} \oplus$ P$_{pp}^{q \bar q}$, such that $A^{A}=A^{B}$, then $\sigma_{pp}^{A}/\sigma_{pp}^{B}$ equals  P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ up to a scaling factor.
 
-Since both the photons and gluons are massless they should have the same distribution or at least the distributions should be proportional. Thats why we choose interaction A to be $gg \rightarrow g \rightarrow q \bar q$ and interaction B to be $q \bar q \rightarrow \gamma \rightarrow q \bar q$. The coupling constants are respectively $\alpha_{s}$ and $\alpha_{qed}$\\
-
-We could also choose B to be  $q \bar q \rightarrow g \rightarrow q \bar q$, and maybe this would be even smarter because now A and B share $\alpha_{s}$. If we take a glance at the Feynmann diagrams for the three interactions we can simply by counting find the different color factors:
+The interactions we choose are A: $gg \rightarrow g \rightarrow q \bar q$ and B: $q \bar q \rightarrow g \rightarrow q \bar q$. The coupling constant being $\alpha_{s}$. If we take a glance at the Feynman diagrams in Figures \ref{fig:feyn:parton1} and \ref{fig:feyn:parton2} for the two interactions, we can simply find the different color factors by counting:\footnote{See p. 67 in  \cite{peskin1993iqf}.}
 \begin{align}
 	CF_{gg \rightarrow g \rightarrow q \bar q}&=\frac{1}{8} \cdot \frac{1}{8} \cdot 8=\frac{8}{64}\\
-	CF_{q \bar q \rightarrow \gamma \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3} \cdot 8=\frac{8}{9}\\
-	CF_{q \bar q \rightarrow g \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3}=\frac{1}{9}
+	%CF_{q \bar q \rightarrow \gamma \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3} \cdot 8=\frac{8}{9}\\
+	CF_{q \bar q \rightarrow g \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3}=\frac{1}{9}.
 \end{align}
 
-This gives us the two ratios:
+This gives us the ratio
 
 \begin{align}
-	\frac{\sigma_{gg \rightarrow g \rightarrow q \bar q}}{\sigma_{q \bar q \rightarrow \gamma \rightarrow q \bar q}} &=\frac{2 \cdot \alpha_{s} \cdot \frac{8}{64} \cdot C^{2}(r)}{2 \cdot \alpha_{qed} \cdot \frac{1}{9}}=\frac{9 \cdot  \alpha_{s} }{32 \cdot  \alpha_{qed} }\\ \nonumber \\
-	\frac{\sigma_{gg \rightarrow g \rightarrow q \bar q}}{\sigma_{q \bar q \rightarrow g \rightarrow q \bar q}} &=\frac{2 \cdot \alpha_{s} \cdot \frac{8}{64} \cdot C^{2}(r)}{2 \cdot \alpha_{s} \cdot \frac{8}{9} \cdot C^{2}(r)}=\frac{9}{68}
+	%\frac{\sigma_{gg \rightarrow g \rightarrow q \bar q}}{\sigma_{q \bar q \rightarrow \gamma \rightarrow q \bar q}} &=\frac{2 \cdot \alpha_{s} \cdot \frac{8}{64} \cdot C^{2}(r)}{2 \cdot \alpha_{qed} \cdot \frac{1}{9}}=\frac{9 \cdot  \alpha_{s} }{32 \cdot  \alpha_{qed} }\\ \nonumber \\
+	\frac{\sigma_{gg \rightarrow g \rightarrow q \bar q}}{\sigma_{q \bar q \rightarrow g \rightarrow q \bar q}} &=\frac{2 \cdot \alpha_{s} \cdot \frac{8}{64} \cdot C^{2}(r)}{2 \cdot \alpha_{s} \cdot \frac{8}{9} \cdot C^{2}(r)}=\frac{9}{68},
 \end{align}
-
-Where $C(r) = \frac{1}{2}$ for the fundamental representation of SU(3) and the factor of two accounts for the symmetry of swapping the two particles in the initial state.
+where $C(r) = \frac{1}{2}$ for the fundamental representation of SU(3) and the factor of two accounts for the symmetry of swapping the two particles in the initial state.
 
 Now we are actually ready to create the wanted cross sections with CompHEP. We collide two protons with beam energy 7000 GeV and then looks at different outcomes:
 
