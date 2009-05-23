@@ -5,5 +5,7 @@ The problem is that when we try to include gravity in the quantum mechanical des
 
 A lot of effort has been put in to unifying the encompassing physical theory of the Universe on the very largest scales, GR, with the theory of Universe at the smallest scales, the SM. So far no one have been successful, but a lot of interesting theoretical candidates exists.
 
-<---------- SM ----------->
+We hereby (by doing the calculations we do) hope to be able to examine these results to set constraints on NCG by current, and someday future experimental data.
 
+<---------- GR ----------->
+we must take each point with a given precision. According to the uncertainty principle $\Delta E \Delta t \approx {h \over 2 \pi}$ \footnote{The Uncertainty Principle states that for a pair of conjugate variables such as position/momentum and energy/time, it is impossible to have a precisely determined value of each member of the pair at the same time.}, energy and time are related in such a way that the conservation of energy can be violated, although for a very short moment. This allows a temporary change in the amount of energy in a point in the space-time and thereby the creation of particle-antiparticle pairs of virtual particles. This phenomenon is called quantum fluctuations.
