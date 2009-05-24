@@ -234,6 +234,15 @@ void drawhist(Int_t nr) {
 			// }
 			// 
 			// khist->Draw();
+			// break;
+			
+			case 5:
+			// // // // // // // // // // // // // // // // // //
+			// // // //  Plot SM-NCG Diff // // // // // // // //
+			// // // // // // // // // // // // // // // // // //	
+			
+			
+			
 			
 		// default:
 		// 	cout << "Please enter a number from 1 to 2.";
