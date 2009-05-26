@@ -3,9 +3,9 @@
 \subsection{The process of interest $(pp \rightarrow Z^0 \rightarrow \mu \bar\mu)$}
 We have decided to look at a process frequently occurring at the LCH, namely muon pair-production, in which a muon anti-muon pair is produced from the collision of two protons. In the ordinary SM this process can happen in the following two ways; a quark anti-quark pair annihilating to create either a photon or a Z boson decaying into the muon-pair. These two processes are illustrated by a feynman diagram in Figure \ref{fig:feyn:parton_qq}. In NCG we have the extra vertex $Zgg$ (and $\gamma gg$) which allows us to draw a diagram like that in Figure \ref{fig:feyn:parton_gg}. In this case we have taken out two gluons from the proton which collide to produce a Z boson decaying into a muon-pair. Our strategy is to calculate the total cross section for muon pair-production at the LHC
 \begin{equation}
-	\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = |A_{q \bar q \rightarrow \gamma} + A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z} + A_{gg \rightarrow \gamma}|^{2},
+	\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = |A_{q \bar q \rightarrow \gamma} + A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2},
 \end{equation}
-where $A = \sigma P^{pp}$ is the experimental amplitude, $\sigma$ is the cross section at calculated by Fermi's Golden Rule \eqref{eq:goldenrule} and $P^{pp}$ is the parton distribution function. We have chosen to ignore the contribution coming from $gg \rightarrow \gamma$ because this term will make the calculations much more complex, although this is surely an interesting thing to look into in the future. While the full quantum field theoretical calculation is too advanced, for us to make use of, there exists several numerical application that can be used to gather the results we need for further analysis.
+where $A = \sigma P^{pp}$ is the experimental amplitude, $\sigma$ is the cross section at calculated by Fermi's Golden Rule \eqref{eq:goldenrule} and $P^{pp}$ is the parton distribution function. We have chosen to ignore the contribution coming from $gg \rightarrow \gamma$ because this term will make the calculations much more complex, although this is an interesting thing to look into in future studies. In Figure \ref{fig:feyn:parton_qq} and \ref{fig:feyn:parton_gg} we have drawn the two processes we will be looking at. While the full quantum field theoretical calculations for these processes are too advanced, for us to make use of, there exists several numerical application that can be used to gather the results we need for further analysis. We calculate all SM amplitudes directly in CompHEP, and derive the NCG contribution using ROOT and CompHEP histograms.
 
 \begin{figure}[htp]
 	\centering
@@ -23,11 +23,16 @@ where $A = \sigma P^{pp}$ is the experimental amplitude, $\sigma$ is the cross s
 \end{figure}
 
 
-\subsection{CompHEP and LanHEP}
+\subsection{Calculating cross sections in CompHEP}
 
 CompHEP is a numerical application for calculating cross sections for multi-particle final states in elementary particle decays and collision events, in the lowest order of perturbation theory. CompeHEP starts from the level of Feynman rules for a gauge model Lagrangian. There are several built-in models, for instance the SM in Unitary and 't-Hooft - Feynman gauge, and some MSSM models. You can also create a new model of your own, or generate it with another program called LanHEP. In LanHEP one simply inputs the Lagrangian terms for the theory you want to study and the program derives matrix elements for direct use in CompHEP. Then CompHEP calculates symbolically the matrix element for any of the processes chosen. This was what we tried to do initially, but we ran into problems stemming from the nature of NCG.
 
-Because LanHEP uses a lot of algorithms based on Lorentz invariance, one of the limitations is that you cannot introduce any Lorentz-invariant terms. This causes problems if you want to include a term \eqref{eq:zggterm}, where we have an anti-symmetric tensor of the type $\theta^{\mu\nu}$, given in \eqref{eq:ncgtheta}. The antisymmetry between the tensor components give rise to distinctions between directions in space, something that is in clear violation of Lorentz invariance, required by LanHEP. These observations led us to consider different methods by which to study NCG using CompHep.
+Because LanHEP uses a lot of algorithms based on Lorentz invariance, one of the limitations is that you cannot introduce any Lorentz-invariant terms. This causes problems if you want to include a term \eqref{eq:zggterm}, where we have an anti-symmetric tensor of the type $\theta^{\mu\nu}$, given in \eqref{eq:ncgtheta}. The antisymmetry between the tensor components give rise to distinctions between directions in space, something that is in clear violation of Lorentz invariance, required by LanHEP. Even if we were to ignore the field strength tensor in \eqref{eq:ncgtheta}, and only plug in scalar $\theta$, CompHEP will not let us because of the-non conformity of the SU(2) structure of $Z^0$ and the SU(3) structure of the gluons.
+
+These observations led us to consider different methods by which to study NCG using CompHEP.
+
+\subsubsection{Finding the appropriate form for $\theta_\textrm{NCG}$}
+Instead of trying to implement the full tensor expression for the NCG contribution $\theta$ \eqref{eq:ncgtheta}. DET HER AFSNIT SKRIVES EFTER SAMTALE MED JØRGEN.
 
 \subsubsection{Deriving the cross section from CompHEP histograms}
 
@@ -35,7 +40,7 @@ Instead of implementing the NCG Lagrangian terms directly into CompHEP we examin
 
 \begin{align}
 \sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} &= |A_{q \bar q \rightarrow \gamma} + A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2} \nonumber \\
-&= |A_{q \bar q \rightarrow \gamma}|^{2} + |A_{q \bar q \rightarrow Z}|^ {2} + |A_{gg \rightarrow Z}|^{2} + A_{q \bar q \rightarrow Z }A_{qq \rightarrow \gamma}.
+&= |A_{q \bar q \rightarrow \gamma}|^{2} + |A_{q \bar q \rightarrow Z}|^ {2} + |A_{gg \rightarrow Z}|^{2} + |A_{q \bar q \rightarrow Z }A_{qq \rightarrow \gamma}|.
 \end{align}
 
 The last term is the interference part between $\gamma$ and Z, the second last is the cross section coming from NCG, that we are interested in. The two first terms we already know
@@ -51,19 +56,20 @@ Here the symbol $\oplus$ means that we multiply distributions, bin by bin, $\mat
 \hat \sigma_{q \bar q/gg \rightarrow Z} = |A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2}=|A_{q \bar q \rightarrow Z}|^{2}+|A_{gg \rightarrow Z}|^{2}.
 \end{equation}
 
-Notice that we avoid interference terms by insisting on distinguishable initial and final states. Now the trick is to write write $A_{gg \rightarrow Z}$ as a percentage of $A_{q \bar q \rightarrow Z}$, then we have
-
+Notice that we avoid interference terms by insisting on distinguishable initial and final states. Now we insert the form of $\theta$ derived in the previous section, then we have
+% trick is to write write $A_{gg \rightarrow Z}$ as a percentage of $A_{q \bar q \rightarrow Z}$
 \begin{equation}
-\sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \oplus \textrm{P}_{pp}(\mathcal{M}_{gg})=\sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \theta_{NCG}\textrm{P}_{pp}(\mathcal{M}_{gg}),
+	\sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \oplus \textrm{P}_{pp}(\mathcal{M}_{gg})=\sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \theta_{NCG}\textrm{P}_{pp}(\mathcal{M}_{gg}).
 \end{equation}
+This leads us to an expression for the total cross section
 
-where $\theta_{NCG}$ is the NCG commutator. This leads us to an expression for the total cross section
-
-\begin{align}
+\begin{align} \label{eq:qqggztotal}
 \sigma_{q \bar q/gg \rightarrow Z} &= \sigma_{q \bar q \rightarrow Z} (\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q})+ \sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \oplus \textrm{P}_{pp}(\mathcal{M}_{gg})\nonumber \\ 
 &= \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus (\textrm{P}_{pp}(\mathcal{M}_{q \bar q})+\theta_{NCG}^{\Lambda}\textrm{P}_{pp}(\mathcal{M}_{gg}))\nonumber \\ 
 &= \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q}) \left ( 1+\theta_{NCG}^{\Lambda}\frac{\textrm{P}_{pp}(\mathcal{M}_{gg})}{\textrm{P}_{pp}(\mathcal{M}_{q \bar q}} \right ).
 \end{align}
+
+\subsubsection{Calculating color factors}
 
 All we need to know now is the ratio P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ since $ \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}$ is what CompHEP gives us when we make the interaction: $u \bar u \rightarrow Z \rightarrow \mu \bar \mu $. If we can construct two processes: $A_{pp}^{A}=\sigma^{A} \oplus$ P$_{pp}^{gg}$ and $A_{pp}^{B}=\sigma^{B} \oplus$ P$_{pp}^{q \bar q}$, such that $A^{A}=A^{B}$, then $\sigma_{pp}^{A}/\sigma_{pp}^{B}$ equals  P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ up to a constant.
 
@@ -82,17 +88,14 @@ This gives us the ratio
 \end{align}
 where $C(r) = \frac{1}{2}$ for the fundamental representation of SU(3) and the factor of two accounts for the symmetry of swapping the two particles in the initial state.
 
-Now we are actually ready to create the wanted cross sections with CompHEP. We collide two protons with beam energy 7000 GeV and then looks at these different processes:
-
+Now we are actually ready to create the cross sections, needed for analysis, with CompHEP. We collide protons with beam energy 7000 GeV and then looks at these different processes:
 \begin{align}
-gg \rightarrow g \rightarrow u \bar u \nonumber \\ \nonumber
-u \bar u \rightarrow g \rightarrow d \bar d \\ \nonumber
-u \bar u \rightarrow \gamma \rightarrow d \bar d \\ \nonumber
-u \bar u \rightarrow Z \rightarrow \mu \bar \mu \\ \nonumber
-u \bar u \rightarrow \gamma \rightarrow \mu \bar \mu 
+gg &\rightarrow g \rightarrow u \bar u \nonumber \\ \nonumber
+u \bar u &\rightarrow g \rightarrow d \bar d \\ \nonumber
+q \bar q &\rightarrow Z \rightarrow \mu \bar \mu \\ \nonumber
+q \bar q &\rightarrow \gamma \rightarrow \mu \bar \mu,
 \end{align}
+where $q = \{u,d,s,c,b\}$. The first two processes we use to calculate the PDF ratio in \eqref{eq:qqggztotal}, the rest we add together to get the total cross section for all possible collisions. The reason we're not just doing $q \bar q \rightarrow Z/ \gamma \rightarrow \mu \bar \mu$, which CompHEP is fully capable of, is that we need the partial cross section for processes involving only $Z$'s to be able to add the NCG contribution. To avoid singularities for $P_\textrm{T} \rightarrow 0$ we put in cuts in the transverse momentum of the out-coming particles (> 50 GeV) and also in their invariant mass ($20 \leq M \leq 1820$ GeV).
 
-We have made cuts in the transverse momentum of the out-coming particles (< 50 GeV) and also in their invariant mass ($20 \leq M \leq 1820$ GeV).
-
-\subsection{Numerical tools}
-We use two different programs for analysis and making plots. the first one is ROOT. ROOT is a program for data processing, developed at CERN. The package has many features. We mostly used it for calculating with and analyzing histogram distribution with we gaind from CompHEP. ROOT provides a data structure that is extremely powerful for fast access of huge amounts of data. This is very appropriate when making particle physics data analysis. ROOT is written in C++, and we're using version 5.23. For some analytical calculations and simple numerical plotting we have used Mathematica 6.
+\subsection{Numerical tools, ROOT \& Mathematica}
+We use two different programs for analysis and making plots. the first one is ROOT. ROOT is a program for data processing, developed at CERN. The package has many features. We mostly used it for calculating with and analyzing histogram distribution with we gaind from CompHEP. ROOT provides a data structure that is extremely powerful for fast access of huge amounts of data. This is very appropriate when making particle physics data analysis. ROOT is written in C++, and we're using version 5.23. For some analytical calculations and simple numerical plotting we have used Mathematica 6. For more information about ROOT see http://root.cern.ch.
