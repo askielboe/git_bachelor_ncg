@@ -411,6 +411,9 @@ void drawhist(Int_t nr) {
 
 			// Calculate NCG total cross sections for different lambda.
 
+			TH1F *ncg_130 = new TH1F("ncg_130","NCG 130",nbins,ecm_start,ecm_end);
+			calcncgtot(ncg_130,130);
+
 			TH1F *ncg_200 = new TH1F("ncg_200","NCG 200",nbins,ecm_start,ecm_end);
 			calcncgtot(ncg_200,200);
 			
@@ -425,44 +428,34 @@ void drawhist(Int_t nr) {
 			
 			TH1F *ncg_1000 = new TH1F("ncg_1000","NCG 1000",nbins,ecm_start,ecm_end);
 			calcncgtot(ncg_1000,1000);
-
-
-
-
-
-
-
-
-			// TH1F *ncg_200 = hist_total_ncg->Clone("ncg_200");
-			// calcncgtot(ncg_200,200);
-			// 
-			// TH1F *ncg_400 = hist_total_ncg->Clone("ncg_400");
-			// calcncgtot(ncg_400,400);
-			// 
-			// TH1F *ncg_600 = hist_total_ncg->Clone("ncg_600");
-			// calcncgtot(ncg_600,600);
-			// 
-			// TH1F *ncg_800 = hist_total_ncg->Clone("ncg_800");
-			// calcncgtot(ncg_800,800);
-			// 
-			// TH1F *ncg_1000 = hist_total_ncg->Clone("ncg_1000");
-			// calcncgtot(ncg_1000,1000);
 			
 			// Plot total NCG cross section as a function of lambda
 			TCanvas *c1 = new TCanvas("c1","Total cross section at LHC",1000,750);
-		//	c1->SetLogy();
+		    c1->SetLogy();
 
-			ncg_200->Draw("LPe0");
-			ncg_400->Draw("LPe0");
-			ncg_600->Draw("LPe0");
-			ncg_800->Draw("LPe0");
-			ncg_1000->Draw("LPe0");		
+			calcsmtot();
+			hist_total_sm->SetLineColor(18);
+			hist_total_sm->Draw("");
+			
+			ncg_130->SetLineColor(9);
+			ncg_130->Draw("same");
+			
+			ncg_200->SetLineColor(9);
+			ncg_200->Draw("same");
+			
+			ncg_400->SetLineColor(9);
+			ncg_400->Draw("same");
+			
+			ncg_600->SetLineColor(9);
+			ncg_600->Draw("same");
+			
+			ncg_800->SetLineColor(9);
+			ncg_800->Draw("same");
+			
+			ncg_1000->SetLineColor(9);
+			ncg_1000->Draw("same");
 			
 			// Calculate ordinary SM total cross section and plot it with statistical errors.
-			
-			calcsmtot();
-			
-			hist_total_sm->Draw("LPe0");
 					
 		break;
 
