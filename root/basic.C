@@ -486,30 +486,79 @@ void drawhist(Int_t nr) {
 		Double_t ecm_start=20., ecm_end=1820.;
 		Int_t lines = 0, nbins=1800;
 			
-			TH1F *ncg_2000 = new TH1F("ncg_2000","NCG 2000",nbins,ecm_start,ecm_end);
-			calcncgtot(ncg_2000,2000.);
+			calcsmtot();
 			
+			TH1F *ncg_500 = new TH1F("ncg_500","NCG 500",nbins,ecm_start,ecm_end);
+			calcncgtot(ncg_500,2000.);
+			
+			// TH1F *ncg_1000 = new TH1F("ncg_1000","NCG 1000",nbins,ecm_start,ecm_end);
+			// calcncgtot(ncg_1000,1000.);
+			// 
+			// TH1F *ncg_1500 = new TH1F("ncg_1500","NCG 1500",nbins,ecm_start,ecm_end);
+			// calcncgtot(ncg_1500,1500.);
+			// 
+			// TH1F *ncg_2000 = new TH1F("ncg_2000","NCG 2000",nbins,ecm_start,ecm_end);
+			// calcncgtot(ncg_2000,2000.);
+
 			// Plot total NCG cross section as a function of lambda
 			TCanvas *c1 = new TCanvas("c1","Total cross section at LHC",1000,750);
 		    c1->SetLogy();
-
-			calcsmtot();
-			
 			hist_total_sm->SetTitle("Total cross section at LHC, SM with error, blue line = NCG, lambda = 2000");
 			hist_total_sm->GetXaxis()->SetTitle("E [GeV]");
 			hist_total_sm->GetYaxis()->SetTitle("Number of events");
 			hist_total_sm->SetLineColor(18);
+			gStyle->SetOptStat(0);
 			hist_total_sm->Draw("e0");
 			
-			ncg_2000->SetLineColor(9);
-			ncg_2000->Draw("same");
+			ncg_500->SetLineColor(9);
+			ncg_500->Draw("same");
 			
-			// Calculate ordinary SM total cross section and plot it with statistical errors.
+			// // Plot total NCG cross section as a function of lambda
+			// TCanvas *c2 = new TCanvas("c2","Total cross section at LHC",1000,750);
+			// 		    c1->SetLogy();
+			// 
+			// hist_total_sm->SetTitle("Total cross section at LHC, SM with error, blue line = NCG, lambda = 1000");
+			// hist_total_sm->GetXaxis()->SetTitle("E [GeV]");
+			// hist_total_sm->GetYaxis()->SetTitle("Number of events");
+			// hist_total_sm->SetLineColor(18);
+			// gStyle->SetOptStat(0);
+			// hist_total_sm->Draw("e0");
+			// 
+			// ncg_1000->SetLineColor(9);
+			// ncg_1000->Draw("same");
+			// 
+			// // Plot total NCG cross section as a function of lambda
+			// TCanvas *c3 = new TCanvas("c3","Total cross section at LHC",1000,750);
+			// 		    c1->SetLogy();
+			// 
+			// hist_total_sm->SetTitle("Total cross section at LHC, SM with error, blue line = NCG, lambda = 1500");
+			// hist_total_sm->GetXaxis()->SetTitle("E [GeV]");
+			// hist_total_sm->GetYaxis()->SetTitle("Number of events");
+			// hist_total_sm->SetLineColor(18);
+			// gStyle->SetOptStat(0);
+			// hist_total_sm->Draw("e0");
+			// 
+			// ncg_1500->SetLineColor(9);
+			// ncg_1500->Draw("same");
+			// 
+			// // Plot total NCG cross section as a function of lambda
+			// TCanvas *c4 = new TCanvas("c4","Total cross section at LHC",1000,750);
+			// 		    c1->SetLogy();
+			// 
+			// hist_total_sm->SetTitle("Total cross section at LHC, SM with error, blue line = NCG, lambda = 2000");
+			// hist_total_sm->GetXaxis()->SetTitle("E [GeV]");
+			// hist_total_sm->GetYaxis()->SetTitle("Number of events");
+			// hist_total_sm->SetLineColor(18);
+			// gStyle->SetOptStat(0);
+			// hist_total_sm->Draw("e0");
+			// 
+			// ncg_2000->SetLineColor(9);
+			// ncg_2000->Draw("same");
 			
+			
+						
 			break;
 
-		// default:
-		// 	cout << "Please enter a number from 1 to 2.";
 	}
 
 }
