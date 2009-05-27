@@ -5,11 +5,11 @@ The particles and interactions of the SM are described in the language of quantu
 \subsubsection{Principle of least action}
 The action $\mathcal{S}$ is a functional\footnote{A functional is something that takes as its argument a function and returns a scalar.} related to the time evolution of a physical system. Namely the action is the change in phase of the wave function of the system. The Lagrangian is defined as the rate of change of the phase and given as
 
-\begin{equation}
-	\mathcal{S} = \int_{t_i \mathcal{P}}^{t_f} L \textrm{d}t,
+\begin{equation}\label{eq:S}
+	\mathcal{S} = \int_{t_i}^{t_f} L(x,\dot{x},t)dt,
 \end{equation}
 
-where we integrate over all intermediate states taken by the system evolving from time $t_i$ to $t_f$. The principle of least action then states that the actual path taken by the system is one that minimizes the action, or more precisely one where the action is stationary. In other words the variation of the line integral going from $t_i$ to $t_f$ is zero \cite{goldstein1959};
+where $x, \dot{x} \equiv \frac{dx}{dt}$ are generalized coordinates and we integrate over all intermediate states taken by the system evolving from time $t_i$ to $t_f$. The principle of least action then states that the actual path taken by the system is one that minimizes the action, or more precisely one where the action is stationary. In other words the variation of the line integral going from $t_i$ to $t_f$ is zero \cite{goldstein1959};
 
 \begin{equation}
 	\delta \mathcal{S} = \delta \int_{t_i}^{t_f} L \textrm{d}t = 0.
@@ -30,14 +30,7 @@ where $\mathcal{N}$ is a constant of the system, $U$ is the time translation ope
 	\int \mathcal{D} x \equiv \lim_{N \to \infty} \int dx_1 \dots dx_N
 \end{equation}
 
-and the action $\mathcal{S}$ is related to the Lagrangian by the action principle, given in the 1-D case by
-
-\begin{equation}
-	\mathcal{S} = \int_{t_i}^{t_f} L(x,\dot{x},t)dt,
-\end{equation}
-where $x, \dot{x} \equiv \frac{dx}{dt}$ are generalized coordinates.
-
-Equation \eqref{eq:path} is called the propagator in QFT. This equation describes the probability amplitude that a particle will go from the initial state to the final state in time $t_f - t_i$.
+and the action $\mathcal{S}$ is related to the Lagrangian by the action principle, given in the 1-D in equation \ref{eq:S}. Equation \eqref{eq:path} is called the propagator in QFT. This equation describes the probability amplitude that a particle will go from the initial state to the final state in time $t_f - t_i$.
 
 \subsubsection{Symmetry groups and gauge theories}
 Noethe's Theorem states that for any transformation under which a physical system is invariant there exists a conserved quantity of that system. The classical examples are translations and rotations in the three spatial dimensions. If the system is invariant under those two transformations this corresponds to the conservation of linear and angular momentum. Thus these transformations forms a symmetry group of the theory. The two, physically equivalent situations, can be described by different mathematical configurations depending on the reference frame. The two descriptions are related to each other by this symmetry group.
@@ -110,10 +103,10 @@ Combining electroweak theory and quantum chromo dynamics using the group U(1) $\
 % Billede med partikel-generationer fra Wikipedia.
 \includefigure{fig:particle_generations}{0.3}{./images/particle_generations}{The fundamental particles in the Standard Model. Fermions and bosons, listed in their respective generations. (Source: Wikimedia Commons).}
 
-In the Standard Model of particle physics we divide the particles into two main groups; fermions and bosons. Fermions are defined as having half-integral spin and are described by Fermi-Dirac statistics, these include the leptons and quarks. Fermions constitutes all known matter and as such they are sometimes described as matter-particles. Bosons, on the other hand, have zero or integral spin and are described by Bose-Einstein statistics. Some of these, namely the gauge bosons, are responsible for the weak, strong and electromagnetic interactions. Therefore the gauge bosons are often called the force-carriers of their respective interactions. It may be appropriate to note that the formalism of quantum mechanics makes no clear distinction between the concepts of matter-particles and force-particles. Below is a table with all known quarks, leptons and gauge bosons. With the exception of neutrinos, which have to be detected in other ways, all of them have been seen in particle accelerator experiments.
+In the Standard Model of particle physics we divide the particles into two main groups; fermions and bosons. Fermions are defined as having half-integral spin and are described by Fermi-Dirac statistics, these include the leptons and quarks. Fermions constitutes all known matter and as such they are sometimes described as matter-particles. All fermions have electric charge except for the neutrinos and all quarks have en extra property called color charge which makes them interact with gluons. Bosons, on the other hand, have zero or integral spin and are described by Bose-Einstein statistics. Some of these, namely the gauge bosons, are responsible for the weak, strong and electromagnetic interactions. Therefore the gauge bosons are often called the force-carriers of their respective interactions. It may be appropriate to note that the formalism of quantum mechanics makes no clear distinction between the concepts of matter-particles and force-particles. Below is a table with all known quarks, leptons and gauge bosons. With the exception of neutrinos, which have to be detected in other ways, all of them have been seen in particle accelerator experiments.
 
 \subsubsection{Feynman diagrams}
-When calculating amplitudes for particle interactions in the SM it can be very instructive to make use of \emph{Feynman diagrams}. This approach was proposed by american physicist Richard P. Feynman in 1949 \cite{feynman1949sta}. A typical space-time interaction is the scattering of an electron and a positron by virtual annihalation followed by pair production. This process is represented as a Feynman diagram in Figure \ref{fig:feyn:ee_a_ee}. Space is extending top-down in the diagram while time is increasing from left to right. Arrows pointing along the flow of time, to the right, are particles, while arrows pointing against the flow of time, to the left, are anti-particles.
+When calculating amplitudes for particle interactions in the SM it can be very instructive to make use of \emph{Feynman diagrams}. This approach was proposed by American physicist Richard P. Feynman in 1949 \cite{feynman1949sta}. A typical space-time interaction is the scattering of an electron and a positron by virtual annihilation followed by pair production. This process is represented as a Feynman diagram in Figure \ref{fig:feyn:ee_a_ee}. Space is extending top-down in the diagram while time is increasing from left to right. Arrows pointing along the flow of time, to the right, are particles, while arrows pointing against the flow of time, to the left, are anti-particles.
 
 \begin{figure}[htp]
 \centering
@@ -121,7 +114,7 @@ When calculating amplitudes for particle interactions in the SM it can be very i
 \caption{Feynman diagram for the electromagnetic scattering of an electron and a positron. Time is increasing from left to right in the diagram.} \label{fig:feyn:ee_a_ee}
 \end{figure}
 
-The wavy line in the middle is a so called \emph{virtual particle}, in this case a virtual photon. It is virtual in the sense that we never actually measure it without disturbing the process and thereby destroying it. We can only ever measure the initial-state (incoming) particles and the final-state (outgoing) particles. Another reason why these, intermediate particles, are called virtual is suggested by looking at Figure \ref{fig:feyn:ee_a}. In the center-of-mass (CM) frame of the electron and positron, the two have exactly equal and opposite momenta. Together they have zero momentum in the CM-frame. Therefore the two particles can never annihilate to create a single photon, which always have momentum, given that it always travels at the speed $c$.
+The wavy line in the middle is a so called \emph{virtual particle}, in this case a virtual photon. It is virtual in the sense that we never actually measure it without disturbing the process and thereby destroying it. We can only ever measure the initial-state (incoming) particles and the final-state (outgoing) particles. Another reason why these, intermediate particles, are called virtual is suggested by looking at Figure \ref{fig:feyn:ee_a}. In the centre-of-mass (CM) frame of the electron and positron, the two have exactly equal and opposite momenta. Together they have zero momentum in the CM-frame. Therefore the two particles can never annihilate to create a single photon, which always have momentum, given that it always travels at the speed $c$.
 
 \begin{figure}[htp]
 \centering
@@ -148,7 +141,7 @@ where $e$ is the charge of the positron, $\varepsilon_0$ is the permittivity of 
 
 Constants like these are appropriately called coupling constants\footnote{At increasing energies these constants are no longer constant, but are observed to be running, therefore they are also called running coupling constants. At energies of around $10^{14}$ GeV the fundamental forces are thought to combine into one grand unified force with one coupling strength $\alpha_{\textrm{\tiny{GUT}}}$. GUT stands for \emph{Grand Unified Theory}.} and they are always dimensionless.
 
-The other parts of the diagram get their own factors according to the feynman rules. Each external, incoming or outgoing, line get a factor related to the type of particle and its direction, ie. if its a particle or an antiparticle. Internal lines, also called propagators, get different factors because they don't lie on their mass shell and are what we call virtual particles. We then use delta functions to impose energy momentum conversation at the vertices and finally we integrate over internal momenta\footnote{Remember we can never measure the virtual particles, so we have to take into account all the different states the propagator can have been in, that is all the different momenta it could have had. As they all contribute to the amplitude.}. Following the above rules one can write down the amplitude, or matrix element, $\mathcal{M}$. Having written down the amplitude for the process, the next step is to calculate the actual cross section for the process. To do this we use Fermi's Golden Rule.
+The other parts of the diagram get their own factors according to the feynman rules. Each external, incoming or outgoing, line get a factor related to the type of particle and its direction, i.e.. if its a particle or an antiparticle. Internal lines, also called propagators, get different factors because they don't lie on their mass shell and are what we call virtual particles. We then use delta functions to impose energy momentum conversation at the vertices and finally we integrate over internal momenta\footnote{Remember we can never measure the virtual particles, so we have to take into account all the different states the propagator can have been in, that is all the different momenta it could have had. As they all contribute to the amplitude.}. Following the above rules one can write down the amplitude, or matrix element, $\mathcal{M}$. Having written down the amplitude for the process, the next step is to calculate the actual cross section for the process. To do this we use Fermi's Golden Rule.
 % In case of Figure \ref{fig:feyn:ee_a_ee} the matrix element is given by \cite{griffiths1987iep}
 % 
 % \begin{equation}
