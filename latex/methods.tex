@@ -46,11 +46,11 @@ Instead of implementing the NCG Lagrangian terms directly into CompHEP we examin
 The last term is the interference part between $\gamma$ and Z, the second last is the cross section coming from NCG, that we are interested in. The two first terms we already know
 
 \begin{align}
-A_{q \bar q \rightarrow Z} &= \sigma_{q \bar q \rightarrow Z} (\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q}) \nonumber \\ 
-A_{q \bar q \rightarrow \gamma} &= \sigma_{q \bar q \rightarrow  \gamma}( \mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q}).
+A_{q \bar q \rightarrow Z} &= \sigma_{q \bar q \rightarrow Z} (\mathcal{M}_{q \bar q}) \otimes \textrm{P}_{pp}(\mathcal{M}_{q \bar q}) \nonumber \\ 
+A_{q \bar q \rightarrow \gamma} &= \sigma_{q \bar q \rightarrow  \gamma}( \mathcal{M}_{q \bar q}) \otimes \textrm{P}_{pp}(\mathcal{M}_{q \bar q}).
 \end{align}
 
-Here the symbol $\oplus$ means that we multiply distributions, bin by bin, $\mathcal{M}$ is the invariant mass for the two particles in the final state and P$_{pp}$ is the PDF. The idea is now to derive the last term, the amplitude of two gluons coupling to Z. Lets therefore take a look at the terms in the total muon production cross section that includes virtual $Z$ bosons.
+Here the symbol $\otimes$ means that we multiply distributions, bin by bin, $\mathcal{M}$ is the invariant mass for the two particles in the final state and P$_{pp}$ is the PDF. The idea is now to derive the last term, the amplitude of two gluons coupling to Z. Lets therefore take a look at the terms in the total muon production cross section that includes virtual $Z$ bosons.
 
 \begin{equation}
 \hat \sigma_{q \bar q/gg \rightarrow Z} = |A_{q \bar q \rightarrow Z} + A_{gg \rightarrow Z}|^{2}=|A_{q \bar q \rightarrow Z}|^{2}+|A_{gg \rightarrow Z}|^{2}.
@@ -60,19 +60,19 @@ Notice that we avoid interference terms by insisting on distinguishable initial 
 % trick is to write write $A_{gg \rightarrow Z}$ as a percentage of $A_{q \bar q \rightarrow Z}$
 
 \begin{equation}
-	\sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \oplus \textrm{P}_{pp}(\mathcal{M}_{gg})=\sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \theta_{NCG}\textrm{P}_{pp}(\mathcal{M}_{gg}).
+	\sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \otimes \textrm{P}_{pp}(\mathcal{M}_{gg})=\sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \otimes \theta_{NCG}\textrm{P}_{pp}(\mathcal{M}_{gg}).
 \end{equation}
 This leads us to an expression for the total cross section
 
 \begin{align} \label{eq:qqggztotal}
-\sigma_{q \bar q/gg \rightarrow Z} &= \sigma_{q \bar q \rightarrow Z} (\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q})+ \sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \oplus \textrm{P}_{pp}(\mathcal{M}_{gg})\nonumber \\ 
-&= \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus (\textrm{P}_{pp}(\mathcal{M}_{q \bar q})+\theta_{NCG}^{\Lambda}\textrm{P}_{pp}(\mathcal{M}_{gg}))\nonumber \\ 
-&= \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}(\mathcal{M}_{q \bar q}) \left ( 1+\theta_{NCG}^{\Lambda}\frac{\textrm{P}_{pp}(\mathcal{M}_{gg})}{\textrm{P}_{pp}(\mathcal{M}_{q \bar q}} \right ).
+\sigma_{q \bar q/gg \rightarrow Z} &= \sigma_{q \bar q \rightarrow Z} (\mathcal{M}_{q \bar q}) \otimes \textrm{P}_{pp}(\mathcal{M}_{q \bar q})+ \sigma_{gg\rightarrow Z} (\mathcal{M}_{gg}) \otimes \textrm{P}_{pp}(\mathcal{M}_{gg})\nonumber \\ 
+&= \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \otimes (\textrm{P}_{pp}(\mathcal{M}_{q \bar q})+\theta_{NCG}^{\Lambda}\textrm{P}_{pp}(\mathcal{M}_{gg}))\nonumber \\ 
+&= \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \otimes \textrm{P}_{pp}(\mathcal{M}_{q \bar q}) \left ( 1+\theta_{NCG}^{\Lambda}\frac{\textrm{P}_{pp}(\mathcal{M}_{gg})}{\textrm{P}_{pp}(\mathcal{M}_{q \bar q}} \right ).
 \end{align}
 
 \subsubsection{Calculating color factors}
 
-All we need to know now is the ratio P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ since $ \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \oplus \textrm{P}_{pp}$ is what CompHEP gives us when we make the interaction: $u \bar u \rightarrow Z \rightarrow \mu \bar \mu $. If we can construct two processes: $A_{pp}^{A}=\sigma^{A} \oplus$ P$_{pp}^{gg}$ and $A_{pp}^{B}=\sigma^{B} \oplus$ P$_{pp}^{q \bar q}$, such that $A^{A}=A^{B}$, then $\sigma_{pp}^{A}/\sigma_{pp}^{B}$ equals  P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ up to a constant.
+All we need to know now is the ratio P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ since $ \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \otimes \textrm{P}_{pp}$ is what CompHEP gives us when we make the interaction: $u \bar u \rightarrow Z \rightarrow \mu \bar \mu $. If we can construct two processes: $A_{pp}^{A}=\sigma^{A} \otimes$ P$_{pp}^{gg}$ and $A_{pp}^{B}=\sigma^{B} \otimes$ P$_{pp}^{q \bar q}$, such that $A^{A}=A^{B}$, then $\sigma_{pp}^{A}/\sigma_{pp}^{B}$ equals  P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ up to a constant.
 
 The interactions we choose are A: $gg \rightarrow g \rightarrow q \bar q$ and B: $q \bar q \rightarrow g \rightarrow q \bar q$. The coupling constant being $\alpha_{s}$. If we take a glance at the Feynman diagrams in Figures \ref{fig:feyn:parton_qq} and \ref{fig:feyn:parton_gg} for the two interactions, we can simply find the different colour factors by counting:\footnote{See p. 67 in  \cite{peskin1993iqf}.}
 \begin{align}
