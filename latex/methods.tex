@@ -74,11 +74,15 @@ This leads us to an expression for the total cross section
 
 All we need to know now is the ratio P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ since $ \sigma_{q \bar q\rightarrow Z}(\mathcal{M}_{q \bar q}) \otimes \textrm{P}_{pp}$ is what CompHEP gives us when we make the interaction: $u \bar u \rightarrow Z \rightarrow \mu \bar \mu $. If we can construct two processes: $A_{pp}^{A}=\sigma^{A} \otimes$ P$_{pp}^{gg}$ and $A_{pp}^{B}=\sigma^{B} \otimes$ P$_{pp}^{q \bar q}$, such that $A^{A}=A^{B}$, then $\sigma_{pp}^{A}/\sigma_{pp}^{B}$ equals  P$_{pp}(\mathcal{M}_{gg})$/P$_{pp}(\mathcal{M}_{q \bar q})$ up to a constant.
 
-The interactions we choose are A: $gg \rightarrow g \rightarrow q \bar q$ and B: $q \bar q \rightarrow g \rightarrow q \bar q$. The coupling constant being $\alpha_{s}$. If we take a glance at the Feynman diagrams in Figures \ref{fig:feyn:parton_qq} and \ref{fig:feyn:parton_gg} for the two interactions, we can simply find the different colour factors by counting:\footnote{See p. 67 in  \cite{peskin1993iqf}.}
+The interactions we choose are A: $gg \rightarrow g \rightarrow q \bar q$ and B: $q \bar q \rightarrow g \rightarrow q \bar q$. The coupling constant being $\alpha_{s}$. If we take a glance at the Feynman diagrams in Figures \ref{fig:feyn:parton_qq} and \ref{fig:feyn:parton_gg} for the two interactions, we can simply find the different colour factors by counting. As mentioned in section ?? quarks can have 3 different colors and gluons can have 8. Therefore we have
+
+?In interaction A we have $\frac{1}{8}$ from each of the incoming gluons and then we multiply with 8 from the probagator which also is a gluon. In interaction B we have two incoming quarks, wich can have 3 possible colors and therefore they contribute with $\frac{1}{3}$ each. The probagator is again a gluon and therefore multiply with 8?
+
+\footnote{See p. 569 in  \cite{peskin1993iqf}.}:
 \begin{align}
 	CF_{gg \rightarrow g \rightarrow q \bar q}&=\frac{1}{8} \cdot \frac{1}{8} \cdot 8=\frac{8}{64}\\
 	%CF_{q \bar q \rightarrow \gamma \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3} \cdot 8=\frac{8}{9}\\
-	CF_{q \bar q \rightarrow g \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3}=\frac{1}{9}.
+	CF_{q \bar q \rightarrow g \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3} \cdot 8=\frac{1}{9}.
 \end{align}
 
 This gives us the ratio
