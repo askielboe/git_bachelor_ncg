@@ -28,7 +28,7 @@ for (i = 1; i <= 1820; i++) {
 	cout << s;
 	printf("\n");
 	
-	gz = pow(4.*Pi*alphazmass,1/2) * (0.5 - 2./3. * pow(s,2)) / (sinw * cosw); // Deleted a factor pow(s,2)
+	gz = pow(4.*Pi*alphazmass,1/2) * (0.5 - 2./3. * pow(sinw,2)) / (sinw * cosw);
 	printf("gz = ");
 	cout << gz;
 	printf("\n");
@@ -44,7 +44,7 @@ for (i = 1; i <= 1820; i++) {
 		Crossqq = (12 * Pi / pow(Zmass,2) * Zwidthfracmu * Zwidthfracdsb * s * pow(Zwidthfull,2));
 		Crossqq = Crossqq / (pow(s - pow(Zmass,2),2) + pow(s,2) * pow(Zwidthfull,2) / pow(Zmass,2));	
 	}
-	theta = pow(Ggg,2) * s * gz / Crossqq; // Not taking gz^2 !
+	theta = pow(Ggg,2) * s * pow(gz,2) / Crossqq; // Not taking gz^2 !
 	printf("theta = ");
 	cout << theta;
 	printf("\n");

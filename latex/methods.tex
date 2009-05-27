@@ -33,7 +33,38 @@ Because LanHEP uses a lot of algorithms based on Lorentz invariance, one of the 
 These observations led us to consider different methods by which to study NCG using CompHEP.
 
 \subsubsection{Finding the appropriate form for $\theta_\textrm{NCG}$}
-Instead of trying to implement the full tensor expression for the NCG contribution $\theta$ \eqref{eq:ncgtheta}. DET HER AFSNIT SKRIVES EFTER SAMTALE MED JØRGEN.
+Instead of trying to implement the full tensor expression for the NCG contribution $\theta$ \eqref{eq:ncgtheta} we approximate by an effective zero-point interaction. The scattering amplitude in lowest order perturbation theory for the tree-level interaction in Figure \ref{fig:feyn:parton_gg} is given in natural units by
+\begin{equation}
+	\mathcal{M}(\mathbf{q}) = -\frac{g_Z g_g }{|\mathbf{q}|^2 + \Lambda^2},
+\end{equation}
+where $g_g$ is associated with the vertex $Zgg$ and $g_Z$ with the vertex $Z\mu\mu$, $\Lambda$ is related to $\theta$ by \eqref{eq:ncgtheta}. Making the low energy approximation that $|\mathbf{q}|^2 << \Lambda^2$ we get
+\begin{equation} \label{eq:scatteringamplitude}
+	\mathcal{M} = -\frac{g_Z g_g}{\Lambda^2} = -G_{Zgg},
+\end{equation}
+where $G_Z$ is the effective low-energy constant.\footnote{See section 9.1 in \cite{martin1998pp}.} In the case that we want to calculate the cross section for the process in Figure \ref{fig:feyn:parton_gg} we make use of Fermi's Golden Rule \eqref{eq:goldenrule}
+\begin{equation}
+	\hat \sigma_{Zgg} \propto |\mathcal{M}|^2 = G_{Zgg}^2.
+\end{equation}
+Now $G_Z$ has the unit of [E$^{-4}$] but we want the cross section to be of dimension [E$^{-2}$]. The only dimensional parameter we have available is the CM energy $|\mathbf{q}|^2 = s$, that gives us
+\begin{equation}
+	\hat \sigma_{Zgg} \approx G_{Zgg}^2 s = \frac{g_Z^2 g_g^2}{\Lambda^4}s.
+\end{equation}
+Looking at the vertices we have to figure out what the couplings $g_Z$ and $g_g$ should be. The first one, $g_Z$, is related to a regular weak interaction, and we have looked it up to be \cite{bettini2008iep}
+\begin{equation}
+	g_Z = \frac{\sqrt{4\pi\alpha}}{\sin{\theta_W}\cos{\theta_W}} c_Z,
+\end{equation}
+where $c_Z$ is a so-called Z charge factor and $\alpha = 1/128$ is the electromagnetic coupling calculated on the Z-mass. In our case, with $\bar \mu_R + \mu_L$ in the final state, $c_Z$ is given by $c_Z = \pm (1/2 - (2/3)\sin^2{\theta_W})$. The other coupling $g_g$ we derive from the width of the $Z \rightarrow gg$ decay given by \cite{behr2003dnc}
+\begin{equation}
+	\frac{g_g^2}{\Lambda^4} \propto \Gamma_{Z \rightarrow gg} = \frac{8}{12} \alpha M_Z^5 \sin^2{2\theta_W} K_{Zgg}^2 \frac{1}{\Lambda^4}.
+\end{equation}
+Again we make use of dimensional analysis. As we can see from \eqref{eq:scatteringamplitude}, $G_{Zgg}$ should have the dimension of [$E^{-2}$]. To achieve this we divide by $M_Z^5$ to get
+\begin{equation}
+	g_g^2 = \frac{8}{12} \alpha \sin^2{2\theta_W} K_{Zgg}^2.
+\end{equation}
+Now we can write the complete cross section for $gg \rightarrow Z \rightarrow \mu \bar \mu$
+\begin{equation}
+	\hat \sigma_{gg \rightarrow Z \rightarrow \mu \bar \mu} = \frac{32\pi}{12} \frac{\sin^2{2\theta_W}}{\sin^2{\theta_W}\cos^2{\theta_W}} \alpha^2 c_Z^2 K_{Zgg}^2 \frac{s}{\Lambda^4} .
+\end{equation}
 
 \subsubsection{Deriving the cross section from CompHEP histograms}
 Instead of implementing the NCG Lagrangian terms directly into CompHEP we examine the different amplitudes in the total cross section, including NCG contributions.
