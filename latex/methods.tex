@@ -37,7 +37,7 @@ Instead of trying to implement the full tensor expression for the NCG contributi
 \begin{equation}
 	\mathcal{M}(\mathbf{q}) = -\frac{g_Z g_g }{|\mathbf{q}|^2 + \Lambda^2},
 \end{equation}
-where $g_g$ is associated with the vertex $Zgg$ and $g_Z$ with the vertex $Z\mu\mu$, $\Lambda$ is related to $\theta$ by \eqref{eq:ncgtheta}. Making the low energy approximation that $|\mathbf{q}|^2 << \Lambda^2$ we get
+where $g_g$ is associated with the vertex $Zgg$ and $g_Z$ with the vertex $Z\mu\mu$, $\Lambda$ is related to $\theta$ by \eqref{eq:ncgtheta}. Making the low energy approximation that $|\mathbf{q}|^2 \ll \Lambda^2$ we get
 \begin{equation} \label{eq:scatteringamplitude}
 	\mathcal{M} = -\frac{g_Z g_g}{\Lambda^2} = -G_{Zgg},
 \end{equation}
@@ -45,7 +45,7 @@ where $G_Z$ is the effective low-energy constant.\footnote{See section 9.1 in \c
 \begin{equation}
 	\hat \sigma_{Zgg} \propto |\mathcal{M}|^2 = G_{Zgg}^2.
 \end{equation}
-Now $G_Z$ has the unit of [E$^{-4}$] but we want the cross section to be of dimension [E$^{-2}$]. The only dimensional parameter we have available is the CM energy $|\mathbf{q}|^2 = s$, that gives us
+Now $G_Z$ has the unit of [E$^{-4}$] but we want the cross section to be of dimension [E$^{-2}$]. The only dimensional parameter we have available is the CM energy $|\mathbf{q}|^2 = s$. That gives us
 \begin{equation}
 	\hat \sigma_{Zgg} \approx G_{Zgg}^2 s = \frac{g_Z^2 g_g^2}{\Lambda^4}s.
 \end{equation}
@@ -61,9 +61,9 @@ Again we make use of dimensional analysis. As we can see from \eqref{eq:scatteri
 \begin{equation}
 	g_g^2 = \frac{8}{12} \alpha \sin^2{2\theta_W} K_{Zgg}^2.
 \end{equation}
-Now we can write the complete cross section for $gg \rightarrow Z \rightarrow \mu \bar \mu$
+Now we can write the complete cross section for $gg \rightarrow Z \rightarrow \mu \bar \mu$ in the approximation where $s \ll \Lambda^2$
 \begin{equation}
-	\hat \sigma_{gg \rightarrow Z \rightarrow \mu \bar \mu} = \frac{32\pi}{12} \frac{\sin^2{2\theta_W}}{\sin^2{\theta_W}\cos^2{\theta_W}} \alpha^2 c_Z^2 K_{Zgg}^2 \frac{s}{\Lambda^4} .
+	\hat \sigma_{gg \rightarrow Z \rightarrow \mu \bar \mu} = \frac{32\pi}{12} \frac{\sin^2{2\theta_W}}{\sin^2{\theta_W}\cos^2{\theta_W}} \alpha^2 c_Z^2 K_{Zgg}^2 \frac{s}{\Lambda^4}.
 \end{equation}
 
 \subsubsection{Deriving the cross section from CompHEP histograms}

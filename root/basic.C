@@ -89,38 +89,38 @@ void loadhist() {
 	makehist("../data/v4_uu_z_mm_1220_1520.txt", hist_sm_uu_z, lines);
 	makehist("../data/v4_uu_z_mm_1520_1820.txt", hist_sm_uu_z, lines);
 	
-	// TH1F *hist_sm_dd_z = new TH1F("hist_sm_dd_z","d,d -> Z -> mu,mu",nbins,ecm_start,ecm_end);
-	// hist_sm_dd_z->GetXaxis()->SetTitle("E [GeV]");
-	// hist_sm_dd_z->GetYaxis()->SetTitle("cross section [pb]");
-	// lines = 0;
-	// makehist("../data/v4_dd_z_mm_20_320.txt", hist_sm_dd_z, lines);
-	// makehist("../data/v4_dd_z_mm_320_620.txt", hist_sm_dd_z, lines);
-	// makehist("../data/v4_dd_z_mm_620_920.txt", hist_sm_dd_z, lines);
-	// makehist("../data/v4_dd_z_mm_920_1220.txt", hist_sm_dd_z, lines);
-	// makehist("../data/v4_dd_z_mm_1220_1520.txt", hist_sm_dd_z, lines);
-	// makehist("../data/v4_dd_z_mm_1520_1820.txt", hist_sm_dd_z, lines);
-	//  	
-	//  	TH1F *hist_sm_ss_z = new TH1F("hist_sm_ss_z","s,s -> Z -> mu,mu",nbins,ecm_start,ecm_end);
-	//  	hist_sm_ss_z->GetXaxis()->SetTitle("E [GeV]");
-	//  	hist_sm_ss_z->GetYaxis()->SetTitle("cross section [pb]");
-	// lines = 0;
-	// makehist("../data/v4_ss_z_mm_20_320.txt", hist_sm_ss_z, lines);
-	// makehist("../data/v4_ss_z_mm_320_620.txt", hist_sm_ss_z, lines);
-	// makehist("../data/v4_ss_z_mm_620_920.txt", hist_sm_ss_z, lines);
-	// makehist("../data/v4_ss_z_mm_920_1220.txt", hist_sm_ss_z, lines);
-	// makehist("../data/v4_ss_z_mm_1220_1520.txt", hist_sm_ss_z, lines);
-	// makehist("../data/v4_ss_z_mm_1520_1820.txt", hist_sm_ss_z, lines);
-	// 
-	// TH1F *hist_sm_cc_z = new TH1F("hist_sm_cc_z","c,c -> Z -> mu,mu",nbins,ecm_start,ecm_end);
-	// hist_sm_cc_z->GetXaxis()->SetTitle("E [GeV]");
-	// hist_sm_cc_z->GetYaxis()->SetTitle("cross section [pb]");
-	// lines = 0;
-	// makehist("../data/v4_cc_z_mm_20_320.txt", hist_sm_cc_z, lines);
-	// makehist("../data/v4_cc_z_mm_320_620.txt", hist_sm_cc_z, lines);
-	// makehist("../data/v4_cc_z_mm_620_920.txt", hist_sm_cc_z, lines);
-	// makehist("../data/v4_cc_z_mm_920_1220.txt", hist_sm_cc_z, lines);
-	// makehist("../data/v4_cc_z_mm_1220_1520.txt", hist_sm_cc_z, lines);
-	// makehist("../data/v4_cc_z_mm_1520_1820.txt", hist_sm_cc_z, lines);
+	TH1F *hist_sm_dd_z = new TH1F("hist_sm_dd_z","d,d -> Z -> mu,mu",nbins,ecm_start,ecm_end);
+	hist_sm_dd_z->GetXaxis()->SetTitle("E [GeV]");
+	hist_sm_dd_z->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_dd_z_mm_20_320.txt", hist_sm_dd_z, lines);
+	makehist("../data/v4_dd_z_mm_320_620.txt", hist_sm_dd_z, lines);
+	makehist("../data/v4_dd_z_mm_620_920.txt", hist_sm_dd_z, lines);
+	makehist("../data/v4_dd_z_mm_920_1220.txt", hist_sm_dd_z, lines);
+	makehist("../data/v4_dd_z_mm_1220_1520.txt", hist_sm_dd_z, lines);
+	makehist("../data/v4_dd_z_mm_1520_1820.txt", hist_sm_dd_z, lines);
+	 	
+	TH1F *hist_sm_ss_z = new TH1F("hist_sm_ss_z","s,s -> Z -> mu,mu",nbins,ecm_start,ecm_end);
+	hist_sm_ss_z->GetXaxis()->SetTitle("E [GeV]");
+	hist_sm_ss_z->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_ss_z_mm_20_320.txt", hist_sm_ss_z, lines);
+	makehist("../data/v4_ss_z_mm_320_620.txt", hist_sm_ss_z, lines);
+	makehist("../data/v4_ss_z_mm_620_920.txt", hist_sm_ss_z, lines);
+	makehist("../data/v4_ss_z_mm_920_1220.txt", hist_sm_ss_z, lines);
+	makehist("../data/v4_ss_z_mm_1220_1520.txt", hist_sm_ss_z, lines);
+	makehist("../data/v4_ss_z_mm_1520_1820.txt", hist_sm_ss_z, lines);
+	
+	TH1F *hist_sm_cc_z = new TH1F("hist_sm_cc_z","c,c -> Z -> mu,mu",nbins,ecm_start,ecm_end);
+	hist_sm_cc_z->GetXaxis()->SetTitle("E [GeV]");
+	hist_sm_cc_z->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_cc_z_mm_20_320.txt", hist_sm_cc_z, lines);
+	makehist("../data/v4_cc_z_mm_320_620.txt", hist_sm_cc_z, lines);
+	makehist("../data/v4_cc_z_mm_620_920.txt", hist_sm_cc_z, lines);
+	makehist("../data/v4_cc_z_mm_920_1220.txt", hist_sm_cc_z, lines);
+	makehist("../data/v4_cc_z_mm_1220_1520.txt", hist_sm_cc_z, lines);
+	makehist("../data/v4_cc_z_mm_1520_1820.txt", hist_sm_cc_z, lines);
 // 	
 // ////// TOTAL MUON PRODUKTION VED GAMMA
 // 	TH1F *hist_sm_uu_a = new TH1F("hist_sm_uu_a","u,u -> A -> mu,mu",nbins,ecm_start,ecm_end);
@@ -211,16 +211,13 @@ void pdfratio(TH1F *hist_pdf) {
 
 void calcsmtot() {
 			TH1F *hist_total_sm = hist1->Clone("hist_total_sm");
-			hist_total_sm->SetTitle("Total cross section at LHC ordinary SM");
-			hist_total_sm->GetXaxis()->SetTitle("E [GeV]");
-			hist_total_sm->GetYaxis()->SetTitle("Number of events");
 			hist_total_sm->Reset();
 			
 			// Adding z contributions
 			hist_total_sm->Add(hist_sm_uu_z);
-			// hist_total_sm->Add(hist_sm_dd_z);
-			// hist_total_sm->Add(hist_sm_ss_z);
-			// hist_total_sm->Add(hist_sm_cc_z);
+			hist_total_sm->Add(hist_sm_dd_z);
+			hist_total_sm->Add(hist_sm_ss_z);
+			hist_total_sm->Add(hist_sm_cc_z);
 			
 			// // Adding gamma contributions
 			// hist_total_sm->Add(hist_sm_uu_a);
@@ -242,7 +239,7 @@ void calcsmtot() {
 			}
 }
 
-void calcncgfactor(TH1F *histmultiply, Float_t lambda, Int_t gen) {
+void calcncgfactor(TH1F *histncgfactor, Float_t lambda, Int_t gen) {
 	Double_t ecm_start=20., ecm_end=1820.;
 	Int_t lines = 0, nbins=1800, i;
 	
@@ -259,31 +256,51 @@ void calcncgfactor(TH1F *histmultiply, Float_t lambda, Int_t gen) {
 	histtheta->Reset();
 
 	Int_t i;
-	Float_t s;
-	Float_t Zmass = 91.1876, alphazmass = 1./128., sinw = 0.480832611, cosw = 0.876740947, Kgg = 0.2, Pi = 3.14159265;
-	Float_t Zwidthfull = 2.4952, Zwidthfracmu = 0.03366, Zwidthfracuc = 0.116, Zwidthfracdsb = 0.156;
+	Double_t s, l = lambda;
+	Double_t m = 91.1876, alpha = 1./128., sinw = 0.480832611, cosw = 0.876740947, kgg = 0.2, pi = 3.14159265;
+	Double_t w = 2.4952, wfmu = 0.03366, wfuc = 0.101, wfdsb = 0.166;
 	Double_t theta, Ggg, Crossqq, gz;
+
+	// Squaring functions
+	Double_t m2, alpha2, sinw2, cosw2, kgg2, pi2, w2, cz, cz2, l2, l4, w2;
 	
-	Ggg = (pow(8./12. * alphazmass,1/2) * sinw * Kgg * 1./pow(lambda,2));
+		m2 = m*m;
+		alpha2 = alpha*alpha;
+		sinw2 = sinw*sinw;
+		cosw2 = cosw*cosw;
+		kgg2 = kgg*kgg;
+		cz = (1./2. - (2./3.)*sinw2);
+		cz2 = cz*cz;
+		l2 = l*l;
+		l4 = l2*l2;
+		w2 = w*w;
 	
 	for (i = 1; i <= nbins; i++) {
-		s = pow(i+20.,2);
-		gz = pow(4.*Pi*alphazmass,1/2) * (0.5 - 2./3.*pow(sinw,2)) / (sinw * cosw);
+		s = (i+20)*(i+20);
 		if (gen = 1) {
-			Crossqq = (12 * Pi / pow(Zmass,2) * Zwidthfracmu * Zwidthfracuc * s * pow(Zwidthfull,2));
-			Crossqq = Crossqq / (pow(s - pow(Zmass,2),2) + pow(s,2) * pow(Zwidthfull,2) / pow(Zmass,2));
+			theta = 32*pi/12*sinw2/(sinw2*cosw2)*alpha2*cz2*kgg2*s/l4/((12*pi/m2*wfmu*wfuc*s*w2)/((s - m2)*(s - m2) + s*s*w2/m2));
 		}
 		else if (gen = 2) {
-			Crossqq = (12. * Pi / pow(Zmass,2) * Zwidthfracmu * Zwidthfracdsb * s * pow(Zwidthfull,2));
-			Crossqq = Crossqq / (pow(s - pow(Zmass,2),2) + pow(s,2) * pow(Zwidthfull,2) / pow(Zmass,2));	
+			theta = 32*pi/12*sinw2/(sinw2*cosw2)*alpha2*cz2*kgg2*s/l4/((12*pi/m2*wfmu*wfdsb*s*w2)/((s - m2)*(s - m2) + s*s*w2/m2));
 		}
-		theta = pow(Ggg,2) * s * pow(gz,2) / Crossqq;
 		histtheta->SetBinContent(i,theta);
 	}
 	
 	// Doing the multiplication. (Here comes the fudge factor!)
-		histmultiply -> Multiply(hist_pdf,histtheta,1.,1.);
-	
+		histncgfactor -> Multiply(hist_pdf,histtheta,1.,1.);
+		
+		// TCanvas *c2 = new TCanvas("c2","hist_pdf",1000,750);	
+		// c2->SetLogy();
+		// hist_pdf->Draw();		
+		// 
+		// TCanvas *c3 = new TCanvas("c3","histtheta",1000,750);	
+		// c3->SetLogy();
+		// histtheta->Draw();
+		// 
+		// TCanvas *c4 = new TCanvas("c4","histncgfactor",1000,750);	
+		// c4->SetLogy();
+		// histncgfactor->Draw();
+		
 	// Double_t x, y;
 	// for (i = 1; i <= 1820; i++) {
 	// 	x = hist_pdf->GetBinContent(i);
@@ -311,7 +328,7 @@ void calcncgfactor(TH1F *histmultiply, Float_t lambda, Int_t gen) {
 	
 	// Adding the one histogram into final histogram: the histncgfactor.
 	
-	histmultiply->Add(histone);
+	histncgfactor->Add(histone);
 	
 }
 
@@ -327,40 +344,24 @@ void calcncgtot(TH1F *hist_total_ncg, Float_t lambda) {
 
 		calcncgfactor(histncgfactor,lambda,1); 	 // Calculate NCG factor (1 + theta * pp_gg/pp_qq)
 
-		TCanvas *c6 = new TCanvas("c6","histncgfactor before multiply",1000,750);				
-		c6->SetLogy();
-		histncgfactor->Draw();
-
+		h1->Reset();
 		h1->Multiply(hist_sm_uu_z,histncgfactor,1.,1.);
 		hist_total_ncg->Add(h1);
-			
-			TCanvas *c2 = new TCanvas("c2","hist_sm_uu_z",1000,750);	
-			c2->SetLogy();
-			hist_sm_uu_z->Draw();
-			
-			TCanvas *c3 = new TCanvas("c3","histncgfactor after multiply",1000,750);				
-			c3->SetLogy();
-			histncgfactor->Draw();
-						
-			TCanvas *c4 = new TCanvas("c4","hist_total_ncg",1000,750);
-			c4->SetLogy();
-			hist_total_ncg->Draw();
-			
-			TCanvas *c5 = new TCanvas("c5","h1",1000,750);
-			c5->SetLogy();
-			h1->Draw();			
+		
+		h1->Reset();
+		h1->Multiply(hist_sm_cc_z,histncgfactor,1.,1.);
+		hist_total_ncg->Add(h1);
+		
+		histncgfactor->Reset();
+		calcncgfactor(histncgfactor,lambda,2); 	 // Calculate NCG factor (1 + theta * pp_gg/pp_qq)
 
-		// hist_sm_cc_z->Multiply(histncgfactor);
-		// hist_total_ncg->Add(hist_sm_cc_z);
-		// 
-		// histncgfactor->Reset();
-		// calcncgfactor(histncgfactor,lambda,2); 	 // Calculate NCG factor (1 + theta * pp_gg/pp_qq)
-		// 
-		// hist_sm_dd_z->Multiply(histncgfactor);
-		// hist_total_ncg->Add(hist_sm_dd_z);
-		// 
-		// hist_sm_ss_z->Multiply(histncgfactor);
-		// hist_total_ncg->Add(hist_sm_ss_z);
+		h1->Reset();		
+		h1->Multiply(hist_sm_dd_z,histncgfactor,1.,1.);
+		hist_total_ncg->Add(h1);
+
+		h1->Reset();				
+		h1->Multiply(hist_sm_ss_z,histncgfactor,1.,1.);
+		hist_total_ncg->Add(h1);
 
 		// Adding gamma contributions
 		// hist_total_ncg->Add(hist_sm_uu_a);
@@ -429,23 +430,23 @@ void drawhist(Int_t nr) {
 			// TH1F *ncg_test = new TH1F("ncg_test","NCG TEST",nbins,ecm_start,ecm_end);
 			// calcncgtot(ncg_test,200.);
 
-			TH1F *ncg_130 = new TH1F("ncg_130","NCG 130",nbins,ecm_start,ecm_end);
-			calcncgtot(ncg_130,130.);
+			// TH1F *ncg_130 = new TH1F("ncg_130","NCG 130",nbins,ecm_start,ecm_end);
+			// calcncgtot(ncg_130,100.);
 			
-			// TH1F *ncg_200 = new TH1F("ncg_200","NCG 200",nbins,ecm_start,ecm_end);
-			// calcncgtot(ncg_200,200.);
-			// 
-			// TH1F *ncg_400 = new TH1F("ncg_400","NCG 400",nbins,ecm_start,ecm_end);
-			// calcncgtot(ncg_400,400.);
-			// 
-			// TH1F *ncg_600 = new TH1F("ncg_600","NCG 600",nbins,ecm_start,ecm_end);
-			// calcncgtot(ncg_600,600.);
-			// 
-			// TH1F *ncg_800 = new TH1F("ncg_800","NCG 800",nbins,ecm_start,ecm_end);
-			// calcncgtot(ncg_800,800.);
-			// 
-			// TH1F *ncg_1000 = new TH1F("ncg_1000","NCG 1000",nbins,ecm_start,ecm_end);
-			// calcncgtot(ncg_1000,1000.);
+			TH1F *ncg_200 = new TH1F("ncg_200","NCG 200",nbins,ecm_start,ecm_end);
+			calcncgtot(ncg_200,200.);
+			
+			TH1F *ncg_400 = new TH1F("ncg_400","NCG 400",nbins,ecm_start,ecm_end);
+			calcncgtot(ncg_400,400.);
+			
+			TH1F *ncg_600 = new TH1F("ncg_600","NCG 600",nbins,ecm_start,ecm_end);
+			calcncgtot(ncg_600,600.);
+			
+			TH1F *ncg_800 = new TH1F("ncg_800","NCG 800",nbins,ecm_start,ecm_end);
+			calcncgtot(ncg_800,800.);
+			
+			TH1F *ncg_1000 = new TH1F("ncg_1000","NCG 1000",nbins,ecm_start,ecm_end);
+			calcncgtot(ncg_1000,1000.);
 			
 			// Plot total NCG cross section as a function of lambda
 			TCanvas *c1 = new TCanvas("c1","Total cross section at LHC",1000,750);
@@ -458,27 +459,54 @@ void drawhist(Int_t nr) {
 			// ncg_test->SetLineColor(9);
 			// ncg_test->Draw("same");
 			
-			ncg_130->SetLineColor(9);
-			ncg_130->Draw("same");
+			// ncg_130->SetLineColor(9);
+			// ncg_130->Draw("same");
 			
-			// ncg_200->SetLineColor(9);
-			// ncg_200->Draw("same");
-			// 
-			// ncg_400->SetLineColor(9);
-			// ncg_400->Draw("same");
-			// 
-			// ncg_600->SetLineColor(9);
-			// ncg_600->Draw("same");
-			// 
-			// ncg_800->SetLineColor(9);
-			// ncg_800->Draw("same");
-			// 
-			// ncg_1000->SetLineColor(9);
-			// ncg_1000->Draw("same");
+			ncg_200->SetLineColor(9);
+			ncg_200->Draw("same");
+			
+			ncg_400->SetLineColor(9);
+			ncg_400->Draw("same");
+			
+			ncg_600->SetLineColor(9);
+			ncg_600->Draw("same");
+			
+			ncg_800->SetLineColor(9);
+			ncg_800->Draw("same");
+			
+			ncg_1000->SetLineColor(9);
+			ncg_1000->Draw("same");
 			
 			// Calculate ordinary SM total cross section and plot it with statistical errors.
 					
 		break;
+		
+		case 4:
+		
+		Double_t ecm_start=20., ecm_end=1820.;
+		Int_t lines = 0, nbins=1800;
+			
+			TH1F *ncg_2000 = new TH1F("ncg_2000","NCG 2000",nbins,ecm_start,ecm_end);
+			calcncgtot(ncg_2000,2000.);
+			
+			// Plot total NCG cross section as a function of lambda
+			TCanvas *c1 = new TCanvas("c1","Total cross section at LHC",1000,750);
+		    c1->SetLogy();
+
+			calcsmtot();
+			
+			hist_total_sm->SetTitle("Total cross section at LHC, SM with error, blue line = NCG, lambda = 2000");
+			hist_total_sm->GetXaxis()->SetTitle("E [GeV]");
+			hist_total_sm->GetYaxis()->SetTitle("Number of events");
+			hist_total_sm->SetLineColor(18);
+			hist_total_sm->Draw("e0");
+			
+			ncg_2000->SetLineColor(9);
+			ncg_2000->Draw("same");
+			
+			// Calculate ordinary SM total cross section and plot it with statistical errors.
+			
+			break;
 
 		// default:
 		// 	cout << "Please enter a number from 1 to 2.";

@@ -6,49 +6,56 @@ void main() {
 
 Double_t ecm_start=20., ecm_end=1820.;
 Int_t lines = 0, nbins=1800;
-TH1F *hist1 = new TH1F("hist1","u,u -> g -> d,d",nbins,ecm_start,ecm_end);
+
+TH1F *hist1 = new TH1F("hist1","histtheta",nbins,ecm_start,ecm_end);
 TH1F *histtheta = hist1->Clone("histtheta");
 histtheta->Reset();
 
-Int_t i, gen = 1;
-Float_t gz, s, Crossqq, lambda = 200.;
-Float_t Zmass = 91.1876, alphazmass = 1./128., sinw = 0.480832611, cosw = 0.876740947, Kgg = 0.2, Pi = 3.14159265;
-Float_t Zwidthfull = 2.4952, Zwidthfracmu = 3.366, Zwidthfracuc = 11.6, Zwidthfracdsb = 15.6;
-Double_t theta, Ggg;
-
-Ggg = (pow(8./12. * alphazmass,1/2) * sinw * Kgg * 1./pow(lambda,2));
-
-printf("Ggg = ");
-cout << Ggg;
-printf("\n");
-
-for (i = 1; i <= 1820; i++) {
-	s = pow(i+20,2);
-	printf("s = ");
-	cout << s;
-	printf("\n");
+	Int_t i, gen = 1;
+	Double_t s, l = 200.;
+	Double_t m = 91.1876, alpha = 1./128., sinw = 0.480832611, cosw = 0.876740947, kgg = 0.2, pi = 3.14159265;
+	Double_t w = 2.4952, wfmu = 0.03366, wfuc = 0.101, wfdsb = 0.166;
+	Double_t theta, Ggg, Crossqq, gz;
 	
-	gz = pow(4.*Pi*alphazmass,1/2) * (0.5 - 2./3. * pow(sinw,2)) / (sinw * cosw);
-	printf("gz = ");
-	cout << gz;
-	printf("\n");
+	// Ggg = (pow(8./12. * alphazmass,1/2) * sinw * Kgg * 1./pow(lambda,2));
+	// 	printf("Ggg = ");
+	// 	cout << Ggg;
+	// 	printf("\n");
 	
-	if (gen = 1) {
-		Crossqq = (12 * Pi / pow(Zmass,2) * Zwidthfracmu * Zwidthfracuc * s * pow(Zwidthfull,2));
-		Crossqq = Crossqq / (pow(s - pow(Zmass,2),2) + pow(s,2) * pow(Zwidthfull,2) / pow(Zmass,2));
-		printf("Crossqq = ");
-		cout << Crossqq;
-		printf("\n");
+	// Squaring functions
+	Double_t m2, alpha2, sinw2, cosw2, kgg2, pi2, w2, cz, cz2, l2, l4, w2;
+	
+		m2 = m*m;
+		alpha2 = alpha*alpha;
+		sinw2 = sinw*sinw;
+		cosw2 = cosw*cosw;
+		kgg2 = kgg*kgg;
+		cz = (1./2. - (2./3.)*sinw2);
+		cz2 = cz*cz;
+		l2 = l*l;
+		l4 = l2*l2;
+		w2 = w*w;
+	
+	for (i = 1; i <= nbins; i++) {
+		s = (i+20)*(i+20);
+		// gz = pow(4.*Pi*alphazmass,1/2) * (0.5 - 2./3. * pow(sinw,2)) / (sinw * cosw);
+		// 	printf("gz = ");
+		// 	cout << gz;
+		// 	printf("\n");
+		if (gen = 1) {
+			theta = 32*pi/12*sinw2/(sinw2*cosw2)*alpha2*cz2*kgg2*s/l4/((12*pi/m2*wfmu*wfuc*s*w2)/((s - m2)*(s - m2) + s*s *w2/m2));
+		}
+		else if (gen = 2) {
+			theta = 32*pi/12*sinw2/(sinw2*cosw2)*alpha2*cz2*kgg2*s/l4/((12*pi/m2*wfmu*wfdsb*s*w2)/((s - m2)*(s - m2) + s*s *w2/m2));
+		}
+		
+	//	theta = pow(Ggg,2) * s * pow(gz,2) / Crossqq;
+			printf("theta = ");
+			cout << theta;
+			printf("\n");
+		histtheta->SetBinContent(i,theta);
 	}
-	else if (gen = 2) {
-		Crossqq = (12 * Pi / pow(Zmass,2) * Zwidthfracmu * Zwidthfracdsb * s * pow(Zwidthfull,2));
-		Crossqq = Crossqq / (pow(s - pow(Zmass,2),2) + pow(s,2) * pow(Zwidthfull,2) / pow(Zmass,2));	
-	}
-	theta = pow(Ggg,2) * s * pow(gz,2) / Crossqq; // Not taking gz^2 !
-	printf("theta = ");
-	cout << theta;
-	printf("\n");
 	
-	histtheta->SetBinContent(i,theta);
-}
+	histtheta->Draw();
+	
 }
