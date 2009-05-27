@@ -66,47 +66,42 @@ Instead of implementing the NCG Lagrangian terms directly into CompHEP we examin
 \begin{equation}
 	\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = \hat \sigma_{q \bar q \rightarrow \gamma} \otimes \mathcal{L}_{pp}^{q \bar q}+ \hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q}+ \hat \sigma_{gg \rightarrow Z} \otimes \mathcal{L}_{pp}^{gg}.
 \end{equation}
-The first two terms can be calculate directly in CompHEP, the latter terms we have to give a closer look: 
+The first two terms can be calculate directly in CompHEP, while we take a closer look at the latter. 
 \begin{eqnarray} \label{eq:qqggztotal}
 	\sigma_{total, Z \rightarrow \mu \bar \mu} &=& \hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q}+ \hat \sigma_{gg \rightarrow Z} \otimes \mathcal{L}_{pp}^{gg} \nonumber \\
 	&=&\hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q} \left (1+ \frac{\hat \sigma_{gg \rightarrow Z}}{\hat \sigma_{q \bar q \rightarrow Z}} \otimes \frac{\mathcal{L}_{pp}^{gg}} {\mathcal{L}_{pp}^{q \bar q}} \right )
 \end{eqnarray}
-Notice that we avoid interference terms by insisting on distinguishable initial and final states. Now we have to find the two ratios ${\hat \sigma_{gg \rightarrow Z}}/{\hat \sigma_{q \bar q \rightarrow Z}}$and ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$.
+Now we just have to find the two ratios ${\hat \sigma_{gg \rightarrow Z}}/{\hat \sigma_{q \bar q \rightarrow Z}}$and ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$.
 
-\subsubsection{Finding the ratio ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$}
-To find the ratio between the two luminosity functions we have made cross sectional distributions of two similar interactions. The two interactions are  $gg \rightarrow g \rightarrow q \bar q$ and $q \bar q \rightarrow g \rightarrow q \bar q$, se figures \ref{fig:feyn:parton_qq} and \ref{fig:feyn:parton_gg}, with  $\sigma^{pp}_{gg \rightarrow g \rightarrow q \bar q}=\hat \sigma_{gg \rightarrow g \rightarrow q \bar q} \otimes \mathcal{L}_{pp}^{gg}$ and $\sigma^{pp}_{q \bar q \rightarrow g \rightarrow q \bar q}= \hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q} \otimes \mathcal{L}_{pp}^{q \bar q}$. If $\hat \sigma_{gg \rightarrow g \rightarrow q \bar q} = \hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q}$ up to a constant then $\sigma^{pp}_{gg \rightarrow g \rightarrow q \bar q}/\sigma^{pp}_{q \bar q \rightarrow g \rightarrow q \bar q}$ equals $\mathcal{L}_{pp}^{gg}/\mathcal{L}_{pp}^{q \bar q}$ up to the same constant. The choice of interactions is very smart since they are strong interactions, and therefore the coupling constant being $\alpha_{s}$ for both and therefor dissapears. All we then have left is the ratio between the different color factors.
-As mentioned in section \ref{sec:su2andsu3} and \ref{sec:particles} quarks have 3 different colors and gluons have 8. Therefore we have\footnote{See p. 569 in  \cite{peskin1993iqf}.}:
+\subsubsection{Calculating the ratio ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$}
+To find the ratio between the two luminosity functions we have made cross sectional distributions of two interactions with similar couplings. The interactions of choise are  $gg \rightarrow g \rightarrow q \bar q$ and $q \bar q \rightarrow g \rightarrow q \bar q$ respectively. The cross sections are given by  $\sigma^{pp}_{gg \rightarrow g \rightarrow q \bar q}=\hat \sigma_{gg \rightarrow g \rightarrow q \bar q} \otimes \mathcal{L}_{pp}^{gg}$ and $\sigma^{pp}_{q \bar q \rightarrow g \rightarrow q \bar q}= \hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q} \otimes \mathcal{L}_{pp}^{q \bar q}$. If $\hat \sigma_{gg \rightarrow g \rightarrow q \bar q} = K \hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q}$ then $\mathcal{L}_{pp}^{gg}/\mathcal{L}_{pp}^{q \bar q} = K^{-1} \sigma^{pp}_{gg \rightarrow g \rightarrow q \bar q}/\sigma^{pp}_{q \bar q \rightarrow g \rightarrow q \bar q}$. We just have to find $K$. This is exactly why we choose two processes with similar interactions. The cross section is directly proportional to the couplings, but since the couplings are the same, we are left only with the choise of flavors. As mentioned in section \ref{sec:su2andsu3} and \ref{sec:particles} quarks have 3 different colors and gluons have 8. Therefore we have\footnote{See p. 569 in  \cite{peskin1993iqf}.}
 \begin{align}
 	CF_{gg \rightarrow g \rightarrow q \bar q}&=\frac{1}{8} \cdot \frac{1}{8} \cdot 8=\frac{8}{64}\\
 	CF_{q \bar q \rightarrow g \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3} \cdot 8=\frac{1}{9}.
 \end{align}
-
 This gives us the ratio
-
 \begin{align}
 	\frac{\hat \sigma_{gg \rightarrow g \rightarrow q \bar q}}{\hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q}} &=\frac{2 \cdot \alpha_{s} \cdot \frac{8}{64} \cdot C^{2}(r)}{2 \cdot \alpha_{s} \cdot \frac{8}{9} \cdot C^{2}(r)}=\frac{9}{64},
 \end{align}
-where $C(r) = \frac{1}{2}$\cite{peskin1993iqf} for the fundamental representation of SU(3) and the factor of two accounts for the symmetry of swapping the two particles in the initial state.
+with $K^{-1}=64/9$ and $C(r) = \frac{1}{2}$ for the fundamental representation of SU(3) and the factor of 2 accounts for the symmetry of swapping the two particles in the initial state. \cite{peskin1993iqf}
 
 \subsubsection{Finding the ratio ${\hat \sigma_{gg \rightarrow Z}}/{\hat \sigma_{q \bar q \rightarrow Z}}$}
-The cross section for quarks going to muons via Z is given in \cite{amsler2008rpp} is:
-
+The cross section for quarks going to muons via Z is given in \cite{amsler2008rpp} as
 \begin{equation}
-	\hat \sigma_{q \bar q \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = \frac{12 \pi}{M_{Z}^{2}}\frac{\Gamma(\mu \bar \mu)\Gamma(q\bar q)}{\Gamma^{2}_{Z}}\frac{s\Gamma^{2}_{Z}}{(s-M_{Z}^{2})^{2}+s^{2}\Gamma_{Z}^{2}/M_{Z}^{2}}
+	\hat \sigma_{q \bar q \rightarrow Z \rightarrow \mu \bar \mu} = \frac{12 \pi}{M_{Z}^{2}}\frac{\Gamma(\mu \bar \mu)\Gamma(q\bar q)}{\Gamma^{2}_{Z}}\frac{s\Gamma^{2}_{Z}}{(s-M_{Z}^{2})^{2}+s^{2}\Gamma_{Z}^{2}/M_{Z}^{2}},
 \end{equation}
-if we devide this by \ref{eq:sigmahatgg}
+where $\Gamma(\mu \bar \mu)$ is the width of $Z$ decaying into muons, $\Gamma(q \bar q)$ is the width of $Z$ decaying into a quark anti-quark pair and $\Gamma_Z$ is the total width of $Z$. All of these values can be found in \cite{amsler2008rpp}. Dividing by \ref{eq:sigmahatgg} we get a ratio with the profile
 \begin{equation}
-	\frac{\hat \sigma_{gg \rightarrow Z \rightarrow \mu \bar \mu}}{\hat \sigma_{q \bar q \rightarrow \gamma/ Z \rightarrow \mu \bar \mu}} \sim \frac{s^{2}}{\Lambda^{4}}
+	\frac{\hat \sigma_{gg \rightarrow Z \rightarrow \mu \bar \mu}}{\hat \sigma_{q \bar q \rightarrow Z \rightarrow \mu \bar \mu}} \sim \frac{s^{2}}{\Lambda^{4}}
 \end{equation}
-Now we are actually ready to create the cross sections, needed for analysis, with CompHEP. We collide protons with beam energy 7000 GeV and then looks at these different processes:
-
+Now we are ready to create the cross sections, needed for analysis, with CompHEP. We collide protons with beam energy 7000 GeV and then look at these different processes:
 \begin{align}
 gg &\rightarrow g \rightarrow u \bar u \nonumber \\ \nonumber
 u \bar u &\rightarrow g \rightarrow d \bar d \\ \nonumber
 q \bar q &\rightarrow Z \rightarrow \mu \bar \mu \\ \nonumber
 q \bar q &\rightarrow \gamma \rightarrow \mu \bar \mu,
 \end{align}
-where $q = \{u,d,s,c,b\}$. The first two processes we use to calculate the ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$ ratio in \eqref{eq:qqggztotal}, the rest we add together to get the total cross section for all possible collisions. The reason we're not just doing $q \bar q \rightarrow Z/ \gamma \rightarrow \mu \bar \mu$, which CompHEP is fully capable of, is that we need the partial cross section for processes involving only $Z$'s to be able to add the NCG contribution. To avoid singularities for $P_\textrm{T} \rightarrow 0$ we put in cuts in the transverse momentum of the out-coming particles (> 50 GeV) and also in their invariant mass ($20 \leq M \leq 1820$ GeV).
+where $q = \{u,d,s,c\}$. The first two processes are only used to calculate the ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$ ratio in \eqref{eq:qqggztotal}, the rest are added together to form the total cross section for moun pair production. The reason we are not just doing $q \bar q \rightarrow Z/ \gamma \rightarrow \mu \bar \mu$, is that we need the partial cross section for processes involving only $Z$'s to be able to add the NCG contribution. To avoid singularities for $P_\textrm{T} \rightarrow 0$ we put in cuts in the transverse momentum of the out-coming particles (> 50 GeV) and also in their invariant mass ($20 \leq M \leq 1820$ GeV).
 
 \subsection{Numerical tools, ROOT \& Mathematica}
 We use two different programs for analysis and making plots. the first one is ROOT. ROOT is a program for data processing, developed at CERN. The package has many features. We mostly used it for calculating with and analyzing histogram distribution with we gaind from CompHEP. ROOT provides a data structure that is extremely powerful for fast access of huge amounts of data. This is very appropriate when making particle physics data analysis. ROOT is written in C++, and we're using version 5.23. For some analytical calculations and simple numerical plotting we have used Mathematica 6. For more information about ROOT see http://root.cern.ch.
