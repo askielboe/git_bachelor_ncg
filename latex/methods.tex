@@ -28,7 +28,7 @@ CompHEP is a numerical application for calculating cross sections for multi-part
 These observations led us to consider different methods by which to study NCG using CompHEP.
 
 \subsubsection{Deriving the cross section for $Z \rightarrow gg$}
-Instead of trying to implement the full tensor expression for the NCG contribution $\theta$ \eqref{eq:ncgtheta} we approximate by an effective zero-point interaction. The scattering amplitude in lowest order perturbation theory for the tree-level interaction in Figure \ref{fig:feyn:parton_gg} is given in natural units by
+Instead of trying to calculate the full mE\footnote{This would be clearly beyond the score of this project.} for the NCG contribution $\theta$ \eqref{eq:ncgtheta} we approximate by an effective zero-point interaction. The scattering amplitude in lowest order perturbation theory for the tree-level interaction in Figure \ref{fig:feyn:parton_gg} is given in natural units by
 \begin{equation}
 	\mathcal{M}(\mathbf{q}) = -\frac{g_Z g_g }{|\mathbf{q}|^2 + \Lambda^2},
 \end{equation}
@@ -40,7 +40,7 @@ where $G_Z$ is the effective low-energy constant.\footnote{See section 9.1 in \c
 \begin{equation}
 	\hat \sigma_{Zgg} \propto |\mathcal{M}|^2 = G_{Zgg}^2.
 \end{equation}
-Now $G_Z$ has the unit of [E$^{-4}$] but we want the cross section to be of dimension [E$^{-2}$]. The only dimensional parameter we have available is the CM energy $|\mathbf{q}|^2 = s$. That gives us
+Now $G_Z^2$ has the unit of [E$^{-4}$] but we want the cross section to be of dimension [E$^{-2}$]. The only dimensional parameter we have available is the CM energy, assuming m=0 for initial+final particle, $|\mathbf{q}|^2 = s$. That gives us
 \begin{equation}
 	\hat \sigma_{Zgg} \approx G_{Zgg}^2 s = \frac{g_Z^2 g_g^2}{\Lambda^4}s.
 \end{equation}
@@ -48,7 +48,7 @@ Looking at the vertices we have to figure out what the couplings $g_Z$ and $g_g$
 \begin{equation}
 	g_Z = \frac{\sqrt{4\pi\alpha}}{\sin{\theta_W}\cos{\theta_W}} c_Z,
 \end{equation}
-where $c_Z$ is a so-called Z charge factor and $\alpha = 1/128$ is the electromagnetic coupling calculated on the Z-mass. In our case, with $\bar \mu_R + \mu_L$ in the final state, $c_Z$ is given by $c_Z = \pm (1/2 - (2/3)\sin^2{\theta_W})$. The other coupling $g_g$ we derive from the width of the $Z \rightarrow gg$ decay given by \cite{behr2003dnc}
+where $c_Z$ is a so-called Z charge factor and $\alpha = 1/128$ is the electromagnetic coupling evaluated at the Z-mass. In our case, with $\bar \mu_R + \mu_L$ in the final state, $c_Z$ is given by $c_Z = \pm (1/2 - (2/3)\sin^2{\theta_W})$. The other coupling $g_g$ we derive from the width of the $Z \rightarrow gg$ decay given by \cite{behr2003dnc}, in complete analogy to the Fermi interaction,
 \begin{equation}
 	\frac{g_g^2}{\Lambda^4} \propto \Gamma_{Z \rightarrow gg} = \frac{8}{12} \alpha M_Z^5 \sin^2{2\theta_W} K_{Zgg}^2 \frac{1}{\Lambda^4}.
 \end{equation}
@@ -62,19 +62,19 @@ Now we can write the complete cross section for $gg \rightarrow Z \rightarrow \m
 \end{equation}
 
 \subsubsection{Deriving the cross section from CompHEP histograms}
-Instead of implementing the NCG Lagrangian terms directly into CompHEP we examine the different amplitudes in the total cross section, including NCG contributions as derived above, while ignoring the interference terms
+As we cannot implement the NCG Lagrangian terms directly into CompHEP we examine the different amplitudes in the total cross section, including NCG contributions as derived above, while ignoring the interference terms
 \begin{equation}
 	\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = \hat \sigma_{q \bar q \rightarrow \gamma} \otimes \mathcal{L}_{pp}^{q \bar q}+ \hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q}+ \hat \sigma_{gg \rightarrow Z} \otimes \mathcal{L}_{pp}^{gg}.
 \end{equation}
 The first two terms can be calculated directly in CompHEP, while we take a closer look at the latter. 
 \begin{eqnarray} \label{eq:qqggztotal}
 	\sigma_{total, Z \rightarrow \mu \bar \mu} &=& \hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q}+ \hat \sigma_{gg \rightarrow Z} \otimes \mathcal{L}_{pp}^{gg} \nonumber \\
-	&=&\hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q} \left (1+ \frac{\hat \sigma_{gg \rightarrow Z}}{\hat \sigma_{q \bar q \rightarrow Z}} \frac{\mathcal{L}_{pp}^{gg}} {\mathcal{L}_{pp}^{q \bar q}} \right )
+	&=&\hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q} \left (1+ \frac{\hat \sigma_{gg \rightarrow Z}}{\hat \sigma_{q \bar q \rightarrow Z}} \frac{\mathcal{L}_{pp}^{gg}} {\mathcal{L}_{pp}^{q \bar q}} \right ).
 \end{eqnarray}
 Now we just have to find the two ratios ${\hat \sigma_{gg \rightarrow Z}}/{\hat \sigma_{q \bar q \rightarrow Z}}$ and ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$, where the latter is the ratio between the probability distributions for taking out gluons and quarks from the colliding protons.
 
 \subsubsection{Calculating the ratio ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$}
-To find the ratio between the two luminosity functions we have made cross sectional distributions of two interactions with similar couplings. The interactions of choise are  $gg \rightarrow g \rightarrow q \bar q$ and $q \bar q \rightarrow g \rightarrow q \bar q$ respectively. The cross sections are given by  $\sigma^{pp}_{gg \rightarrow g \rightarrow q \bar q}=\hat \sigma_{gg \rightarrow g \rightarrow q \bar q} \otimes \mathcal{L}_{pp}^{gg}$ and $\sigma^{pp}_{q \bar q \rightarrow g \rightarrow q \bar q}= \hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q} \otimes \mathcal{L}_{pp}^{q \bar q}$. If $\hat \sigma_{gg \rightarrow g \rightarrow q \bar q} = K \hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q}$ then $\mathcal{L}_{pp}^{gg}/\mathcal{L}_{pp}^{q \bar q} = K^{-1} \sigma^{pp}_{gg \rightarrow g \rightarrow q \bar q}/\sigma^{pp}_{q \bar q \rightarrow g \rightarrow q \bar q}$. We just have to find $K$. This is exactly why we choose two processes with similar interactions. The cross section is directly proportional to the couplings, but since the couplings are the same, we are left only with the choise of colors. As mentioned in section \ref{sec:su2andsu3} and \ref{sec:particles} quarks comes with 3 degrees of freedom and gluons comes with 8. When calculating the matrix element for a given Feynman diagram we have to average over the different initial states and sum over the final states. Therefore we have\footnote{See p. 569 in  \cite{peskin1993iqf}.}
+To find the ratio between the two luminosity functions we have made cross sectional distributions of two interactions with similar couplings. The interactions of choice are  $gg \rightarrow g \rightarrow q \bar q$ and $q \bar q \rightarrow g \rightarrow q \bar q$ respectively. The cross sections are given by  $\sigma^{pp}_{gg \rightarrow g \rightarrow q \bar q}=\hat \sigma_{gg \rightarrow g \rightarrow q \bar q} \otimes \mathcal{L}_{pp}^{gg}$ and $\sigma^{pp}_{q \bar q \rightarrow g \rightarrow q \bar q}= \hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q} \otimes \mathcal{L}_{pp}^{q \bar q}$. If $\hat \sigma_{gg \rightarrow g \rightarrow q \bar q} = K \hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q}$ then $\mathcal{L}_{pp}^{gg}/\mathcal{L}_{pp}^{q \bar q} = K^{-1} \sigma^{pp}_{gg \rightarrow g \rightarrow q \bar q}/\sigma^{pp}_{q \bar q \rightarrow g \rightarrow q \bar q}$. We just have to find $K$. This is exactly why we choose two processes with similar interactions. The cross section is directly proportional to the couplings, but since the couplings are the same, we are left only with the choise of colors. As mentioned in section \ref{sec:su2andsu3} and \ref{sec:particles} quarks comes with 3 degrees of freedom and gluons comes with 8. When calculating the matrix element for a given Feynman diagram we have to average over the different initial states and sum over the final states. Therefore we have\footnote{See p. 569 in  \cite{peskin1993iqf}.}
 \begin{align}
 	CF_{gg \rightarrow g \rightarrow q \bar q}&=\frac{1}{8} \cdot \frac{1}{8} \cdot 8=\frac{8}{64}\\
 	CF_{q \bar q \rightarrow g \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3} \cdot 8=\frac{1}{9}.
@@ -94,7 +94,7 @@ where $\Gamma(\mu \bar \mu)$ is the width of $Z$ decaying into muons, $\Gamma(q 
 \begin{equation}
 	\frac{\hat \sigma_{gg \rightarrow Z \rightarrow \mu \bar \mu}}{\hat \sigma_{q \bar q \rightarrow Z \rightarrow \mu \bar \mu}} \sim \frac{s^{2}}{\Lambda^{4}}
 \end{equation}
-Now we are ready to create the cross sections, needed for analysis, with CompHEP. We collide protons with beam energy 7000 GeV and we choose to only include tho first two generations of quarks.Then we look at these different processes:
+Now we are ready to create the cross sections, needed for analysis, with CompHEP. We collide protons with beam energy 7000 GeV and we choose to only include tho first two generations of quarks. As we want the same topological structure of alle the diagrams, the initial and final state may not be the same\footnote{In the interaction $u \bar $	$u \rightarrow g \rightarrow u \bar u$ we get both s- and t-channels \cite{peskin1993iqf}.}. Then we look at these different processes:
 \begin{align}
 gg &\rightarrow g \rightarrow u \bar u \nonumber \\ \nonumber
 u \bar u &\rightarrow g \rightarrow d \bar d \\ \nonumber
