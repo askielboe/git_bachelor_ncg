@@ -36,20 +36,17 @@ Gauge theories, which are central to the SM (the SM is in itself a gauge theory)
 In physics, any field theory in which the Lagrangian is invariant under some kind of continuous transformation is called a gauge theory, the invariance referred to as a gauge invariance. The group of transformations under which the Lagrangian is invariant is called the gauge group of the theory.\footnote{For a historical account of the development of gauge theories, at a level relevant for the present discussion, see \cite{gross1992gtp}.}
 
 \subsubsection{Quantum electrodynamics and SU(1)}
-In quantum mechanics the wave equation is invariant under local, space-time dependent, phase transformations, corresponding to rotations in the complex phase space of the wave function. In practice this invariance comes about when, in order to make predictions of physical observable, we have to take the absolute square of the wave function. Doing this information about the phase of the complex wave function is lost and we are left with only the absolute size of the complex number. This means that we can never physically measure the phase of the wave function, only its amplitude. Because of this, if we want the wave functions to represent actual physical systems, we have to insist that our equations be invariant under all local phase transformations\footnote{Actually the argument is a bit more subtle. There is no physical principle that states that the wavefunction \emph{has} to be invariant under local phase transformations, it is just something we assume. And, as it turns out, we can learn a lot from this assumption. \cite{griffiths1987iep}} of $\psi$ given by
-
+In quantum mechanics the wave equation is invariant under local, space-time dependent, phase transformations, corresponding to rotations in the complex phase space of the wave function. In practice this invariance comes about when, in order to make predictions of physical observable, we have to take the absolute square of the wave function. Doing this information about the phase of the complex wave function is lost and we are left with only the absolute size of the complex number. This means that we can never physically measure the phase of the wave function, only its amplitude. Because of this, if we want the wave functions to represent actual physical systems, we have to insist that our equations be invariant under all local phase transformations\footnote{Actually the argument is a bit more subtle. There is no physical principle that states that the wavefunction \emph{has} to be invariant under local phase transformations, but if we want the physics to be the same in our office downstairs and Jørgens office upstairs, we will have to insist on local gauge invariance.} of $\psi$ given by
 \begin{equation} \label{eq:localphase}
     \psi \rightarrow e^{i\alpha(\mathbf{x})} \psi.
 \end{equation}
 
 Together these transformations form the mathematical symmetry group SU(1). This is simply the group of all transformations of the form \eqref{eq:localphase}.  So far this does not seem to pose any problems for us. Adding a phase may change the wave function, but all predictions made about the position of the particle, described by this function, are left invariant. Specifically
-
 \begin{equation}
 	|\psi|^2 \rightarrow |e^{i\alpha(\mathbf{x})} \psi|^2 = |\psi|^2.
 \end{equation}
 
-However for the derivative operator $\partial_\mu$ to be well-defined for all points in space-time we have to replace it by the covariant derivative
-
+However, for the derivative operator $\partial_\mu$ to be well-defined for all points in space-time we have to replace it by the covariant derivative
 \begin{equation} \label{eq:covariant}
 	\partial_\mu \rightarrow D_\mu = \partial_\mu - \textrm{i}e A_\mu.
 \end{equation}
