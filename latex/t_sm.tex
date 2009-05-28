@@ -55,7 +55,6 @@ The covariant derivative compensates for the fact that, when making the local ph
 
 \subsubsection{Gauging the SU(2) and SU(3) Lie groups} \label{sec:su2andsu3}
 The previous discussion outlines many of the essential principles of gauge theories. Following the same logic the gauge group governing weak interaction turns out to be the composed group SU(1) $\times$ SU(2), where SU(2) is the group of $2 \times 2$ complex unitary matrices\footnote{More specifically SU(2) is a Lie group and its Lie algebra is the set of anti-Hermition $2 \times 2$ matrices with trace 0. For more information about Lie groups and Lie algebras see  \cite{fulton1991rtf}.}. The electromagnetism, and the weak interaction responsible for radioactive decay, are then combined into one theory, the electroweak theory. The generators of SU(2) are the Pauli matrices
-
 \begin{equation}
 	\sigma_1 =
 	\begin{pmatrix}
@@ -84,7 +83,6 @@ The gauge bosons associated with the weak force are the $W^+$, $W^-$ and the $Z^
 	\lambda_7 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & -i \\ 0 & i & 0 \end{pmatrix},
 	\lambda_8 = \frac{1}{\sqrt{3}} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -2 \end{pmatrix},
 \end{align}
-
 giving rise to 8 gauge bosons of the strong interaction know as gluons, each having a property called color. The reason for having 8 gluons is that we need 8 matrices to span the 'color' space laid out by the Gell-Mann matrices, while requiring that they have determinant 1. This is in fact the same reason why we need three Pauli matrices to span the group of SU(2). Because of this color feature the gauge theory of the strong interaction is called Quantum Chromodynamics (QCD).
 
 \subsection{The Standard Model}
@@ -137,7 +135,7 @@ The other parts of the diagram get their own factors according to the feynman ru
 \subsubsection{Fermi's golden rule for scattering}
 Fermi's golden rule states that for scattering between incoming particles with 4-momenta $p_1, p_2$ producing $n$ particles with momenta $p_3 \dots , p_n$ the scattering cross section is given by\cite{griffiths1987iep}
 \begin{align} \label{eq:goldenrule}
-	\sigma = &\frac{S\hbar^2}{4\sqrt{(p_1 \cdot p_2)^2 - (m_1 m_2 c^2)^2}} \int |\mathcal{M}|^2 (2 \pi)^4 \delta^4(p_1+p_2-p_3 \dots -p_n) \nonumber \\
+	\hat \sigma = &\frac{S\hbar^2}{4\sqrt{(p_1 \cdot p_2)^2 - (m_1 m_2 c^2)^2}} \int |\mathcal{M}|^2 (2 \pi)^4 \delta^4(p_1+p_2-p_3 \dots -p_n) \nonumber \\
 	&\times \prod_{j=3}^n 2\pi \delta(p_j^2 - m_j^2c^2)\theta(p_j^0) \frac{\textrm{d}p_j}{(2\pi)^2}.
 \end{align}
 Here $S$ is a factor taking care of double counting of identical particles in the final state and $\theta$ is the Heaviside step function defined by
@@ -153,7 +151,7 @@ Equation \eqref{eq:goldenrule} may look confusing at first, but all it is saying
 In the special case where we have only two particles in the final state and we look at the CM frame,\footnote{In this case $\sqrt{(p_1\cdot p_2)^2 - (m_1m_2 c^2)^2} = (E_1+E_2)|\mathbf{p}_1|/c$. See section 6.2 in \cite{griffiths1987iep}.} equation \eqref{eq:goldenrule} reduces to \cite{griffiths1987iep}
 
 \begin{equation}
-	\sigma = \frac{S\hbar^2c}{64\pi^2(E_1+E_2)|\mathbf{p}_1|} \int | \mathcal{M} |^2
+	\hat \sigma = \frac{S\hbar^2c}{64\pi^2(E_1+E_2)|\mathbf{p}_1|} \int | \mathcal{M} |^2
 	\frac{\delta^4(p_1+p_2-p_3-p_4)}{\sqrt{\mathbf{p}_3^2+m_3^2c^2}\sqrt{\mathbf{p}_4^2+m_4^2c^2}} \textrm{d}^3\mathbf{p}_3\textrm{d}^3\mathbf{p}_4.
 \end{equation}
 

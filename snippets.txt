@@ -9,3 +9,7 @@ We hereby (by doing the calculations we do) hope to be able to examine these res
 
 <---------- GR ----------->
 we must take each point with a given precision. According to the uncertainty principle $\Delta E \Delta t \approx {h \over 2 \pi}$ \footnote{The Uncertainty Principle states that for a pair of conjugate variables such as position/momentum and energy/time, it is impossible to have a precisely determined value of each member of the pair at the same time.}, energy and time are related in such a way that the conservation of energy can be violated, although for a very short moment. This allows a temporary change in the amount of energy in a point in the space-time and thereby the creation of particle-antiparticle pairs of virtual particles. This phenomenon is called quantum fluctuations.
+
+< results>
+
+ In this process we have made several assumptions. First of all we assume that all the events are recorded in the detector. This means that the \emph{detector acceptance}, A, is equal to unity. 
