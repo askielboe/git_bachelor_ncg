@@ -172,21 +172,6 @@ void loadhist() {
 	f->Write();
 }
 
-void test() {
-	hist_sm_uu_z->Add(hist_sm_dd_z);
-	hist_sm_uu_z->Draw();
-}
-
-void test2() {
-	test();
-}
-
-void plot(TH1F *h1, const char* canvas, Int_t log) {
-	TCanvas *c1 = new TCanvas(canvas,"Canvas 1",1000,750);
-	if (log = 1) c1->SetLogy();
-	h1->Draw("e");
-}
-
 void pdfratio(TH1F *hist_pdf) { 
 	//// Calculating the PDF ratio
 	hist1->Clone("hist_pdf"); // This is just to get the same number of bins, etc.
@@ -202,7 +187,12 @@ void pdfratio(TH1F *hist_pdf) {
 
 double pdfratiobin(int ibin) { 
 	//// Calculating the PDF ratio
-	return -64.*hist2->GetBinContent(ibin)/hist1->GetBinContent(ibin)/9.;
+	if (hist1->GetBinContent(ibin) = 0) {
+		return 0;
+	}
+	else if (hist1->GetBinContent(ibin) > 0) {
+		return -64.*hist2->GetBinContent(ibin)/hist1->GetBinContent(ibin)/9.;
+	}
 	// Divide the two histograms and divide by -9/64,
 	// minus sign from taking only s-channel contribution.
 }
@@ -387,12 +377,12 @@ void calcncgtot(TH1F *hist_total_ncg, Float_t lambda) {
 
 void calcncgtotbin(double xval, double oneoverlambda, double result) {
 	
-	int ibin=hist1->GetBinX((Float_t)xval);
+	int ibin=hist1->FindBin((Float_t)xval);
 	
-	double thehistncgfactor=histncgfactorbin(ibin,oneoverlambda,1);
+	double thehistncgfactor=calcncgfactorbin(ibin,oneoverlambda,1);
 	result=hist_sm_uu_z->GetBinContent(ibin)*thehistncgfactor;
 	result+=hist_sm_cc_z->GetBinContent(ibin)*thehistncgfactor;
-	thehistncgfactor=histncgfactorbin(ibin,oneoverlambda,2);
+	thehistncgfactor=calcncgfactorbin(ibin,oneoverlambda,2);
 	result+=hist_sm_dd_z->GetBinContent(ibin)*thehistncgfactor;
 	result+=hist_sm_ss_z->GetBinContent(ibin)*thehistncgfactor;
 	result+=hist_sm_uu_a->GetBinContent(ibin)+hist_sm_dd_a->GetBinContent(ibin)+hist_sm_cc_a->GetBinContent(ibin)+hist_sm_ss_a->GetBinContent(ibin);
@@ -401,7 +391,7 @@ void calcncgtotbin(double xval, double oneoverlambda, double result) {
 
 double thefitfunc(double *x, double *par){
 	double result=0.0;
-	call calcngtotbin(x[0],par[0],result);
+	calcncgtotbin(x[0],par[0],result);
 	return result;
 }
 
@@ -541,51 +531,7 @@ void drawhist(Int_t nr) {
 			
 			ncg_500->SetLineColor(9);
 			ncg_500->Draw("same");
-			
-			// // Plot total NCG cross section as a function of lambda
-			// TCanvas *c2 = new TCanvas("c2","Total cross section at LHC",1000,750);
-			// 		    c1->SetLogy();
-			// 
-			// hist_total_sm->SetTitle("Total cross section at LHC, SM with error, blue line = NCG, lambda = 1000");
-			// hist_total_sm->GetXaxis()->SetTitle("E [GeV]");
-			// hist_total_sm->GetYaxis()->SetTitle("Number of events");
-			// hist_total_sm->SetLineColor(18);
-			// gStyle->SetOptStat(0);
-			// hist_total_sm->Draw("e0");
-			// 
-			// ncg_1000->SetLineColor(9);
-			// ncg_1000->Draw("same");
-			// 
-			// // Plot total NCG cross section as a function of lambda
-			// TCanvas *c3 = new TCanvas("c3","Total cross section at LHC",1000,750);
-			// 		    c1->SetLogy();
-			// 
-			// hist_total_sm->SetTitle("Total cross section at LHC, SM with error, blue line = NCG, lambda = 1500");
-			// hist_total_sm->GetXaxis()->SetTitle("E [GeV]");
-			// hist_total_sm->GetYaxis()->SetTitle("Number of events");
-			// hist_total_sm->SetLineColor(18);
-			// gStyle->SetOptStat(0);
-			// hist_total_sm->Draw("e0");
-			// 
-			// ncg_1500->SetLineColor(9);
-			// ncg_1500->Draw("same");
-			// 
-			// // Plot total NCG cross section as a function of lambda
-			// TCanvas *c4 = new TCanvas("c4","Total cross section at LHC",1000,750);
-			// 		    c1->SetLogy();
-			// 
-			// hist_total_sm->SetTitle("Total cross section at LHC, SM with error, blue line = NCG, lambda = 2000");
-			// hist_total_sm->GetXaxis()->SetTitle("E [GeV]");
-			// hist_total_sm->GetYaxis()->SetTitle("Number of events");
-			// hist_total_sm->SetLineColor(18);
-			// gStyle->SetOptStat(0);
-			// hist_total_sm->Draw("e0");
-			// 
-			// ncg_2000->SetLineColor(9);
-			// ncg_2000->Draw("same");
-			
-			
-						
+									
 			break;
 
 	}
@@ -593,8 +539,9 @@ void drawhist(Int_t nr) {
 }
 
 void DoFit(void){
-	TF1 *AFitFunc= new TF1();
-	hist_total_sm->Fit("")
-	
+	TF1 *AFitFunc= new TF1("AFitFunc",thefitfunc,100.,1800.,1);
+	AFitFunc->SetParName(0,"OneOverLambda");
+	AFitFunc->SetParameter(0,1./1000.);
+	hist_total_sm->Fit("AFitFunc","LL");
 }
 
