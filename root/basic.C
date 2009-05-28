@@ -2,6 +2,7 @@
 #include "TH1F.h"
 #include "TH2F.h"
 #include "math.h"
+
 void makehist(const char* filename, TH1F *h1, Int_t& nlines) {
 	string d, pin, pout;
 	Double_t x,y,z, ecm_start, ecm_end;
@@ -33,7 +34,8 @@ void makehist(const char* filename, TH1F *h1, Int_t& nlines) {
 		nlines++;
 	}
 	
-	printf("Read from %i to %i GeV (%d points total)\n",ecm_start,ecm_end,nlines);
+	printf("Reading from file %s, ",filename);
+	printf("loading bins from %i to %i GeV (%d points total)\n",ecm_start,ecm_end,nlines);
 	
 	in.close();
 }
@@ -122,61 +124,50 @@ void loadhist() {
 	makehist("../data/v4_cc_z_mm_1220_1520.txt", hist_sm_cc_z, lines);
 	makehist("../data/v4_cc_z_mm_1520_1820.txt", hist_sm_cc_z, lines);
 // 	
-// ////// TOTAL MUON PRODUKTION VED GAMMA
-// 	TH1F *hist_sm_uu_a = new TH1F("hist_sm_uu_a","u,u -> A -> mu,mu",nbins,ecm_start,ecm_end);
-// 	hist_sm_uu_a->GetXaxis()->SetTitle("E [GeV]");
-// 	hist_sm_uu_a->GetYaxis()->SetTitle("cross section [pb]");
-// 	lines = 0;
-// 	makehist("../data/v4_uu_a_mm_20_320.txt", hist_sm_uu_a, lines);
-// 	makehist("../data/v4_uu_a_mm_320_620.txt", hist_sm_uu_a, lines);
-// 	makehist("../data/v4_uu_a_mm_620_920.txt", hist_sm_uu_a, lines);
-// 	makehist("../data/v4_uu_a_mm_920_1220.txt", hist_sm_uu_a, lines);
-// 	makehist("../data/v4_uu_a_mm_1220_1520.txt", hist_sm_uu_a, lines);
-// 	makehist("../data/v4_uu_a_mm_1520_1820.txt", hist_sm_uu_a, lines);
-// 
-// 	TH1F *hist_sm_dd_a = new TH1F("hist_sm_dd_a","d,d -> A -> mu,mu",nbins,ecm_start,ecm_end);
-// 	hist_sm_dd_a->GetXaxis()->SetTitle("E [GeV]");
-// 	hist_sm_dd_a->GetYaxis()->SetTitle("cross section [pb]");
-// 	lines = 0;
-// 	makehist("../data/v4_dd_a_mm_20_320.txt", hist_sm_dd_a, lines);
-// 	makehist("../data/v4_dd_a_mm_320_620.txt", hist_sm_dd_a, lines);
-// 	makehist("../data/v4_dd_a_mm_620_920.txt", hist_sm_dd_a, lines);
-// 	makehist("../data/v4_dd_a_mm_920_1220.txt", hist_sm_dd_a, lines);
-// 	makehist("../data/v4_dd_a_mm_1220_1520.txt", hist_sm_dd_a, lines);
-// 	makehist("../data/v4_dd_a_mm_1520_1820.txt", hist_sm_dd_a, lines);
-// 
-// 	TH1F *hist_sm_ss_a = new TH1F("hist_sm_ss_a","s,s -> A -> mu,mu",nbins,ecm_start,ecm_end);
-// 	hist_sm_ss_a->GetXaxis()->SetTitle("E [GeV]");
-// 	hist_sm_ss_a->GetYaxis()->SetTitle("cross section [pb]");
-// 	lines = 0;
-// 	makehist("../data/v4_ss_a_mm_20_320.txt", hist_sm_ss_a, lines);
-// 	makehist("../data/v4_ss_a_mm_320_620.txt", hist_sm_ss_a, lines);
-// 	makehist("../data/v4_ss_a_mm_620_920.txt", hist_sm_ss_a, lines);
-// 	makehist("../data/v4_ss_a_mm_920_1220.txt", hist_sm_ss_a, lines);
-// 	makehist("../data/v4_ss_a_mm_1220_1520.txt", hist_sm_ss_a, lines);
-// 	makehist("../data/v4_ss_a_mm_1520_1820.txt", hist_sm_ss_a, lines);
-// 
-// 	TH1F *hist_sm_cc_a = new TH1F("hist_sm_cc_a","c,c -> A -> mu,mu",nbins,ecm_start,ecm_end);
-// 	hist_sm_cc_a->GetXaxis()->SetTitle("E [GeV]");
-// 	hist_sm_cc_a->GetYaxis()->SetTitle("cross section [pb]");
-// 	lines = 0;
-// 	makehist("../data/v4_cc_a_mm_20_320.txt", hist_sm_cc_a, lines);
-// 	makehist("../data/v4_cc_a_mm_320_620.txt", hist_sm_cc_a, lines);
-// 	makehist("../data/v4_cc_a_mm_620_920.txt", hist_sm_cc_a, lines);
-// 	makehist("../data/v4_cc_a_mm_920_1220.txt", hist_sm_cc_a, lines);
-// 	makehist("../data/v4_cc_a_mm_1220_1520.txt", hist_sm_cc_a, lines);
-// 	makehist("../data/v4_cc_a_mm_1520_1820.txt", hist_sm_cc_a, lines);
-// 
-// 	TH1F *hist_sm_bb_a = new TH1F("hist_sm_bb_a","b,b -> A -> mu,mu",nbins,ecm_start,ecm_end);
-// 	hist_sm_bb_a->GetXaxis()->SetTitle("E [GeV]");
-// 	hist_sm_bb_a->GetYaxis()->SetTitle("cross section [pb]");
-// 	lines = 0;
-// 	makehist("../data/v4_bb_a_mm_20_320.txt", hist_sm_bb_a, lines);
-// 	makehist("../data/v4_bb_a_mm_320_620.txt", hist_sm_bb_a, lines);
-// 	makehist("../data/v4_bb_a_mm_620_920.txt", hist_sm_bb_a, lines);
-// 	makehist("../data/v4_bb_a_mm_920_1220.txt", hist_sm_bb_a, lines);
-// 	makehist("../data/v4_bb_a_mm_1220_1520.txt", hist_sm_bb_a, lines);
-// 	makehist("../data/v4_bb_a_mm_1520_1820.txt", hist_sm_bb_a, lines);
+////// TOTAL MUON PRODUKTION VED GAMMA
+	TH1F *hist_sm_uu_a = new TH1F("hist_sm_uu_a","u,u -> A -> mu,mu",nbins,ecm_start,ecm_end);
+	hist_sm_uu_a->GetXaxis()->SetTitle("E [GeV]");
+	hist_sm_uu_a->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_uu_a_mm_20_320.txt", hist_sm_uu_a, lines);
+	makehist("../data/v4_uu_a_mm_320_620.txt", hist_sm_uu_a, lines);
+	makehist("../data/v4_uu_a_mm_620_920.txt", hist_sm_uu_a, lines);
+	makehist("../data/v4_uu_a_mm_920_1220.txt", hist_sm_uu_a, lines);
+	makehist("../data/v4_uu_a_mm_1220_1520.txt", hist_sm_uu_a, lines);
+	makehist("../data/v4_uu_a_mm_1520_1820.txt", hist_sm_uu_a, lines);
+
+	TH1F *hist_sm_dd_a = new TH1F("hist_sm_dd_a","d,d -> A -> mu,mu",nbins,ecm_start,ecm_end);
+	hist_sm_dd_a->GetXaxis()->SetTitle("E [GeV]");
+	hist_sm_dd_a->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_dd_a_mm_20_320.txt", hist_sm_dd_a, lines);
+	makehist("../data/v4_dd_a_mm_320_620.txt", hist_sm_dd_a, lines);
+	makehist("../data/v4_dd_a_mm_620_920.txt", hist_sm_dd_a, lines);
+	makehist("../data/v4_dd_a_mm_920_1220.txt", hist_sm_dd_a, lines);
+	makehist("../data/v4_dd_a_mm_1220_1520.txt", hist_sm_dd_a, lines);
+	makehist("../data/v4_dd_a_mm_1520_1820.txt", hist_sm_dd_a, lines);
+
+	TH1F *hist_sm_ss_a = new TH1F("hist_sm_ss_a","s,s -> A -> mu,mu",nbins,ecm_start,ecm_end);
+	hist_sm_ss_a->GetXaxis()->SetTitle("E [GeV]");
+	hist_sm_ss_a->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_ss_a_mm_20_320.txt", hist_sm_ss_a, lines);
+	makehist("../data/v4_ss_a_mm_320_620.txt", hist_sm_ss_a, lines);
+	makehist("../data/v4_ss_a_mm_620_920.txt", hist_sm_ss_a, lines);
+	makehist("../data/v4_ss_a_mm_920_1220.txt", hist_sm_ss_a, lines);
+	makehist("../data/v4_ss_a_mm_1220_1520.txt", hist_sm_ss_a, lines);
+	makehist("../data/v4_ss_a_mm_1520_1820.txt", hist_sm_ss_a, lines);
+
+	TH1F *hist_sm_cc_a = new TH1F("hist_sm_cc_a","c,c -> A -> mu,mu",nbins,ecm_start,ecm_end);
+	hist_sm_cc_a->GetXaxis()->SetTitle("E [GeV]");
+	hist_sm_cc_a->GetYaxis()->SetTitle("cross section [pb]");
+	lines = 0;
+	makehist("../data/v4_cc_a_mm_20_320.txt", hist_sm_cc_a, lines);
+	makehist("../data/v4_cc_a_mm_320_620.txt", hist_sm_cc_a, lines);
+	makehist("../data/v4_cc_a_mm_620_920.txt", hist_sm_cc_a, lines);
+	makehist("../data/v4_cc_a_mm_920_1220.txt", hist_sm_cc_a, lines);
+	makehist("../data/v4_cc_a_mm_1220_1520.txt", hist_sm_cc_a, lines);
+	makehist("../data/v4_cc_a_mm_1520_1820.txt", hist_sm_cc_a, lines);
 	
 	f->Write();
 }
@@ -209,6 +200,13 @@ void pdfratio(TH1F *hist_pdf) {
 	hist_pdf->Divide(hist2,hist1,-64,9);
 }
 
+double pdfratiobin(int ibin) { 
+	//// Calculating the PDF ratio
+	return -64.*hist2->GetBinContent(ibin)/hist1->GetBinContent(ibin)/9.;
+	// Divide the two histograms and divide by -9/64,
+	// minus sign from taking only s-channel contribution.
+}
+
 void calcsmtot() {
 			TH1F *hist_total_sm = hist1->Clone("hist_total_sm");
 			hist_total_sm->Reset();
@@ -219,11 +217,11 @@ void calcsmtot() {
 			hist_total_sm->Add(hist_sm_ss_z);
 			hist_total_sm->Add(hist_sm_cc_z);
 			
-			// // Adding gamma contributions
-			// hist_total_sm->Add(hist_sm_uu_a);
-			// hist_total_sm->Add(hist_sm_dd_a);
-			// hist_total_sm->Add(hist_sm_cc_a);
-			// hist_total_sm->Add(hist_sm_ss_a);
+			// Adding gamma contributions
+			hist_total_sm->Add(hist_sm_uu_a);
+			hist_total_sm->Add(hist_sm_dd_a);
+			hist_total_sm->Add(hist_sm_cc_a);
+			hist_total_sm->Add(hist_sm_ss_a);
 			
 			// Multiplying by two possible initial states per diagram
 			hist_total_sm->Scale(2.);
@@ -235,7 +233,7 @@ void calcsmtot() {
 			Float_t bin, Int_t i;
 			for (i = 1; i <= 1820; i++) {
 				bin = hist_total_sm->GetBinContent(i);
-				hist_total_sm->SetBinError(i,sqrt(bin));
+				hist_total_sm->SetBinError(i,1.64*sqrt(bin));
 			}
 }
 
@@ -288,34 +286,6 @@ void calcncgfactor(TH1F *histncgfactor, Float_t lambda, Int_t gen) {
 	
 	// Doing the multiplication. (Here comes the fudge factor!)
 		histncgfactor -> Multiply(hist_pdf,histtheta,1.,1.);
-		
-		// TCanvas *c2 = new TCanvas("c2","hist_pdf",1000,750);	
-		// c2->SetLogy();
-		// hist_pdf->Draw();		
-		// 
-		// TCanvas *c3 = new TCanvas("c3","histtheta",1000,750);	
-		// c3->SetLogy();
-		// histtheta->Draw();
-		// 
-		// TCanvas *c4 = new TCanvas("c4","histncgfactor",1000,750);	
-		// c4->SetLogy();
-		// histncgfactor->Draw();
-		
-	// Double_t x, y;
-	// for (i = 1; i <= 1820; i++) {
-	// 	x = hist_pdf->GetBinContent(i);
-	// 	y = histtheta->GetBinContent(i);
-	// 	histmultiply->SetBinContent(i,x*y);
-	// }
-	
-	// // Lets draw it.
-	// TCanvas *c2 = new TCanvas("c2","theta_NCG x -1 x 64(gg -> g -> uu) / 9(uu -> g -> dd)",1000,750);
-	// c2->SetLogy();
-	// histmultiply->Draw("e");
-	
-	// // // // // // // // // // // // // // // // // // 
-	// Calculating (1+theta*P_gg/P_qq) = (histncgfactor).
-	// // // // // // // // // // // // // // // // // // 
 	
 	// Making the 1 histogram.
 	TH1F *histone = hist1->Clone("histone");
@@ -330,6 +300,45 @@ void calcncgfactor(TH1F *histncgfactor, Float_t lambda, Int_t gen) {
 	
 	histncgfactor->Add(histone);
 	
+}
+
+double calcncgfactorbin(int ibin, double oneoverlambda, Int_t gen) {
+	Double_t ecm_start=20., ecm_end=1820.;
+	Int_t lines = 0, nbins=1800, i;
+	
+	double ThePdf=pdfratiobin(ibin);
+
+	Int_t i;
+	Double_t s, l = oneoverlambda;
+	Double_t m = 91.1876, alpha = 1./128., sinw = 0.480832611, cosw = 0.876740947, kgg = 0.2, pi = 3.14159265;
+	Double_t w = 2.4952, wfmu = 0.03366, wfuc = 0.101, wfdsb = 0.166;
+	Double_t theta, Ggg, Crossqq, gz;
+
+	// Squaring functions
+	Double_t m2, alpha2, sinw2, cosw2, kgg2, pi2, w2, cz, cz2, l2, l4, w2;
+	
+		m2 = m*m;
+		alpha2 = alpha*alpha;
+		sinw2 = sinw*sinw;
+		cosw2 = cosw*cosw;
+		kgg2 = kgg*kgg;
+		cz = (1./2. - (2./3.)*sinw2);
+		cz2 = cz*cz;
+		l2 = l*l;
+		l4 = l2*l2;
+		w2 = w*w;
+		i=ibin;
+	//for (i = 1; i <= nbins; i++) {
+		s = (i+20)*(i+20);
+		if (gen = 1) {
+			theta = 32*pi/12*sinw2/(sinw2*cosw2)*alpha2*cz2*kgg2*s*l4/((12*pi/m2*wfmu*wfuc*s*w2)/((s - m2)*(s - m2) + s*s*w2/m2));
+		}
+		else if (gen = 2) {
+			theta = 32*pi/12*sinw2/(sinw2*cosw2)*alpha2*cz2*kgg2*s*l4/((12*pi/m2*wfmu*wfdsb*s*w2)/((s - m2)*(s - m2) + s*s*w2/m2));
+		}
+		//histtheta->SetBinContent(i,theta);
+	//}
+		return ThePdf*theta+1.0;
 }
 
 void calcncgtot(TH1F *hist_total_ncg, Float_t lambda) {
@@ -364,16 +373,36 @@ void calcncgtot(TH1F *hist_total_ncg, Float_t lambda) {
 		hist_total_ncg->Add(h1);
 
 		// Adding gamma contributions
-		// hist_total_ncg->Add(hist_sm_uu_a);
-		// hist_total_ncg->Add(hist_sm_dd_a);
-		// hist_total_ncg->Add(hist_sm_cc_a);
-		// hist_total_ncg->Add(hist_sm_ss_a);
+		hist_total_ncg->Add(hist_sm_uu_a);
+		hist_total_ncg->Add(hist_sm_dd_a);
+		hist_total_ncg->Add(hist_sm_cc_a);
+		hist_total_ncg->Add(hist_sm_ss_a);
 		
 		// Multiplying by two possible initial states per diagram
 		hist_total_ncg->Scale(2.);
 		
 		// Scale up to number of events at LHC running at 10 fb^-1 / year
 		hist_total_ncg->Scale(10000.);
+}
+
+void calcncgtotbin(double xval, double oneoverlambda, double result) {
+	
+	int ibin=hist1->GetBinX((Float_t)xval);
+	
+	double thehistncgfactor=histncgfactorbin(ibin,oneoverlambda,1);
+	result=hist_sm_uu_z->GetBinContent(ibin)*thehistncgfactor;
+	result+=hist_sm_cc_z->GetBinContent(ibin)*thehistncgfactor;
+	thehistncgfactor=histncgfactorbin(ibin,oneoverlambda,2);
+	result+=hist_sm_dd_z->GetBinContent(ibin)*thehistncgfactor;
+	result+=hist_sm_ss_z->GetBinContent(ibin)*thehistncgfactor;
+	result+=hist_sm_uu_a->GetBinContent(ibin)+hist_sm_dd_a->GetBinContent(ibin)+hist_sm_cc_a->GetBinContent(ibin)+hist_sm_ss_a->GetBinContent(ibin);
+	result*=20000.;
+}
+
+double thefitfunc(double *x, double *par){
+	double result=0.0;
+	call calcngtotbin(x[0],par[0],result);
+	return result;
 }
 
 void drawhist(Int_t nr) {
@@ -562,3 +591,10 @@ void drawhist(Int_t nr) {
 	}
 
 }
+
+void DoFit(void){
+	TF1 *AFitFunc= new TF1();
+	hist_total_sm->Fit("")
+	
+}
+
