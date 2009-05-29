@@ -539,7 +539,7 @@ void drawhist(Int_t nr) {
 void DoFit(void){
 	TF1 *AFitFunc= new TF1("AFitFunc",thefitfunc,100.,1800.,1);
 	AFitFunc->SetParName(0,"OneOverLambda");
-	AFitFunc->SetParameter(0,1./1000.);
-	hist_total_sm->Fit("AFitFunc","LL");
+	AFitFunc->SetParameter(0,0.0);
+	hist_total_sm->Fit("AFitFunc","RV");
 }
 
