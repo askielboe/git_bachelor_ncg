@@ -1,11 +1,11 @@
 \section{Methods}
 
 \subsection{The process of interest $(pp \rightarrow Z^0 \rightarrow \mu \bar\mu)$}
-We have decided to look at a process frequently occurring at the LHC, namely muon pair-production, in which a muon anti-muon pair is produced from the collision of two protons. In the ordinary SM this process can happen in the following two ways; a quark anti-quark pair annihilating to create either a photon or a Z boson which then decays into a muon-pair. The two we will study are illustrated by a Feynman diagram in Figure \ref{fig:feyn:parton_qq}. In NCG we have the extra vertex $Zgg$ which allows us to draw a diagram like that in Figure \ref{fig:feyn:parton_gg}. In this case we have taken out two gluons from the proton which then interacts to produce a Z boson, subsequently decaying into a muon-pair. These types of processes, in which a lepton-antilepton pair is produced together with any hadronic final state, are called Drell-Yan processes \cite{burgess2007smp}. The latter contribution is of particular interest when looking for NCG at hadron colliders, because the parton luminosity function for gluons gives much larger values than that of quarks. Our strategy is thus to calculate the total cross section for muon pair-production at the LHC
+We have decided to look at a process frequently occurring at the LHC, namely muon pair-production, in which a muon anti-muon pair is produced from the collision of two protons. In the ordinary SM this process can happen in the following two ways; a quark anti-quark pair annihilating to create either a photon or a Z boson which then decays into a muon-pair. This process is illustrated by a Feynman diagram in Figure \ref{fig:feyn:parton_qq}. In NCG we have the extra vertex $Zgg$ which allows us to draw a diagram like that in Figure \ref{fig:feyn:parton_gg}. In this case we have taken out two gluons from the proton which then interacts to produce a Z boson, subsequently decaying into a muon-pair. These types of processes, in which a lepton-antilepton pair is produced together with any hadronic final state, are called Drell-Yan processes \cite{burgess2007smp}. The latter contribution is of particular interest when looking for NCG at hadron colliders, because the parton luminosity function for gluons gives much larger values than that of quarks. Our strategy is thus to calculate the total cross section for muon pair-production at the LHC
 \begin{equation}
 	\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = \sigma_{q \bar q \rightarrow \gamma} + \sigma_{q \bar q \rightarrow Z} + \sigma_{gg \rightarrow Z} + \mathcal{I},
 \end{equation}
-where $\sigma =\hat \sigma \otimes \mathcal{L}^{pp}$ is the experimental amplitude, $\hat \sigma$ is the cross section calculated by Fermi's Golden Rule \eqref{eq:goldenrule}, $\mathcal{L}^{pp}$ is the parton luminosity function and $\mathcal{I}$ is a sum of interference terms which we later choose to ignore. We have chosen to ignore the contribution coming from $gg \rightarrow \gamma$ because this term will make calculations much more complex, although this could be an interesting thing to look at in future studies. While the full quantum field theoretical calculations for these processes are too advanced, for us to make use of, there exists several numerical applications that can be used to gather the results we need for further analysis. We calculate all SM amplitudes directly in a numerical application, CompHEP, and derive NCG contributions using ROOT and CompHEP histograms.
+where $\sigma =\hat \sigma \otimes \mathcal{L}^{pp}$ is the experimental cross section, $\hat \sigma$ is the cross section calculated by Fermi's Golden Rule \eqref{eq:goldenrule}, $\mathcal{L}^{pp}$ is the parton luminosity function and $\mathcal{I}$ is a sum of interference terms. We have chosen to ignore the contribution coming from $gg \rightarrow \gamma$ because this term will make calculations much more complex, although it could be an interesting thing to look at in future studies. While the full quantum field theoretical calculations for these processes are too advanced, for us to make use of, there exists several numerical applications that can be used to gather the results we need for further analysis. We calculate all SM amplitudes directly in a numerical application, CompHEP, and derive NCG contributions using ROOT and CompHEP histograms.
 
 \begin{figure}[htp]
 	\centering
@@ -23,55 +23,57 @@ where $\sigma =\hat \sigma \otimes \mathcal{L}^{pp}$ is the experimental amplitu
 \end{figure}
 
 \subsection{Calculating cross sections in CompHEP}
-CompHEP is a numerical application for calculating cross sections for multi-particle final states in elementary particle decays and collision events, in the lowest order of perturbation theory. We have used version 4.5.0rc6. CompHEP starts from the level of Feynman rules for a gauge model Lagrangian. There are several built-in models, for instance the SM in Unitary and 't-Hooft - Feynman gauge, and some MSSM models incorporation supersymmetry. You can also create a new model of your own, or generate it with another program called LanHEP. In LanHEP one simply inputs the Lagrangian terms for the theory you want to study and the program derives Feynman rules for direct use in CompHEP. CompHEP then calculates, symbolically, and in turn, the matrix element for any of the processes chosen. This was what we tried to do initially, but we ran into problems stemming from the nature of NCG. Because LanHEP uses a lot of algorithms based on Lorentz invariance, one of the limitations is that you cannot introduce any Lorentz-invariant terms. This causes problems if you want to include a term \eqref{eq:zggterm}, where we have an anti-symmetric tensor of the type $\theta^{\mu\nu}$, given in \eqref{eq:ncgtheta}. The antisymmetry between the tensor components give rise to distinctions between directions in space, something that is in clear violation of Lorentz invariance, required by LanHEP. Even if we were to ignore the field strength tensor in \eqref{eq:ncgtheta}, and only plug in scalar $\theta$, CompHEP will not let us, because of the-non conformity of the SU(2) structure of $Z^0$ and the SU(3) structure of the gluons. \cite{semenov}
+CompHEP\footnote{We have been using version 4.5.0 RC6 consistently throughout this project.} is a numerical application for calculating cross sections for multi-particle final states in elementary particle decays and collision events, in the lowest order of perturbation theory. CompHEP starts from the level of Feynman rules for a gauge model Lagrangian. There are several built-in models, for instance the SM in unitary and 't-Hooft - Feynman gauge, and some MSSM models incorporating supersymmetry. Other models can be generated with another program called LanHEP. In LanHEP one simply inputs the Lagrangian terms for the theory of interest and the program derives Feynman rules for direct use in CompHEP. CompHEP calculates, symbolically, and in turn, the matrix elements for any of the processes chosen.
+% This was what we tried to do initially, but we ran into problems stemming from the nature of NCG.
+Because LanHEP uses a lot of algorithms based on Lorentz invariance, one of the limitations is that you cannot introduce any Lorentz-invariant terms \cite{semenov}. This causes problems if you want to include a term like \eqref{eq:zggterm}, where we have an anti-symmetric tensor in the Lagrangian (eq. \eqref{eq:zggterm}). The antisymmetry between the tensor components give rise to distinctions between directions in space, something that is in clear violation of Lorentz invariance, required by LanHEP and CompHEP. Even if we were to ignore the field strength tensor in \eqref{eq:ncgtheta}, and only plug in scalar $\theta$, CompHEP will not let us, because of the-non conformity of the SU(2) structure of $Z^0$ and the SU(3) structure of the gluons.
 
-These observations led us to consider different methods by which to study NCG using CompHEP.
+These observations led us to consider different methods by which to study NCG using CompHEP. Instead of implementing NCG directly, we derive an expression involving histograms obtainable form CompHEP.
 
 \subsubsection{Deriving the cross section for $Z \rightarrow gg$} \label{sec:derivcrosssection}
-Instead of calculating the full matrix element for the NCG contribution\footnote{Which would clearly be beyond the scope of this project.} we approximate by an effective zero-range (contact) interaction. The scattering amplitude in lowest order perturbation theory for the tree-level interaction in Figure \ref{fig:feyn:parton_gg} is given in natural units by
+Instead of calculating the full matrix element for the NCG contribution\footnote{Which is clearly beyond the scope of this project.} we approximate by an effective zero-range (contact) interaction. The scattering amplitude in lowest order perturbation theory for the tree-level interaction in Figure \ref{fig:feyn:parton_gg} is given in natural units by
 \begin{equation}
 	\mathcal{M}(\mathbf{q}) = -\frac{g_Z g_g }{|\mathbf{q}|^2 + \Lambda^2},
 \end{equation}
-where $g_g$ is associated with the vertex $Zgg$ and $g_Z$ with the vertex $Z\mu\mu$, $\Lambda$ is related to $\theta$ by \eqref{eq:ncgtheta}. Making the low energy approximation that $|\mathbf{q}|^2 \ll \Lambda^2$ we get
+where $g_g$ is associated with the vertex $Zgg$ and $g_Z$ with the vertex $Z\mu \bar \mu$. Making the low energy approximation that $|\mathbf{q}|^2 \ll \Lambda^2$ we get
 \begin{equation} \label{eq:scatteringamplitude}
 	\mathcal{M} = -\frac{g_Z g_g}{\Lambda^2} = -G_{Zgg},
 \end{equation}
-where $G_Z$ is the effective low-energy constant.\footnote{See section 9.1 in \cite{martin1998pp}.} In the case that we want to calculate the cross section for the process in Figure \ref{fig:feyn:parton_gg} we make use of Fermi's Golden Rule \eqref{eq:goldenrule}
+where $G_Z$ is the effective low-energy constant.\footnote{See section 9.1 in \cite{martin1998pp}.} In the case that we want to calculate the cross section for the process in Figure \ref{fig:feyn:parton_gg} we make use of Fermi's Golden Rule \eqref{eq:goldenrule}, which tells us that
 \begin{equation}
 	\hat \sigma_{Zgg} \propto |\mathcal{M}|^2 = G_{Zgg}^2.
 \end{equation}
 Now $G_Z^2$ has the unit of [E$^{-4}$] but we want the cross section to be of dimension [E$^{-2}$]. The only dimensional parameter we have available, assuming that incoming and outgoing particles are massless,\footnote{This assumption is reasonable when considering that the masses of the quarks and muons are taken to be nearly massless compared with the scale of $\Lambda$.} is the CM energy $|\mathbf{q}|^2 = s$. That gives us
-\begin{equation}
+\begin{equation} \label{eq:goldenrule2}
 	\hat \sigma_{Zgg} \approx G_{Zgg}^2 s = \frac{g_Z^2 g_g^2}{\Lambda^4}s.
 \end{equation}
-Looking at the vertices we have to figure out what the couplings $g_Z$ and $g_g$ should be. The first one, $g_Z$, is related to a regular weak interaction, and we have looked it up to be \cite{bettini2008iep}
-\begin{equation}
+Looking at the vertices we have to figure out what the couplings $g_Z$ and $g_g$ should be. The first one, $g_Z$, is related to a regular weak interaction, and we have found it to be \cite{bettini2008iep}
+\begin{equation} \label{eq:gz}
 	g_Z = \frac{\sqrt{4\pi\alpha}}{\sin{\theta_W}\cos{\theta_W}} c_Z,
 \end{equation}
-where $c_Z$ is a so-called Z charge factor and $\alpha = 1/128$ is the electromagnetic coupling evaluated at the Z-mass. In our case, with $\bar \mu_R + \mu_L$ in the final state, $c_Z$ is given by $c_Z = \pm (1/2 - (2/3)\sin^2{\theta_W})$. The other coupling $g_g$ we derive from the width of the $Z \rightarrow gg$ decay given by \cite{behr2003dnc}, in complete analogy to the Fermi interaction,
-\begin{equation}
+where $c_Z$ is the so-called Z charge factor and $\alpha = 1/128$ is the electromagnetic coupling evaluated at the Z-mass. In our case, with $\bar \mu_R + \mu_L$ in the final state, $c_Z$ is given by $c_Z = \pm (1/2 - (2/3)\sin^2{\theta_W})$. The other coupling $g_g$ we derive from the width of the $Z \rightarrow gg$ decay given by \cite{behr2003dnc}, in complete analogy to the Fermi interaction. This yields
+\begin{equation} \label{eq:zggwidth}
 	\frac{g_g^2}{\Lambda^4} \propto \Gamma_{Z \rightarrow gg} = \frac{8}{12} \alpha M_Z^5 \sin^2{2\theta_W} K_{Zgg}^2 \frac{1}{\Lambda^4}.
 \end{equation}
-Again we make use of dimensional analysis. As we can see from \eqref{eq:scatteringamplitude}, $G_{Zgg}$ should have the dimension of [$E^{-2}$]. To achieve this we divide by $M_Z^5$ to get
+Again we make use of dimensional analysis. As we can see from \eqref{eq:scatteringamplitude}, $G_{Zgg}$ should have the dimension of [$E^{-2}$].\footnote{$g_Z$ and $g_g$ are both dimensionless, while $\Lambda$ has the unit of energy.} To achieve this we divide by $M_Z^5$ to get
 \begin{equation}
 	g_g^2 = \frac{8}{12} \alpha \sin^2{2\theta_W} K_{Zgg}^2.
 \end{equation}
-Now we can write the complete cross section for $gg \rightarrow Z \rightarrow \mu \bar \mu$ in the approximation where $s \ll \Lambda^2$
+Notice that, this being a dimensional analysis, we are unable to take into account extra factors, like $\pi$s, or other normalization constants. But with that in mind we can go on, and get an idea of scale of the new theory. We can now combine \eqref{eq:goldenrule2}, \eqref{eq:gz} and \eqref{eq:zggwidth} to write the complete cross section for $gg \rightarrow Z \rightarrow \mu \bar \mu$, in the approximation where $s \ll \Lambda^2$;
 \begin{equation} \label{eq:sigmahatgg}
 	\hat \sigma_{gg \rightarrow Z \rightarrow \mu \bar \mu} = \frac{32\pi}{12} \frac{\sin^2{2\theta_W}}{\sin^2{\theta_W}\cos^2{\theta_W}} \alpha^2 c_Z^2 K_{Zgg}^2 \frac{s}{\Lambda^4}.
 \end{equation}
 
 \subsubsection{Deriving the cross section from CompHEP histograms}
-As we cannot implement the NCG Lagrangian terms directly into CompHEP we examine the different amplitudes in the total cross section, including NCG contributions as derived above, while ignoring the interference terms
+As we cannot implement the NCG Lagrangian term directly into CompHEP we examine the different amplitudes in the total cross section, including NCG contributions as derived above, while ignoring the interference terms;
 \begin{equation}
 	\sigma_{pp \rightarrow \gamma/ Z \rightarrow \mu \bar \mu} = \hat \sigma_{q \bar q \rightarrow \gamma} \otimes \mathcal{L}_{pp}^{q \bar q}+ \hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q}+ \hat \sigma_{gg \rightarrow Z} \otimes \mathcal{L}_{pp}^{gg}.
 \end{equation}
-The first two terms can be calculated directly in CompHEP, while we take a closer look at the latter. 
+The first term we calculate directly in CompHEP, while taking a closer look at the latter two terms; 
 \begin{eqnarray} \label{eq:qqggztotal}
 	\sigma_{total, Z \rightarrow \mu \bar \mu} &=& \hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q}+ \hat \sigma_{gg \rightarrow Z} \otimes \mathcal{L}_{pp}^{gg} \nonumber \\
 	&=&\hat \sigma_{q \bar q \rightarrow Z} \otimes \mathcal{L}_{pp}^{q \bar q} \left (1+ \frac{\hat \sigma_{gg \rightarrow Z}}{\hat \sigma_{q \bar q \rightarrow Z}} \frac{\mathcal{L}_{pp}^{gg}} {\mathcal{L}_{pp}^{q \bar q}} \right ).
 \end{eqnarray}
-Now we just have to find the two ratios ${\hat \sigma_{gg \rightarrow Z}}/{\hat \sigma_{q \bar q \rightarrow Z}}$ and ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$, where the latter is the ratio between the probability distributions for taking out gluons and quarks from the colliding protons.
+Now we just have to find the two ratios ${\hat \sigma_{gg \rightarrow Z}}/{\hat \sigma_{q \bar q \rightarrow Z}}$ and ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$, where the latter is the ratio between the parton luminosity functions, the ratio between taking out gluons versus taking out quarks from the colliding protons.
 
 \subsubsection{Calculating the ratio ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$}
 To find the ratio between the two luminosity functions we have made cross sectional distributions of two interactions with similar couplings. The interactions of choice are  $gg \rightarrow g \rightarrow q \bar q$ and $q \bar q \rightarrow g \rightarrow q \bar q$ respectively. The cross sections are given by  
@@ -87,34 +89,34 @@ then
 \begin{equation}
 \frac{\mathcal{L}_{pp}^{gg}}{\mathcal{L}_{pp}^{q \bar q}} = K^{-1} \frac{\sigma^{pp}_{gg \rightarrow g \rightarrow q \bar q}}{\sigma^{pp}_{q \bar q \rightarrow g \rightarrow q \bar q}}. 
 \end{equation}
-We just have to find $K$. This is exactly why we choose two processes with similar interactions. The cross section is directly proportional to the couplings, but since the couplings are the same, we are left only with the choice of quark flavors and colors. As mentioned in section \ref{sec:su2andsu3} and \ref{sec:particles} quarks has with 3 degrees of color-freedom while the gluons have 8. When calculating the matrix element for a given Feynman diagram we have to average over the different initial states and sum over the final states. therefore we have\footnote{See p. 569 in  \cite{peskin1993iqf}.}
+We just have to find $K$. This is exactly why we choose two processes with similar interactions. The cross section is directly proportional to the couplings, but since the couplings are the same, we are left only with the choice of quark flavors and colors. As mentioned in section \ref{sec:su2andsu3} and \ref{sec:particles} quarks has 3 degrees of color-freedom while the gluons have 8. When calculating the matrix element for a given Feynman diagram we have to average over the different initial states and sum over the final states. Doing this we find the color factors (CF);\footnote{See p. 569 in  \cite{peskin1993iqf}.}
 \begin{align}
 	CF_{gg \rightarrow g \rightarrow q \bar q}&=\frac{1}{8} \cdot \frac{1}{8} \cdot 8=\frac{8}{64}\\
 	CF_{q \bar q \rightarrow g \rightarrow q \bar q}&=\frac{1}{3} \cdot \frac{1}{3} \cdot 8=\frac{1}{9}.
 \end{align}
-This gives us the ratio
+Giving us the value of the ratio between cross sections.
 \begin{align}
 	\frac{\hat \sigma_{gg \rightarrow g \rightarrow q \bar q}}{\hat \sigma_{q \bar q \rightarrow g \rightarrow q \bar q}} &=\frac{2 \cdot \alpha_{s}^2 \cdot \frac{8}{64} \cdot C^{2}(r)}{2 \cdot \alpha_{s}^2 \cdot \frac{8}{9} \cdot C^{2}(r)}=\frac{9}{64},
 \end{align}
-with $K^{-1}=64/9$ and $C(r) = \frac{1}{2}$ for the fundamental representation of SU(3) and the factor of 2 accounts for the symmetry of swapping the two particles in the initial state \cite{peskin1993iqf}.
+where $C(r) = \frac{1}{2}$ for the fundamental representation of SU(3) and the factor of 2 accounts for the symmetry of swapping the two particles in the initial state \cite{peskin1993iqf}. We then have $K=\frac{9}{64}$, and can now calculate the ratio ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$.
 
 \subsubsection{Finding the ratio ${\hat \sigma_{gg \rightarrow Z}}/{\hat \sigma_{q \bar q \rightarrow Z}}$}
 The cross section for quarks going to muons via Z is given in \cite{amsler2008rpp} as
-\begin{equation}
+\begin{equation} \label{eq:zcrosssection_pdg}
 	\hat \sigma_{q \bar q \rightarrow Z \rightarrow \mu \bar \mu} = \frac{12 \pi}{M_{Z}^{2}}\frac{\Gamma(\mu \bar \mu)\Gamma(q\bar q)}{\Gamma^{2}_{Z}}\frac{s\Gamma^{2}_{Z}}{(s-M_{Z}^{2})^{2}+s^{2}\Gamma_{Z}^{2}/M_{Z}^{2}},
 \end{equation}
-where $\Gamma(\mu \bar \mu)$ is the width of $Z$ decaying into muons, $\Gamma(q \bar q)$ is the width of $Z$ decaying into a quark anti-quark pair and $\Gamma_Z$ is the total width of $Z$. All of these values can be found in \cite{amsler2008rpp}. Dividing by \ref{eq:sigmahatgg} we get a ratio with the profile
+where $\Gamma(\mu \bar \mu)$ is the width of $Z$ decaying into muons, $\Gamma(q \bar q)$ is the width of $Z$ decaying into a quark anti-quark pair and $\Gamma_Z$ is the total width of $Z$. All of these values can be found in \cite{amsler2008rpp}. Dividing \eqref{eq:zcrosssection_pdg} by \eqref{eq:sigmahatgg} we get a ratio of the order
 \begin{equation}
-	\frac{\hat \sigma_{gg \rightarrow Z \rightarrow \mu \bar \mu}}{\hat \sigma_{q \bar q \rightarrow Z \rightarrow \mu \bar \mu}} \sim \frac{s^{2}}{\Lambda^{4}}
+	\frac{\hat \sigma_{gg \rightarrow Z \rightarrow \mu \bar \mu}}{\hat \sigma_{q \bar q \rightarrow Z \rightarrow \mu \bar \mu}} \sim \frac{s^{2}}{\Lambda^{4}}.
 \end{equation}
-Now we are ready to create the cross sections, needed for analysis, with CompHEP. We collide protons with beam energy 7000 GeV and choose to only to include the first two generations of quarks. We want the same topological structure of all the diagrams, therefore all the given particles in the interaction must be distinguishable\footnote{In the interaction $u \bar u \rightarrow g \rightarrow u \bar u$ and $gg \rightarrow g \rightarrow u \bar u$ we get both s- and t-channel diagrams, se p. 343 in \cite{burgess2007smp}. In the latter we cannot avoid this, and we have forced CompHEP only to calculate the cross section using the s-channel, this is a gauge violating operation. It gives us a negative distribution as you can se on p. 343 and therefore we multiply it with -1.}. Then we look at these different processes
+Now we are ready to create the cross sections, needed for analysis, with CompHEP. We collide protons with beam energy 7000 GeV. For simplicity, and because other contributions are small, we choose to only to include the first two generations of quarks. We want the same topological structure of all the diagrams, therefore all the given particles in the interaction must be distinguishable\footnote{In the interaction $u \bar u \rightarrow g \rightarrow u \bar u$ and $gg \rightarrow g \rightarrow u \bar u$ we get both s- and t-channel diagrams, se p. 343 in \cite{burgess2007smp}. In the latter we cannot avoid this, and we have forced CompHEP only to calculate the cross section using the s-channel, this is a gauge violating operation. It gives us a negative distribution as you can se on p. 343 and therefore we multiply it with -1.}. Then we look at these different processes
 \begin{align}
 gg &\rightarrow g \rightarrow u \bar u \nonumber \\ \nonumber
 u \bar u &\rightarrow g \rightarrow d \bar d \\ \nonumber
 q \bar q &\rightarrow Z \rightarrow \mu \bar \mu \\ \nonumber
 q \bar q &\rightarrow \gamma \rightarrow \mu \bar \mu,
 \end{align}
-where $q = \{u,d,s,c\}$. The first two processes are only used to calculate the ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$ ratio in \eqref{eq:qqggztotal}, the rest are added together to form the total cross section for muon pair production. The reason we are not just doing $q \bar q \rightarrow Z/ \gamma \rightarrow \mu \bar \mu$, is that we need the partial cross section for processes involving only $Z$ to be able to add the NCG contribution. We put in cuts in the transverse momentum of the out-coming particles (> 50 GeV), because lower energies makes a lot of trouble in CompHEP. We make distributions with the range of histograms $20 GeV \leq \sqrt{s} \leq 1820$ GeV.
+where $q = \{u,d,s,c\}$. The first two processes are only used to calculate the ${\mathcal{L}_{pp}^{gg}}/{\mathcal{L}_{pp}^{q \bar q}}$ ratio in \eqref{eq:qqggztotal}, the rest are added together to form the total cross section for muon pair production. The reason we are not just doing $q \bar q \rightarrow Z/ \gamma \rightarrow \mu \bar \mu$, is that we need the partial cross section for processes involving only $Z$ to be able to add the NCG contribution. We put in cuts in the transverse momentum of the out-coming particles (> 50 GeV), because lower energies makes a lot of trouble in CompHEP. We make distributions with the range of histograms $20 \mbox{ GeV } \leq \sqrt{s} \leq 1820$ GeV.
 
 \subsection{Numerical tools, ROOT \& Mathematica}
-We use two different programs for analysis and making plots. The first one is ROOT.\footnote{For more information about ROOT see \cite{rootweb}.} ROOT is a program for data processing, developed at CERN. The package has many features. We used it mainly for manipulating histograms produced in CompHEP. ROOT provides a data structure that is extremely powerful for fast access of huge amounts of data. This is very appropriate when making particle physics data analysis. ROOT is written in C++, and we're using version 5.23. For some analytical calculations and simple numerical plotting we have used Mathematica 6.
+We use two different programs for analysis and making plots. The first one is ROOT.\footnote{For more information about ROOT see \cite{rootweb}.} ROOT is a program for data processing, developed at CERN. The package has many features, but we use it mainly for manipulating histograms produced in CompHEP. ROOT provides a data structure that is extremely powerful for fast access of huge amounts of data. This is very appropriate when making particle physics data analysis. ROOT is written in C++, and we're using version 5.23. For some analytical calculations and simple numerical plotting we have used Mathematica 6.
