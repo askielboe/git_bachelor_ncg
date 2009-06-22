@@ -5,6 +5,7 @@
 #include "TH2F.h"
 #include "TCanvas.h"
 #include "math.h"
+#include "TRandom.h"
 
 TH1F *hist1;
 TH1F *hist2;
@@ -523,14 +524,34 @@ void DoFit(Float_t lambda){
 	TCanvas *c1;
 	if (lambda == 0) {
 		calcsmtot();
-		TF1 *AFitFunc= new TF1("AFitFunc",thefitfunc,100.,1800.,1);
-		AFitFunc->SetParName(0,"OneOverLambda");
-		AFitFunc->SetParameter(0,0.001);
-		hist_total_sm->Fit("AFitFunc","RVLL");
+		TF1 *AFitFunc= new TF1("AFitFunc",thefitfunc,140.,150.,1);
+		int npseudo=500;
+		TH1F* fitdist=new TH1F("fitdist","fitdist",100,0.,0.001);
+		TH1F* hist_total_fit=(TH1F*)hist1->Clone("hist_total_sm");
 		c1 = new TCanvas("c1","Fit to SM",1000,750);
 		c1->SetLogy();
+		c1->Divide(1,2);
+		c1->cd(1);
+		for (int i=1;i<npseudo;++i){
+			printf("fit nummer: %d\n",i);
+			hist_total_fit->Reset();
+			Float_t nevt=hist_total_sm->Integral();
+			nevt=nevt+gRandom->Gaus(0,1)*sqrt(nevt);
+			//printf("nevt: %d (%d)\n",int(nevt),int(hist_total_sm->Integral()));
+			hist_total_fit->FillRandom(hist_total_sm,int(nevt));	
+			AFitFunc->SetParName(0,"OneOverLambda");
+			AFitFunc->SetParameter(0,0.01);
+			hist_total_fit->Fit("AFitFunc","R");
+			//printf("result: %f\n",AFitFunc->GetParameter(0));
+			fitdist->Fill(fabs(AFitFunc->GetParameter(0)));
+			hist_total_fit->Draw();
+		}
+		/*hist_total_sm->Fit("AFitFunc","RVLL");
+		c1->SetLogy();*/
 		hist_total_sm->SetLineColor(18);
-		hist_total_sm->Draw("e0");
+		hist_total_sm->Draw("SAME");
+		c1->cd(2);
+		fitdist->Draw();		
 	}
 	else if (lambda >= 1) {
 		TH1F *ncg_tot_lambda = (TH1F*)hist1->Clone("ncg_tot_lambda");
